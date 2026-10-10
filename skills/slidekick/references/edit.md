@@ -11,7 +11,7 @@ python "<skill-dir>/scripts/deck.py" inspect <deck.pptx> --out <work>/inspect   
 Read `outline.md` (the storyline, then every slide's shapes with `#id "name"`, box, effective font, size and colour, notes and tables/charts with data) and **look at** `contact-sheet.png`. The ids in the outline are what your edits refer to.
 
 Check the header line `Built by Slidekick:`:
-- **unchanged since the last build** → the canvas is still the source of truth. Prefer editing `canvas/deck.html` / `plan/` and rebuilding (Create Step 5), so the project stays in sync.
+- **unchanged since the last build** → the canvas is still the source of truth. Prefer editing `canvas/deck.html` / `plan/` and rebuilding (Create Step 5), so the project stays in sync. The rebuild replaces `deck.pptx`. If the user has already shared or delivered that file, copy it to `deck-previous.pptx` first and say so.
 - **MODIFIED after the last build** → someone edited the .pptx in PowerPoint. Rebuilding would wipe out their changes. Edit in place, or ask before rebuilding.
 
 Fix `font-missing` issues first (`deck.py fonts fetch …`). Renders with a substitute font will mislead you about fit.
@@ -108,7 +108,8 @@ python "<skill-dir>/scripts/deck.py" taste --inventory <work>/after/inventory.js
 
 - `overflow` errors come from PowerPoint's own layout: rewritten text no longer fits. Fix them.
 - Look at the render of every changed slide next to its "before" render (`<work>/inspect/render/` and `<work>/after/render/`). Did anything shift, rewrap, lose formatting or leave a hole?
-- Run the design review (`taste.md`, mode `edit`) on the changed slides and their neighbours. Judge consistency with the deck's own system, and don't impose Slidekick's style on someone else's deck. A deletion that leaves a `rhythm` hole, or a new slide that doesn't match, is a blocker.
+- **A pure correction** (numbers, wording, chart or table data; no slide added, removed or re-laid-out; text within about 20% of its old length): QA or `inspect` must show no new overflow, collision or contrast issue, and the taste lint no new finding. Then a quick fresh-eyes look at only the changed slides answers one question: does anything look broken or out of place? That replaces the scored review. If it finds anything, run the full review below.
+- **Anything else:** run the design review (`taste.md`, mode `edit`) on the changed slides and their neighbours. Judge consistency with the deck's own system, and don't impose Slidekick's style on someone else's deck. A deletion that leaves a `rhythm` hole, or a new slide that doesn't match, is a blocker.
 
 ## 6. Deliver
 

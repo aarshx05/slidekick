@@ -61,7 +61,23 @@ After installing, run `deck.py tokens` again. QA fails on any font PowerPoint wo
 ### No brand kit?
 
 - **Project or website** → use its own identity: colours from its CSS custom properties, fonts from its stylesheet, logo from `public/` / `assets/` or the site header. Feed those files to `deck.py brand`.
-- **Nothing at all** → pick a restrained palette (one strong accent plus neutrals) and a font pair every recipient has (`Arial` / `Georgia`; `Segoe UI` only if the audience is all-Windows), or a Google pair you fetch with `deck.py fonts fetch "<family>" --install` (then `--embed-fonts` or tell them to install it). Write it into `brand/brand.json` by hand in the same shape, then run `tokens`.
+- **Just colours and a font** (the user names them, or you pick a restrained palette: one strong accent plus neutrals) → no file needed:
+  ```
+  python "<skill-dir>/scripts/deck.py" brand -p <out-dir> --colors "#F26B1D,#2B2B2B" --font "Nunito" --name "Acme"
+  ```
+  List colours most important first; the first is the primary. Use `--display-font`/`--body-font` for a pair. The six theme accents (chart series) are derived from these colours, so charts stay on brand. If the primary is too light to read as text on the background, `brand` says so and writes a darker `--color-primary-text`: use that for text, the brand colour for shapes. Pick fonts every recipient has (`Arial` / `Georgia`; `Segoe UI` only for an all-Windows audience), or a Google family: `deck.py fonts fetch "<family>" --install -p <out-dir>` (then tell recipients to install it, or try `--embed-fonts`).
+
+`brand/brand.json` is plain JSON you can edit, then run `deck.py tokens` to refresh `canvas/brand.css`. The keys that matter:
+
+| Key | What it holds |
+|---|---|
+| `name` | brand name |
+| `theme` | the 12 Office theme slots, hex without `#`: `dk1` text, `lt1` background, `dk2`, `lt2`, `accent1`–`accent6` (chart series in order), `hlink`, `folHlink` |
+| `colors` | `primary`, `primary_text` (readable on the background), `background`, `text`, `dark`, `surface`, `accents[]`, all `#hex` |
+| `fonts` | `display` / `body`: `{family, installed, files[], fallback}`; `files[]`: every font file in the kit (paths relative to `brand/`) |
+| `logos[]` | `{path, name, variant: for-light-backgrounds / for-dark-backgrounds, from_master}` |
+| `template` | a `.potx`/`.pptx` path (relative to `brand/`) whose masters the deck is built on, or `null` |
+| `rules[]` | plain-language brand rules you want enforced ("no Coral text on Violet") |
 
 ## 3. Audience
 

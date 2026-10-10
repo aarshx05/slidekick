@@ -84,6 +84,10 @@ Ask your agent in plain words:
 ```
 
 ```text
+/slidekick 8 slides for our members' meeting, in our orange #F26B1D and charcoal, Nunito font
+```
+
+```text
 update the Q3 numbers in board-review.pptx to Q4 and keep everything else as it is
 ```
 

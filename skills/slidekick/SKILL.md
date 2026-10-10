@@ -57,6 +57,16 @@ python "<skill-dir>/scripts/deck.py" <command> [-p <out-dir>] ...
 
 (`python3` on macOS/Linux.) The first run creates a private environment and installs dependencies. Run `deck.py doctor` once per machine. It reports the browser, PowerPoint/LibreOffice and fonts available. PowerPoint gives ground-truth QA: Windows fully, Mac in beta (renders only; transitions and animations are checked in the XML). LibreOffice is an approximation. On a Mac, the first render may ask to let the terminal control PowerPoint. Say yes.
 
+## Pace — match the process to the job
+
+**Quick path:** take it when the deck is **≤ 10 slides**, the user **supplied the content** (the facts and numbers are in the brief or the files), and there's **no big brand kit** to study. Then:
+- **Step 1:** write `plan/brief.md` with one line per heading. For a brand given as colours and a font, use `deck.py brand --colors … --font …` (see step-1-source.md).
+- **Steps 2–3 combined:** skip `narrative.json`. Write `plan/slides.json` directly (design concept, then the slides) and validate it. Read only design.md's "Make it distinctive" and the archetype table in step-3. Don't read the whole of step-2.
+- **Steps 4–5 unchanged:** the canvas contract and the build gates are what make the deck correct.
+- **Step 5b:** still one fresh-eyes review. Do a second round only if the verdict is `revise`.
+
+Everything else (long decks, research from documents or a codebase, a full brand kit, a story to find) takes the full path below. When unsure, use the full path.
+
 ## Step 0 — Set up
 
 ```bash
@@ -133,7 +143,7 @@ Give the user:
 - **Show the real thing.** Use real product UI, real data and real brand assets. Never use abstract filler or invented numbers.
 - **On brand.** Use only brand colours, fonts and logos, with the logo used as the brand guide says.
 - **Distinctive, never generic.** The deck must not look machine-made. Before laying out slides, set a design concept and a signature device (`slides.json → design.concept`), vary the composition across slides, and avoid the AI-look tells listed in [references/design.md](references/design.md) ("Make it distinctive"). Run its self-check on the contact sheet in Step 5.
-- **Reviewed by fresh eyes.** The author never signs off their own design. Every deck you create or change passes the design review in [references/taste.md](references/taste.md) before it ships.
+- **Reviewed by fresh eyes.** The author never signs off their own design. Every deck you create, and every edit that changes layout or adds slides, passes the design review in [references/taste.md](references/taste.md) before it ships. A pure correction (numbers, wording, chart data, same layout) gets the lighter check in edit.md §5.
 - **Their deck, their system.** When editing someone's deck, change only what was asked, keep their formatting, and make new slides look like siblings of their slides. Never overwrite their file unless asked.
 - **Readable when presented.** Body text ≥ 18px, and no text below 14px except source footnotes. Text needs WCAG AA contrast.
 - **Nothing secret leaves Step 1.** Keep credentials, internal URLs, customer names and personal data out of slides and notes; substitute fictional stand-ins and say so.

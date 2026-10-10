@@ -75,9 +75,9 @@ A real `<table data-pptx="table">` with `<tr>`/`<td>`/`<th>`, `colspan`/`rowspan
 ```
 
 `type`: `column, stacked-column, percent-column, bar, stacked-bar, percent-bar, line, line-markers, area, stacked-area, pie, doughnut, scatter` (scatter series use `"points": [[x,y],…]`).
-Options: `colors` (defaults to the brand accents), per-series `color`, `labels`, `label_format`, `number_format`, `legend` (`bottom|top|right|left|none`), `gridlines`, `grid_color`, `value_axis` (show), `min`, `max`, `gap`, `hole` (doughnut %), `line_width`, `smooth`, `title`, `font_size`, `text_color`.
+Options: `colors` (defaults to the brand accents), per-series `color`, per-series `point_colors` (colour single bars/columns: `{"4": "#F26B1D"}` or a list with `null` for the series colour), `labels`, `label_format`, `label_position` (`outside_end|inside_end|center|inside_base`; stacked charts allow only the inside ones), `label_color`, `number_format`, `legend` (`bottom|top|right|left|none`), `gridlines`, `grid_color`, `value_axis` (show), `min`, `max`, `gap`, `hole` (doughnut %), `line_width`, `smooth`, `title`, `font_size`, `text_color`.
 The element's font and colour style the chart text. The inner markup is only a layout placeholder; QA masks charts out of the pixel diff.
-**Highlight what matters:** to emphasise one series, colour it with the primary colour and the rest with a muted tone via `colors`.
+**Highlight what matters:** to emphasise one series, colour it with the primary colour and the rest with a muted tone via `colors`. To emphasise one bar (the latest quarter, the record month), give the series a muted `color` and set that bar in `point_colors`. Don't fake it with extra zero-value series.
 
 ### Groups
 

@@ -61,34 +61,6 @@
   },
   "findings": [
     {
-      "severity": "major",
-      "code": "margin",
-      "slide": 4,
-      "msg": "left margin 48px vs 64px on most slides",
-      "el": ""
-    },
-    {
-      "severity": "major",
-      "code": "margin",
-      "slide": 5,
-      "msg": "left margin 48px vs 64px on most slides",
-      "el": ""
-    },
-    {
-      "severity": "major",
-      "code": "margin",
-      "slide": 7,
-      "msg": "left margin 47px vs 64px on most slides",
-      "el": ""
-    },
-    {
-      "severity": "major",
-      "code": "margin",
-      "slide": 9,
-      "msg": "left margin 55px vs 64px on most slides",
-      "el": ""
-    },
-    {
       "severity": "polish",
       "code": "type-scale",
       "slide": 0,

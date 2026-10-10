@@ -108,7 +108,7 @@ Use the brand's display font for hero/title/stat and the body font for the rest.
 - Use the brand palette only. Neutrals: text = dk1, background = lt1, muted text ≈ 60% text mixed into the background (`--color-muted`).
 - Use one accent per slide for the thing that matters (the key number, the highlighted series, the recommended option).
 - Dark brand slides (dk2 or primary background) mark title, section and closing slides; other slides stay light. Don't alternate randomly.
-- Text contrast must meet WCAG AA: ≥ 4.5:1 for body, ≥ 3:1 for ≥ 24 px or bold ≥ 18.7 px. On photos, add a gradient scrim (e.g. `linear-gradient(90deg, rgba(0,0,0,.65), transparent 60%)` as the slide background over the image).
+- Text contrast must meet WCAG AA: ≥ 4.5:1 for body, ≥ 3:1 for ≥ 24 px or bold ≥ 18.7 px. When the brand colour itself fails on the background (bright orange or yellow on white is common), use `var(--color-primary-text)` for text in that colour and keep the true brand colour for shapes, bars and rules. On photos, add a gradient scrim (e.g. `linear-gradient(90deg, rgba(0,0,0,.65), transparent 60%)` as the slide background over the image).
 - Follow guideline rules (forbidden combinations, logo-on-colour rules) recorded in `brand.json → rules`.
 
 ## Logo

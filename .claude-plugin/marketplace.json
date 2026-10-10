@@ -11,7 +11,7 @@
       "name": "slidekick",
       "source": "./",
       "description": "Create on-brand, fully editable .pptx decks (HTML canvas -> native PowerPoint objects -> PowerPoint QA), edit existing decks in place, and analyse any deck, with a fresh-eyes design review.",
-      "version": "1.0.1"
+      "version": "1.1.0"
     }
   ]
 }

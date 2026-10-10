@@ -58,3 +58,30 @@ def test_template_author_does_not_leak(tmp_path, built):
     prs.save(out)
     cp = Presentation(out).core_properties
     assert (cp.author, cp.last_modified_by, cp.revision) == ("Deck Bot", "Deck Bot", 1)
+
+
+def test_chart_point_colors_and_labels(tmp_path):
+    """One highlighted bar is a native per-point colour, not a fake extra series."""
+    import argparse
+    import json
+
+    from deckkit.cli import cmd_init
+    from deckkit.compile import compile_deck
+    from deckkit.extract import extract
+
+    project = tmp_path / "p"
+    cmd_init(argparse.Namespace(dir=str(project), force=False))
+    spec = {"type": "column", "categories": ["Q1", "Q2", "Q3", "Q4"], "series": [{"name": "Revenue", "values": [12, 18, 27, 31],
+            "color": "#BBBBBB", "point_colors": {"3": "#F26B1D"}}], "labels": True, "label_position": "inside_end", "label_color": "#FFFFFF"}
+    (project / "canvas" / "deck.html").write_text(
+        '<!doctype html><html><head><link rel="stylesheet" href="deck.css"><link rel="stylesheet" href="brand.css"></head><body>'
+        '<section class="slide"><h2 data-pptx="text" class="abs" style="left:64px;top:64px;width:900px;font:700 40px/48px sans-serif">'
+        'Revenue hit a record in Q4</h2><div data-pptx="chart" class="abs" style="left:64px;top:160px;width:800px;height:420px;'
+        f"font:400 16px/20px sans-serif\" data-chart='{json.dumps(spec)}'></div></section></body></html>", encoding="utf-8")
+    extract(project)
+    prs = Presentation(compile_deck(project, calibrate=False)["output"])
+    chart = next(sh for sh in prs.slides[0].shapes if sh.has_chart).chart
+    xml = chart._chartSpace.xml
+    assert len(chart.plots[0].series) == 1
+    assert "<c:dPt>" in xml and 'val="F26B1D"' in xml and 'val="BBBBBB"' in xml
+    assert '<c:dLblPos val="inEnd"/>' in xml

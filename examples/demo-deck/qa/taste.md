@@ -22,17 +22,8 @@ Measured signals only — the design review (references/taste.md) judges the res
 
 ## Slide 4
 
-- **major** `margin` left margin 48px vs 64px on most slides
 - **polish** `baseline` side-by-side text baselines 3px apart — share one baseline — e34 p.abs.tag "Chart · data in Excel" / e38 p.abs.body "native objects in the 11-slide Fernway d"
 - **polish** `tight` only 8px between these — group them tighter on purpose or give them air — Outline – headline div.abs.sel[data-name="Outline – headline"] / e36 p.abs.tag "Text box"
-
-## Slide 5
-
-- **major** `margin` left margin 48px vs 64px on most slides
-
-## Slide 7
-
-- **major** `margin` left margin 47px vs 64px on most slides
 
 ## Slide 8
 
@@ -40,7 +31,6 @@ Measured signals only — the design review (references/taste.md) judges the res
 
 ## Slide 9
 
-- **major** `margin` left margin 55px vs 64px on most slides
 - **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e83 div.abs / e84 p.abs.foot "Round 1"
 - **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e85 div.abs / e86 p.abs.foot "Round 2, after the fixes"
 

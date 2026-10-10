@@ -10,7 +10,7 @@ import zipfile
 from lxml import etree
 
 from .fonts import FontIndex, describe_font, to_ttf
-from .util import hex6, log, luminance, read_json, rgb_of, write_json
+from .util import contrast, hex6, log, luminance, read_json, rgb_of, write_json
 
 A_NS = "{http://schemas.openxmlformats.org/drawingml/2006/main}"
 HEX_RE = re.compile(r"#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b")
@@ -280,13 +280,53 @@ def _dist(a, b):
     return sum(abs(x - y) for x, y in zip(rgb_of(a), rgb_of(b)))
 
 
+def _mix(hexv, other, amt):
+    a, b = rgb_of(hexv), rgb_of(other)
+    return "%02X%02X%02X" % tuple(round(x + (y - x) * amt) for x, y in zip(a, b))
+
+
+def _fill_accents(given, dark):
+    """Six theme accents from the brand's own colours: shades and tints of what the kit gave, never Office blue/orange."""
+    out = list(given[:6]) or ["3B5BDB"]
+    seeds = given or ["3B5BDB"]
+    candidates = ([v for c in seeds for v in (_mix(c, "000000", 0.38), _mix(c, "FFFFFF", 0.42))] + [_mix(dark, "FFFFFF", 0.55)]
+                  + [v for c in seeds for v in (_mix(c, "000000", 0.62), _mix(c, "FFFFFF", 0.7))]
+                  + [_mix(dark, "FFFFFF", 0.3), _mix(dark, "FFFFFF", 0.8)])
+    for v in candidates:
+        if len(out) >= 6:
+            break
+        if all(_dist(v, d) > 40 for d in out):
+            out.append(v)
+    k = 1
+    while len(out) < 6:
+        out.append(_mix(seeds[0], "FFFFFF" if k % 2 else "000000", 0.15 * k))
+        k += 1
+    return out
+
+
+def _text_safe(hexv, bg, target=4.5):
+    """The nearest shade of a brand colour that is readable as text on bg (WCAG AA); unchanged if it already is."""
+    toward = "000000" if luminance(bg) > 0.4 else "FFFFFF"
+    for i in range(0, 21):
+        v = _mix(hexv, toward, i * 0.04)
+        if contrast(v, bg) >= target:
+            return v
+    return toward
+
+
 def _tint(hexv, amt):
     r, g, b = rgb_of(hexv)
     return "%02X%02X%02X" % tuple(int(v + (255 - v) * amt) for v in (r, g, b))
 
 
-def ingest(inputs, out_dir, name=None):
+def ingest(inputs, out_dir, name=None, colors=None, display_font=None, body_font=None):
+    """inputs: kit files/folders (may be empty). colors/fonts: explicit choices, ranked above anything found in the kit."""
     kit = Kit(out_dir)
+    for i, c in enumerate(colors or []):
+        kit.color(c, 10_000 - i, "--colors", "primary" if i == 0 else f"brand-{i + 1}")
+    for fam, role in ((display_font, "display"), (body_font, "body")):
+        if fam:
+            kit.font_mentions.insert(0, (fam, role, "--font"))
     for f in _files(inputs):
         ext = f.suffix.lower()
         try:
@@ -311,7 +351,7 @@ def ingest(inputs, out_dir, name=None):
     if kit.theme and len(kit.theme.get("slots", {})) >= 10:
         slots = dict(kit.theme["slots"])
     else:
-        acc = (accents + ["4472C4", "ED7D31", "A5A5A5", "FFC000", "5B9BD5", "70AD47"])[:6]
+        acc = _fill_accents(accents, dark)
         slots = {"dk1": dark, "lt1": light, "dk2": accents[0] if accents and luminance(accents[0]) < 0.2 else _shade(dark),
                  "lt2": _tint(acc[0], 0.92), **{f"accent{i + 1}": c for i, c in enumerate(acc)}, "hlink": acc[0], "folHlink": acc[1]}
     index = FontIndex()  # system-installed only: kit files don't count until `deck.py fonts install`
@@ -333,7 +373,9 @@ def ingest(inputs, out_dir, name=None):
     brand = {
         "name": name or (pathlib.Path(inputs[0]).stem if inputs else "Brand"),
         "theme": slots,
-        "colors": {"primary": "#" + (accents[0] if accents else slots["accent1"]), "background": "#" + slots["lt1"],
+        "colors": {"primary": "#" + (accents[0] if accents else slots["accent1"]),
+                   "primary_text": "#" + _text_safe(accents[0] if accents else slots["accent1"], slots["lt1"]),
+                   "background": "#" + slots["lt1"],
                    "text": "#" + slots["dk1"], "dark": "#" + slots["dk2"], "surface": "#" + slots["lt2"],
                    "accents": ["#" + c for c in accents[:6]]},
         "fonts": fonts,
@@ -398,7 +440,7 @@ def write_tokens(brand_json, css_out):
         if slot in t:
             lines.append(f"  --brand-{slot}: #{hex6(t[slot])};")
     c = b.get("colors", {})
-    for k_, v in (("primary", c.get("primary")), ("bg", c.get("background")), ("text", c.get("text")), ("dark", c.get("dark")),
+    for k_, v in (("primary", c.get("primary")), ("primary-text", c.get("primary_text") or c.get("primary")), ("bg", c.get("background")), ("text", c.get("text")), ("dark", c.get("dark")),
                   ("surface", c.get("surface"))):
         if v:
             lines.append(f"  --color-{k_}: {v};")

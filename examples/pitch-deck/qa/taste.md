@@ -16,21 +16,9 @@ Measured signals only — the design review (references/taste.md) judges the res
 
 - **major** `type-scale` 10 text sizes (14, 18, 22, 28, 36, 44, 64, 96, 200, 256 px) — a deck needs 5–7 steps; snap to the scale
 
-## Slide 2
-
-- **major** `margin` left margin 56px vs 64px on most slides
-
 ## Slide 3
 
 - **polish** `long-headline` 3-line headline — cut it to ≤ 2 lines — Statement h2.abs[data-name="Statement"] "The best farmland in town is above the p"
-
-## Slide 5
-
-- **major** `margin` left margin 52px vs 64px on most slides
-
-## Slide 7
-
-- **major** `margin` left margin 56px vs 64px on most slides
 
 ## Slide 11
 

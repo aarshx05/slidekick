@@ -148,6 +148,32 @@ def _content_units(s, H):
     return [u for u in s["units"] if not _background_like(u, H) and not _bleeds(u.box, H) and u.box["w"] > 1 and u.box["h"] > 1]
 
 
+def _optical_align(els):
+    """Big numerals and display words get nudged left 2-4% of their size so the ink lines up with the text below
+    (design.md). Read such a box at the edge it optically aligns to, so the nudge isn't reported as a margin or near-miss."""
+    for e in els:
+        if e.kind == "chart":
+            reach = 16  # plot area and axis labels sit inside the chart box
+        elif e.paras and e.size >= 40 and len(e.text.strip()) <= 14:
+            reach = 0.06 * e.size + 1
+        else:
+            continue
+        x = e.box["x"]
+        edges = [o.box["x"] for o in els if o is not e and 0 < o.box["x"] - x <= reach]
+        if edges:
+            e.box = dict(e.box, x=min(edges))
+
+
+def _hidden_behind(u, later, share=0.6):
+    """True when elements drawn after u cover most of it (a backing card, a frame behind a photo)."""
+    a = u.box["w"] * u.box["h"]
+    if not a or u.paras:
+        return False
+    cov = sum(_overlap(u.box["x"], u.box["x"] + u.box["w"], o.box["x"], o.box["x"] + o.box["w"])
+              * _overlap(u.box["y"], u.box["y"] + u.box["h"], o.box["y"], o.box["y"] + o.box["h"]) for o in later)
+    return cov >= share * a
+
+
 def _overlap(a0, a1, b0, b1):
     return max(0.0, min(a1, b1) - max(a0, b0))
 
@@ -200,6 +226,7 @@ def run_taste(project=None, inventory=None, out_dir=None):
         units = _content_units(s, H)
         allel = [e for u in s["units"] for e in u.walk()]
         texts = [e for e in allel if e.paras]
+        _optical_align(allel)
 
         # -- type, families, colours
         for e in texts:
@@ -223,7 +250,8 @@ def run_taste(project=None, inventory=None, out_dir=None):
                           "align": head.paras[0]["align"], "label": head.label})
 
         # -- margins
-        xs = [u.box["x"] for u in units if u.box["x"] > 2]
+        # a card peeking out from behind a picture is a deliberate stack, not the slide's margin
+        xs = [u.box["x"] for k_, u in enumerate(units) if u.box["x"] > 2 and not _hidden_behind(u, units[k_ + 1:])]
         if xs:
             margins.append((i, min(xs)))
 

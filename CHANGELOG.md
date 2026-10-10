@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.1.0
+
+**New**
+- **A brand without a kit:** `deck.py brand --colors "#F26B1D,#2B2B2B" --font Nunito` builds a complete brand from colours and a font (or `--display-font`/`--body-font`). The `brand.json` format is now documented in step-1-source.md.
+- **On-brand chart colours, always:** when a kit has fewer than six colours, the theme accents are shades and tints of the brand's own colours, never Office blue and orange.
+- **A readable brand colour for text:** when the primary colour fails WCAG AA on the background (bright orange on white, say), `brand` reports it and writes `--color-primary-text`, a darker shade to use for text while shapes keep the true colour.
+- **Highlight a single bar:** per-series `point_colors` (`{"3": "#F26B1D"}`), plus `label_position` and `label_color` for chart data labels. No more zero-value series workarounds.
+- **A quick path for small jobs:** decks of 10 slides or fewer whose content the user supplied skip `narrative.json` and the long reading list. A pure correction in Edit mode (numbers, wording, chart data, same layout) gets a proportionate check instead of the full scored review.
+
+**Fixed**
+- The taste lint no longer flags the deliberate optical nudge of big numerals (which the design guide recommends), the inner padding of a chart's box, or a backing card in a stacked-deck motif as "margin" or "near-miss" majors. Real misalignments are still caught. The launch deck went from 4 false majors to 0.
+- A canvas rebuild in Edit mode keeps the previous `deck.pptx` as `deck-previous.pptx` when the user has already shared it.
+
 ## 1.0.1
 
 **Fixed**

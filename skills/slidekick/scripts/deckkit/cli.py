@@ -79,7 +79,11 @@ def cmd_brand(args):
     from .brand import brand_board, ingest, write_tokens
     project = _p(args)
     out = project / "brand"
-    b = ingest(args.inputs, out, name=args.name)
+    if not args.inputs and not args.colors:
+        raise SystemExit("brand: give a kit (files/folders) and/or --colors \"#hex,#hex\" [--font Family]")
+    colors = [c.strip() for c in (args.colors or "").split(",") if c.strip()]
+    b = ingest(args.inputs, out, name=args.name, colors=colors,
+               display_font=args.display_font or args.font, body_font=args.body_font or args.font)
     css = write_tokens(out / "brand.json", project / "canvas" / "brand.css")
     board = brand_board(out / "brand.json", out / "brand-board.png")
     print(f"brand.json   {out / 'brand.json'}")
@@ -91,6 +95,12 @@ def cmd_brand(args):
     for role in ("display", "body"):
         if f.get(role):
             print(f"font {role:7s} {f[role]['family']}  installed={f[role]['installed']}  files={len(f[role]['files'])}")
+    if b["colors"].get("primary_text", "").lower() != b["colors"]["primary"].lower():
+        print(f"text colour  {b['colors']['primary']} is too light for text on {b['colors']['background']}: use "
+              f"var(--color-primary-text) {b['colors']['primary_text']} for text, the brand colour for shapes")
+    for role in ("display", "body"):
+        if f.get(role) and not f[role]["installed"] and not f[role]["files"]:
+            print(f"  -> '{f[role]['family']}' isn't installed: `deck.py fonts fetch \"{f[role]['family']}\" --install -p {args.project}`")
     print(f"logos        {len(b['logos'])}: " + ", ".join(f"{l['name']} ({l['variant']})" for l in b["logos"][:6]))
     if b["guidelines"]:
         print(f"guidelines   {len(b['guidelines'])} PDF(s) -> text + page renders in brand/pages/")
@@ -364,8 +374,12 @@ def main(argv):
     p.add_argument("--force", action="store_true")
     p.set_defaults(fn=cmd_init)
     p = proj(sub.add_parser("brand", help="ingest a brand kit -> brand/brand.json, canvas/brand.css, brand board"))
-    p.add_argument("inputs", nargs="+")
+    p.add_argument("inputs", nargs="*", help="brand kit files or folders (optional with --colors)")
     p.add_argument("--name")
+    p.add_argument("--colors", help='brand colours, most important first: "#F26B1D,#2B2B2B"')
+    p.add_argument("--font", help="one family for headings and body (e.g. Nunito)")
+    p.add_argument("--display-font", help="heading family (overrides --font)")
+    p.add_argument("--body-font", help="body family (overrides --font)")
     p.set_defaults(fn=cmd_brand)
     proj(sub.add_parser("tokens", help="regenerate canvas/brand.css from brand/brand.json")).set_defaults(fn=cmd_tokens)
     proj(sub.add_parser("board", help="re-render brand/brand-board.png")).set_defaults(fn=cmd_board)

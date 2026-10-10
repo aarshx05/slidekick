@@ -430,6 +430,13 @@ def build_chart(shapes, el, fx):
         else:
             s.format.fill.solid()
             s.format.fill.fore_color.rgb = RGBColor.from_string(col)
+            # highlight single bars: {"point_colors": {"4": "#F26B1D"}} or a list with null for "series colour"
+            pc = spec["series"][i].get("point_colors") or {}
+            for j, c in (pc.items() if isinstance(pc, dict) else enumerate(pc)):
+                if c and 0 <= int(j) < len(spec["categories"]):
+                    pt_ = s.points[int(j)]
+                    pt_.format.fill.solid()
+                    pt_.format.fill.fore_color.rgb = RGBColor.from_string(hex6(c))
     if hasattr(plot, "gap_width") and not pie:
         plot.gap_width = int(spec.get("gap", 60))
         if "stacked" in typ or "percent" in typ:
@@ -444,7 +451,13 @@ def build_chart(shapes, el, fx):
         dl.number_format = spec.get("label_format", spec.get("number_format", "General"))
         dl.number_format_is_linked = False
         dl.font.size = Pt(round(fx.pt(spec.get("label_size", font["size"])), 1))
-        if pie:
+        if spec.get("label_color"):
+            dl.font.color.rgb = RGBColor.from_string(hex6(spec["label_color"]))
+        positions = {"outside_end": XL_DATA_LABEL_POSITION.OUTSIDE_END, "inside_end": XL_DATA_LABEL_POSITION.INSIDE_END,
+                     "center": XL_DATA_LABEL_POSITION.CENTER, "inside_base": XL_DATA_LABEL_POSITION.INSIDE_BASE}
+        if spec.get("label_position") in positions:
+            dl.position = positions[spec["label_position"]]
+        elif pie:
             dl.position = XL_DATA_LABEL_POSITION.OUTSIDE_END if typ == "pie" else XL_DATA_LABEL_POSITION.CENTER
         elif not typ.startswith(("line", "area", "stacked", "percent")):
             dl.position = XL_DATA_LABEL_POSITION.OUTSIDE_END

@@ -124,3 +124,41 @@ def test_build_installs_missing_kit_fonts(tmp_path, monkeypatch):
     monkeypatch.setattr(fonts.FontIndex, "has", lambda self, fam: True)
     installed.clear()
     assert fonts.ensure_kit_fonts(tmp_path / "brand.json") == [] and not installed
+
+
+class _U:
+    def __init__(self, kind, x, y=0, w=100, h=100, text="", size=0):
+        self.kind, self.box, self.text = kind, {"x": x, "y": y, "w": w, "h": h}, text
+        self.paras = [{"runs": [{"text": text, "size": size}]}] if text else []
+        self.size = size
+
+
+def test_lint_reads_optical_nudges_as_aligned():
+    from deckkit.taste import _optical_align
+
+    numeral, body = _U("text", 60, text="1,800", size=120), _U("text", 64, y=200, text="miles from field to shelf", size=22)
+    chart, label = _U("chart", 52, y=300), _U("text", 64, y=700, text="Source: finance", size=14)
+    stray = _U("text", 40, y=500, text="Off by a lot", size=48)  # 24 px left: a real misalignment, not a nudge
+    _optical_align([numeral, body, chart, label, stray])
+    assert numeral.box["x"] == 64 and chart.box["x"] == 64
+    assert stray.box["x"] == 40
+
+
+def test_lint_ignores_backing_cards_for_margins():
+    from deckkit.taste import _hidden_behind
+
+    card, photo = _U("shape", 48, 248, 768, 432), _U("image", 64, 232, 768, 432)
+    assert _hidden_behind(card, [photo])
+    assert not _hidden_behind(photo, [])
+
+
+def test_brand_from_colours_only(tmp_path):
+    from deckkit.brand import ingest
+    from deckkit.util import contrast
+
+    b = ingest([], tmp_path / "brand", name="Spoke", colors=["#F26B1D", "#2B2B2B"], display_font="Nunito", body_font="Nunito")
+    accents = [b["theme"][f"accent{i}"] for i in range(1, 7)]
+    assert accents[0] == "F26B1D" and not {"4472C4", "ED7D31", "A5A5A5", "FFC000", "5B9BD5", "70AD47"} & set(accents)
+    assert b["theme"]["dk1"] == "2B2B2B"
+    assert contrast(b["colors"]["primary_text"].lstrip("#"), "FFFFFF") >= 4.5
+    assert b["fonts"]["display"]["family"] == "Nunito"
