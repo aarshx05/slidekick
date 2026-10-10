@@ -199,7 +199,7 @@ Then remove the plugin with `/plugin uninstall slidekick@slidekick`.
 
 ## Contributing
 
-Ideas, bug reports, new example decks and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please include `deck.py doctor` output with bug reports.
+Ideas, bug reports, new example decks and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please include `deck.py doctor` output with bug reports. For anything else, email [12345.aarsh@gmail.com](mailto:12345.aarsh@gmail.com).
 
 ## License
 
