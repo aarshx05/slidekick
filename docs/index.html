@@ -103,6 +103,7 @@
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-tab="claude">Claude Code</button>
       <button role="tab" aria-selected="false" data-tab="codex">Codex</button>
+      <button role="tab" aria-selected="false" data-tab="gemini">Gemini CLI</button>
       <button role="tab" aria-selected="false" data-tab="any">Any agent</button>
     </div>
     <div class="panel" data-panel="claude">
@@ -113,6 +114,9 @@
     <div class="panel" data-panel="codex" hidden>
       <div class="cmd block" data-copy="codex plugin marketplace add aarshx05/slidekick&#10;codex plugin add slidekick@slidekick"><pre>codex plugin marketplace add aarshx05/slidekick
 codex plugin add slidekick@slidekick</pre><button type="button">Copy</button></div>
+    </div>
+    <div class="panel" data-panel="gemini" hidden>
+      <div class="cmd block" data-copy="gemini extensions install https://github.com/aarshx05/slidekick"><pre>gemini extensions install https://github.com/aarshx05/slidekick</pre><button type="button">Copy</button></div>
     </div>
     <div class="panel" data-panel="any" hidden>
       <div class="cmd block" data-copy="npx skills add https://github.com/aarshx05/slidekick --skill slidekick"><pre>npx skills add https://github.com/aarshx05/slidekick --skill slidekick</pre><button type="button">Copy</button></div>
@@ -128,13 +132,14 @@ codex plugin add slidekick@slidekick</pre><button type="button">Copy</button></d
     <details><summary>Will it match my brand?</summary><p>Give it whatever you have: logos, a palette, fonts, a <code>.potx</code> or <code>.pptx</code> template, design tokens or a guidelines PDF. It builds on your template's masters and theme. No kit? It can take the identity from your website or product.</p></details>
     <details><summary>Can it edit a deck someone else made?</summary><p>Yes. Edit mode reads the deck first, then changes only what you asked for, in place. Untouched slides, masters and fonts stay as they were, and the result is re-rendered to catch any text that no longer fits.</p></details>
     <details><summary>Does my content leave my machine?</summary><p>No. The pipeline runs locally. It goes online only to install its Python packages on first run, to fetch a Google Font you ask for, or to capture a URL you give it.</p></details>
+    <details><summary>How long does a deck take?</summary><p>An ordinary 8-slide deck takes about 13 minutes: planning, four builds checked in PowerPoint, and two fresh-eyes review rounds. That's about 150k tokens of agent work on Claude Opus 5.5. Fixing a couple of numbers afterwards takes about 2 minutes.</p></details>
     <details><summary>What does it cost?</summary><p>Nothing. Slidekick is MIT-licensed. You use it with the agent you already have.</p></details>
   </section>
 </main>
 
 <footer>
   <p><b>Slidekick</b> · MIT · made by <a href="https://github.com/aarshx05">aarshx05</a> · launch video made with <a href="https://github.com/latent-spaces/brag">/brag</a></p>
-  <p><a href="https://github.com/aarshx05/slidekick">GitHub</a> · <a href="https://github.com/aarshx05/slidekick/issues">Issues</a> · <a href="mailto:12345.aarsh@gmail.com">Contact</a> · <a href="https://github.com/aarshx05/slidekick/blob/main/CHANGELOG.md">Changelog</a></p>
+  <p><a href="https://github.com/aarshx05/slidekick">GitHub</a> · <a href="https://github.com/aarshx05/slidekick/discussions">Discussions</a> · <a href="https://github.com/aarshx05/slidekick/issues">Issues</a> · <a href="mailto:12345.aarsh@gmail.com">Contact</a> · <a href="https://github.com/aarshx05/slidekick/blob/main/CHANGELOG.md">Changelog</a></p>
 </footer>
 
 <script>

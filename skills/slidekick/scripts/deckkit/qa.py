@@ -155,19 +155,27 @@ def run_qa(project, build="build", out="qa", diff_limit=0.012):
         add(w["slide"], w["code"], w["msg"], w.get("el", ""))
     for c in L.get("console", []):
         add(0, "console", c, severity="warn")
+    ground_truth = str(R.get("engine") or "").startswith("powerpoint")
     for e in R.get("errors", []):
-        if e.startswith("powerpoint"):
-            add(0, "powerpoint-open", e)
+        # "not installed" is a fact about the machine, not the deck; a PowerPoint that failed while another
+        # renderer succeeded is worth a look but doesn't make the deck wrong
+        if e.startswith("powerpoint") and "not installed" not in e:
+            add(0, "powerpoint-open", e, severity=None if ground_truth or not R.get("engine") else "warn")
     if R and R.get("engine") == "powerpoint-mac":
         add(0, "renderer", "rendered with PowerPoint for Mac — transitions/animations are checked in XML only", severity="warn")
     elif R and R.get("engine") != "powerpoint":
-        add(0, "renderer", f"rendered with {R.get('engine')} — an approximation of PowerPoint", severity="warn")
+        add(0, "renderer", f"rendered with {R.get('engine')}, an approximation of PowerPoint: pixel diffs are advisory, not failures "
+                           "(install PowerPoint for ground-truth QA)", severity="warn")
     if not R:
         add(0, "renderer", "no render found (run `deck.py render`) — visual diff skipped", severity="warn")
     for fam, info in (C.get("fonts") or {}).items():
         if not info.get("installed"):
             add(0, "font-missing", f"font '{fam}' is not installed — PowerPoint will substitute it. "
                                    f"Install it (`deck.py fonts install <files>` / `deck.py fonts fetch \"{fam}\"`) or switch fonts.")
+        elif info.get("kit_only"):
+            add(0, "font-not-installed", f"'{fam}' is only in the brand kit, so renderers substitute it and the diff is unreliable. "
+                                         f"Install it: `deck.py fonts install brand/fonts/*` (build does this unless --no-font-install)",
+                severity="warn")
         elif not info.get("system"):
             add(0, "font-portability", f"'{fam}' is a non-system font: recipients need it installed (or build with --embed-fonts, experimental)",
                 severity="warn")
@@ -208,8 +216,10 @@ def run_qa(project, build="build", out="qa", diff_limit=0.012):
             where = "; ".join(f"({int(r['x'])},{int(r['y'])} {int(r['w'])}x{int(r['h'])}) {', '.join(r.get('elements', [])) or 'background'}"
                               for r in regions[:3])
             if ratio > diff_limit or biggest >= REGION_ERROR_CELLS:
+                # LibreOffice is an approximation of PowerPoint: report the drift, but only ground truth fails a build
                 add(i, "visual-diff", f"{ratio * 100:.1f}% of pixels differ, largest mismatch {biggest} cells — {where}. "
-                                      f"See qa/compare-{i:02d}.png")
+                                      f"See qa/compare-{i:02d}.png" + ("" if ground_truth else " (approximate renderer: check it by eye)"),
+                    severity=None if ground_truth else "warn")
             elif ratio > diff_limit * 2 / 3 or biggest >= REGION_WARN_CELLS:
                 add(i, "visual-drift", f"{ratio * 100:.1f}% differ, largest mismatch {biggest} cells — {where}. See qa/compare-{i:02d}.png",
                     severity="warn")

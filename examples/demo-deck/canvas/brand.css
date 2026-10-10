@@ -1,4 +1,12 @@
 /* Generated from brand/brand.json by `deck.py tokens` — edit brand.json, not this file. */
+@font-face { font-family: 'Inter'; src: url('../brand/fonts/Inter-400.ttf'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('../brand/fonts/Inter-500.ttf'); font-weight: 500; font-style: normal; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('../brand/fonts/Inter-600.ttf'); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: 'Inter'; src: url('../brand/fonts/Inter-700.ttf'); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('../brand/fonts/Manrope-400.ttf'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('../brand/fonts/Manrope-600.ttf'); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('../brand/fonts/Manrope-700.ttf'); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'Manrope'; src: url('../brand/fonts/Manrope-800.ttf'); font-weight: 800; font-style: normal; font-display: block; }
 :root {
   --brand-dk1: #14122B;
   --brand-lt1: #FFFFFF;

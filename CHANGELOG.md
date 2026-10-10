@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.1
+
+**Fixed**
+- **Mac and Linux without PowerPoint no longer report FAIL on a good deck.** "PowerPoint not installed" isn't an error any more. When LibreOffice does the rendering, pixel diffs are warnings, and the report says the check is approximate. A real PowerPoint render still fails on a real diff.
+- `build` and `compile` install the brand kit's fonts per-user when they aren't installed, so renderers stop substituting them. Each install is logged, `deck.py uninstall --fonts` removes them, and `--no-font-install` turns this off. QA now flags a font that exists only in the kit.
+- The demo deck ships its OFL fonts (Manrope, Inter), so it rebuilds on any OS.
+- Demo deck slide 1: the top card of the Morph stack now shows a real cover slide instead of an empty card.
+
+**New**
+- Install on Gemini CLI (`gemini-extension.json`) and Cursor (`.cursor-plugin/plugin.json`).
+- README demo GIF, plus measured time and token numbers.
+- GitHub Discussions for questions and ideas.
+
 ## 1.0.0 — first public release
 
 `/deck` is now **Slidekick** (`/slidekick`). Saying "/deck" still triggers it.

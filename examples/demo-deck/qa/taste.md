@@ -6,11 +6,15 @@ Measured signals only — the design review (references/taste.md) judges the res
 |---|---|
 | slides | 10 |
 | distinct compositions | 10 |
-| text sizes (px) | 14, 22, 28, 44, 56, 96, 280 |
+| text sizes (px) | 14, 20, 22, 28, 44, 56, 96, 280 |
 | type families | Inter, Manrope |
 | off-palette colours | — |
 | kicker-above-headline slides | — |
 | card-grid slides | — |
+
+## Deck
+
+- **polish** `type-scale` 20px and 22px are too close to read as different levels — merge them
 
 ## Slide 2
 
@@ -19,8 +23,8 @@ Measured signals only — the design review (references/taste.md) judges the res
 ## Slide 4
 
 - **major** `margin` left margin 48px vs 64px on most slides
-- **polish** `baseline` side-by-side text baselines 3px apart — share one baseline — e32 p.abs.tag "Chart · data in Excel" / e36 p.abs.body "native objects in the 11-slide Fernway d"
-- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — Outline – headline div.abs.sel[data-name="Outline – headline"] / e34 p.abs.tag "Text box"
+- **polish** `baseline` side-by-side text baselines 3px apart — share one baseline — e34 p.abs.tag "Chart · data in Excel" / e38 p.abs.body "native objects in the 11-slide Fernway d"
+- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — Outline – headline div.abs.sel[data-name="Outline – headline"] / e36 p.abs.tag "Text box"
 
 ## Slide 5
 
@@ -32,11 +36,11 @@ Measured signals only — the design review (references/taste.md) judges the res
 
 ## Slide 8
 
-- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e72 p.abs.label.muted "Before: the Q3 review" / e73 div.abs
+- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e74 p.abs.label.muted "Before: the Q3 review" / e75 div.abs
 
 ## Slide 9
 
 - **major** `margin` left margin 55px vs 64px on most slides
-- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e81 div.abs / e82 p.abs.foot "Round 1"
-- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e83 div.abs / e84 p.abs.foot "Round 2, after the fixes"
+- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e83 div.abs / e84 p.abs.foot "Round 1"
+- **polish** `tight` only 8px between these — group them tighter on purpose or give them air — e85 div.abs / e86 p.abs.foot "Round 2, after the fixes"
 

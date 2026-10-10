@@ -2,7 +2,9 @@
 
 **Your slide sidekick. Brief in, real PowerPoint out: on your brand, every word editable.**
 
-[![Slidekick: brief in, editable on-brand deck out](docs/assets/hero.png)](https://aarshx05.github.io/slidekick/)
+[![Slidekick demo: a brief goes in, a real PowerPoint deck comes out, a click on a chart shows its data, and Morph plays](docs/assets/demo.gif)](https://aarshx05.github.io/slidekick/)
+
+<sub>Everything in the demo is real output. The slides are PowerPoint renders of [`examples/pitch-deck`](examples/pitch-deck/), the table is the workbook embedded in that chart, and the Morph is PowerPoint's own video export.</sub>
 
 **Slidekick** (`/slidekick`) is an agent skill that makes **fully editable, on-brand PowerPoint decks** from a brief, your docs, a spreadsheet, a code project or a website. It also **edits the decks you already have** without breaking their formatting, and **reviews any deck** like a design director would.
 
@@ -25,6 +27,14 @@ There are no screenshots pasted onto slides. Every headline is a real text box, 
 codex plugin marketplace add aarshx05/slidekick
 codex plugin add slidekick@slidekick
 ```
+
+**Gemini CLI:**
+
+```bash
+gemini extensions install https://github.com/aarshx05/slidekick
+```
+
+**Cursor:** add it from the plugin marketplace, or point Cursor at this repo. Its manifest is in `.cursor-plugin/`.
 
 **Any other agent:** one command with the [`skills`](https://github.com/vercel-labs/skills) CLI (Cursor, Copilot, Gemini CLI, opencode and more):
 
@@ -90,6 +100,18 @@ You get a `deck.pptx` that opens and edits like one you built by hand. Alongside
 | `--mode presented\|read` | slides for a speaker, or a deck that stands on its own |
 | `--slides 10` / `--minutes 15` | how long |
 | `--transitions`, `--animations` | how much motion (Morph included) |
+
+## How long does it take?
+
+These numbers come from an ordinary run: Claude Opus 5.5 with PowerPoint 16 for Windows, an 8-slide brief, no brand kit, and every number supplied.
+
+| | Time | What happens |
+|---|---|---|
+| **Create** | about 13 min | plan → canvas → 4 builds of about 20 s each → 2 fresh-eyes review rounds (about a third of the time) |
+| **Edit** ("those two numbers are wrong") | about 2 min | update → rebuild → re-check |
+| **Tokens** | about 150k | the agent's own work for both. Each fresh-eyes review runs as a separate subagent pass on top |
+
+Bigger decks, a brand kit to ingest, or more review rounds take longer. Without PowerPoint, the checks run on LibreOffice, which renders a few seconds slower per build.
 
 ## Three modes
 
@@ -199,7 +221,7 @@ Then remove the plugin with `/plugin uninstall slidekick@slidekick`.
 
 ## Contributing
 
-Ideas, bug reports, new example decks and PRs are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). Please include `deck.py doctor` output with bug reports. For anything else, email [12345.aarsh@gmail.com](mailto:12345.aarsh@gmail.com).
+Questions, ideas and decks you've made go in [Discussions](https://github.com/aarshx05/slidekick/discussions). Bugs go in [Issues](https://github.com/aarshx05/slidekick/issues) (please include `deck.py doctor` output), and PRs are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). For anything private, email [12345.aarsh@gmail.com](mailto:12345.aarsh@gmail.com).
 
 ## License
 

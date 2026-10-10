@@ -64,6 +64,7 @@ class Ctx:
         base = pathlib.Path(brand_dir or ".")
         brand_fonts = [str(base / p) for p in (self.brand.get("fonts", {}).get("files") or []) if (base / p).exists()]
         self.index = FontIndex(extra_files=brand_fonts)
+        self.kit_files = {str(pathlib.Path(f).resolve()).lower() for f in brand_fonts}
         self.font_cache, self.missing, self.used_faces = {}, {}, {}
         self.svg_parts = {}
         self.theme_colors, self.theme_fonts = read_theme(prs)
@@ -650,7 +651,9 @@ def compile_deck(project, layout_path=None, out=None, brand_path=None, embed=Fal
     sysdir = str(system_font_dir() or "").lower()
     for (typeface, bold, italic), face in ctx.used_faces.items():
         entry = report["fonts"].setdefault(typeface, {"installed": True, "system": face["path"].lower().startswith(sysdir) if sysdir else False,
-                                                      "files": {}, "embeddable": embeddable(face)})
+                                                      "files": {}, "embeddable": embeddable(face),
+                                                      # resolved from brand/fonts only: Chromium has it, PowerPoint/LibreOffice don't
+                                                      "kit_only": str(pathlib.Path(face["path"]).resolve()).lower() in ctx.kit_files})
         style = ("boldItalic" if italic else "bold") if bold else ("italic" if italic else "regular")
         entry["files"][style] = face["path"]
     for fam, n in ctx.missing.items():

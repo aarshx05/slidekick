@@ -191,8 +191,17 @@ def cmd_extract(args):
     return 0
 
 
+def _kit_fonts(args, project):
+    if getattr(args, "no_font_install", False):
+        return
+    from .fonts import ensure_kit_fonts
+    for p in ensure_kit_fonts(project / "brand" / "brand.json"):
+        print(f"font         installed brand font {pathlib.Path(p).name} (per-user, so renderers match; `deck.py uninstall --fonts` removes it)")
+
+
 def cmd_compile(args):
     from .compile import compile_deck
+    _kit_fonts(args, _p(args))
     r = compile_deck(_p(args), out=args.out, embed=args.embed_fonts, author=args.author)
     print(f"pptx         {r['output']}  ({len(r['slides'])} slides)")
     for fam, info in r["fonts"].items():
@@ -244,6 +253,7 @@ def cmd_build(args):
     from .qa import run_qa
     from .render import render
     project = _p(args)
+    _kit_fonts(args, project)
     d = extract(project, html=args.html)
     print(f"extract      {len(d['slides'])} slides, {len(d['warnings'])} warning(s)")
     r = compile_deck(project, out=args.out, embed=args.embed_fonts, author=args.author)
@@ -419,6 +429,7 @@ def main(argv):
         p.add_argument("--embed-fonts", action="store_true", help="experimental: embed non-system fonts as EOT")
         p.add_argument("--diff-limit", type=float, default=0.012, help="share of mismatching pixels that fails a slide")
         p.add_argument("--author", default="", help="author to record in the .pptx (default: blank)")
+        p.add_argument("--no-font-install", action="store_true", help="don't install the brand kit's fonts (renders will substitute them)")
         p.set_defaults(fn=fn)
     ap.add_argument("--trace", action="store_true", help="show the full Python traceback on errors (or set DECK_TRACE=1)")
     # accepted anywhere on the command line, not just before the subcommand

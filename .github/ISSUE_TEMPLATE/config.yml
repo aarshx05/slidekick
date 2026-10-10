@@ -1,1 +1,5 @@
 blank_issues_enabled: true
+contact_links:
+  - name: Question or idea
+    url: https://github.com/aarshx05/slidekick/discussions
+    about: Ask how to do something, share a deck you made, or float an idea.

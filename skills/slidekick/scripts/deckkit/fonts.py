@@ -289,3 +289,20 @@ def eot_bytes(font_path, index=0):
 def embeddable(face):
     fs = face.get("fsType", 0)
     return not (fs & 0x0002) and not (fs & 0x0200)
+
+
+def ensure_kit_fonts(brand_json):
+    """Install brand-kit fonts whose families aren't installed yet, so PowerPoint/LibreOffice don't substitute them.
+
+    Per-user, no admin; recorded for `deck.py uninstall --fonts`. Returns the installed paths."""
+    brand_json = pathlib.Path(brand_json)
+    if not brand_json.exists():
+        return []
+    files = (json.loads(brand_json.read_text(encoding="utf-8")).get("fonts") or {}).get("files") or []
+    files = [p for p in (brand_json.parent / f for f in files) if p.exists() and p.suffix.lower() in FONT_EXT]
+    if not files:
+        return []
+    idx = FontIndex()  # installed fonts only
+    need = [p for p in files if any(not idx.has(face["typo"]) and not idx.has(face["family"]) for face in describe_font(p))]
+    return install_fonts(need) if need else []
+

@@ -72,3 +72,55 @@ def test_fetch_and_fonts_follow_project(tmp_path):
     finally:
         cap.fetch = orig
     assert pathlib.Path(seen["out"]) == tmp_path.resolve() / "assets"
+
+
+def _fake_render(project, layout, engine, errors):
+    import shutil
+    render_dir = project / "build" / "render"
+    render_dir.mkdir(parents=True, exist_ok=True)
+    for png in (project / "build" / "ref").glob("slide-*.png"):
+        shutil.copy2(png, render_dir / png.name)
+    # make one slide look badly off, the way a substituted font does
+    from PIL import Image, ImageDraw
+    im = Image.open(render_dir / "slide-01.png").convert("RGB")
+    ImageDraw.Draw(im).rectangle((0, 0, im.width // 2, im.height // 2), fill=(255, 0, 255))
+    im.save(render_dir / "slide-01.png")
+    (render_dir / "render.json").write_text(json.dumps({"engine": engine, "errors": errors,
+                                                        "slides": [{"index": s["index"]} for s in layout["slides"]]}))
+
+
+def test_libreoffice_without_powerpoint_is_not_a_failure(built):
+    """Linux/Mac without PowerPoint: 'not installed' isn't an error, and approximate-renderer diffs are warnings."""
+    from deckkit.qa import run_qa
+
+    _fake_render(built["project"], built["layout"], "libreoffice", ["powerpoint: not installed"])
+    r = run_qa(built["project"])
+    assert r["status"] != "fail", [x for x in r["issues"] if x["severity"] == "error"]
+    assert not [x for x in r["issues"] if x["code"] == "powerpoint-open"]
+    assert [x for x in r["issues"] if x["code"] == "visual-diff" and x["severity"] == "warn"]
+
+
+def test_powerpoint_diff_still_fails(built):
+    from deckkit.qa import run_qa
+
+    _fake_render(built["project"], built["layout"], "powerpoint", [])
+    r = run_qa(built["project"])
+    assert r["status"] == "fail"
+    assert [x for x in r["issues"] if x["code"] == "visual-diff" and x["severity"] == "error"]
+
+
+def test_build_installs_missing_kit_fonts(tmp_path, monkeypatch):
+    from deckkit import fonts
+
+    (tmp_path / "fonts").mkdir()
+    src = next(pathlib.Path(__file__).resolve().parents[1].glob("examples/pitch-deck/brand/fonts/*.ttf"))
+    (tmp_path / "fonts" / src.name).write_bytes(src.read_bytes())
+    (tmp_path / "brand.json").write_text(json.dumps({"fonts": {"files": [f"fonts/{src.name}"]}}))
+    installed = []
+    monkeypatch.setattr(fonts.FontIndex, "has", lambda self, fam: False)
+    monkeypatch.setattr(fonts, "install_fonts", lambda paths: installed.extend(paths) or [str(p) for p in paths])
+    assert fonts.ensure_kit_fonts(tmp_path / "brand.json")
+    assert [p.name for p in installed] == [src.name]
+    monkeypatch.setattr(fonts.FontIndex, "has", lambda self, fam: True)
+    installed.clear()
+    assert fonts.ensure_kit_fonts(tmp_path / "brand.json") == [] and not installed

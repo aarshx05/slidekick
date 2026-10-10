@@ -6,8 +6,8 @@
   "slides": [
     {
       "slide": 1,
-      "diff": 0.0,
-      "words": 17,
+      "diff": 0.0001,
+      "words": 22,
       "regions": []
     },
     {
@@ -22,7 +22,7 @@
           "h": 48.0,
           "area": 31,
           "elements": [
-            "e7 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\""
+            "e9 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\""
           ]
         },
         {
@@ -32,7 +32,7 @@
           "h": 16.0,
           "area": 1,
           "elements": [
-            "e7 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\""
+            "e9 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\""
           ]
         }
       ]
@@ -49,7 +49,7 @@
           "h": 32.0,
           "area": 17,
           "elements": [
-            "e15 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
+            "e17 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
           ]
         },
         {
@@ -59,7 +59,7 @@
           "h": 32.0,
           "area": 9,
           "elements": [
-            "e15 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
+            "e17 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
           ]
         },
         {
@@ -69,7 +69,7 @@
           "h": 32.0,
           "area": 7,
           "elements": [
-            "e15 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
+            "e17 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
           ]
         },
         {
@@ -79,7 +79,7 @@
           "h": 32.0,
           "area": 6,
           "elements": [
-            "e15 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
+            "e17 h2.abs.title[data-name=\"Headline\"] \"Your brief and brand kit in, an editable\""
           ]
         }
       ]
@@ -96,7 +96,7 @@
           "h": 32.0,
           "area": 12,
           "elements": [
-            "e25 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
+            "e27 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
           ]
         },
         {
@@ -106,7 +106,7 @@
           "h": 32.0,
           "area": 5,
           "elements": [
-            "e25 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
+            "e27 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
           ]
         },
         {
@@ -116,7 +116,7 @@
           "h": 16.0,
           "area": 4,
           "elements": [
-            "e25 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
+            "e27 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
           ]
         },
         {
@@ -126,7 +126,7 @@
           "h": 32.0,
           "area": 3,
           "elements": [
-            "e25 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
+            "e27 h2.abs.title[data-name=\"Headline\"] \"Every word, chart and table is native Po\""
           ]
         }
       ]
@@ -143,7 +143,7 @@
           "h": 32.0,
           "area": 7,
           "elements": [
-            "e40 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
+            "e42 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
           ]
         },
         {
@@ -153,7 +153,7 @@
           "h": 16.0,
           "area": 3,
           "elements": [
-            "e40 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
+            "e42 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
           ]
         },
         {
@@ -163,7 +163,7 @@
           "h": 32.0,
           "area": 2,
           "elements": [
-            "e40 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
+            "e42 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
           ]
         },
         {
@@ -173,7 +173,7 @@
           "h": 16.0,
           "area": 2,
           "elements": [
-            "e40 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
+            "e42 h2.abs.title[data-name=\"Headline\"] \"It builds from your kit: template, logos\""
           ]
         }
       ]
@@ -190,7 +190,7 @@
           "h": 32.0,
           "area": 10,
           "elements": [
-            "e47 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
+            "e49 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
           ]
         },
         {
@@ -200,7 +200,7 @@
           "h": 32.0,
           "area": 7,
           "elements": [
-            "e47 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
+            "e49 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
           ]
         },
         {
@@ -210,7 +210,7 @@
           "h": 32.0,
           "area": 6,
           "elements": [
-            "e47 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
+            "e49 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
           ]
         },
         {
@@ -220,7 +220,7 @@
           "h": 32.0,
           "area": 4,
           "elements": [
-            "e47 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
+            "e49 h2.abs.title[data-name=\"Headline\"] \"Every build is rendered in real PowerPoi\""
           ]
         }
       ]
@@ -237,7 +237,7 @@
           "h": 32.0,
           "area": 8,
           "elements": [
-            "e54 h2.abs.title[data-name=\"Headline\"] \"Text lands exactly where it was designed\""
+            "e56 h2.abs.title[data-name=\"Headline\"] \"Text lands exactly where it was designed\""
           ]
         },
         {
@@ -247,7 +247,7 @@
           "h": 48.0,
           "area": 6,
           "elements": [
-            "e54 h2.abs.title[data-name=\"Headline\"] \"Text lands exactly where it was designed\""
+            "e56 h2.abs.title[data-name=\"Headline\"] \"Text lands exactly where it was designed\""
           ]
         },
         {
@@ -257,7 +257,7 @@
           "h": 16.0,
           "area": 4,
           "elements": [
-            "e54 h2.abs.title[data-name=\"Headline\"] \"Text lands exactly where it was designed\""
+            "e56 h2.abs.title[data-name=\"Headline\"] \"Text lands exactly where it was designed\""
           ]
         },
         {
@@ -267,7 +267,7 @@
           "h": 32.0,
           "area": 3,
           "elements": [
-            "e53 p.abs.num[data-name=\"Stat 0 px\"] \"0 px\""
+            "e55 p.abs.num[data-name=\"Stat 0 px\"] \"0 px\""
           ]
         }
       ]
@@ -284,7 +284,7 @@
           "h": 48.0,
           "area": 9,
           "elements": [
-            "e63 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
+            "e65 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
           ]
         },
         {
@@ -294,7 +294,7 @@
           "h": 32.0,
           "area": 6,
           "elements": [
-            "e63 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
+            "e65 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
           ]
         },
         {
@@ -304,7 +304,7 @@
           "h": 16.0,
           "area": 6,
           "elements": [
-            "e63 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
+            "e65 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
           ]
         },
         {
@@ -314,7 +314,7 @@
           "h": 16.0,
           "area": 3,
           "elements": [
-            "e63 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
+            "e65 h2.abs.title[data-name=\"Headline\"] \"Create a deck, edit yours in place, or r\""
           ]
         }
       ]
@@ -331,7 +331,7 @@
           "h": 48.0,
           "area": 7,
           "elements": [
-            "e79 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
+            "e81 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
           ]
         },
         {
@@ -341,7 +341,7 @@
           "h": 32.0,
           "area": 6,
           "elements": [
-            "e79 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
+            "e81 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
           ]
         },
         {
@@ -351,7 +351,7 @@
           "h": 32.0,
           "area": 5,
           "elements": [
-            "e79 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
+            "e81 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
           ]
         },
         {
@@ -361,7 +361,7 @@
           "h": 16.0,
           "area": 4,
           "elements": [
-            "e79 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
+            "e81 h2.abs.title[data-name=\"Headline\"] \"A fresh-eyes reviewer scores the design \""
           ]
         }
       ]
@@ -378,7 +378,7 @@
           "h": 80.0,
           "area": 41,
           "elements": [
-            "e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
+            "e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
           ]
         },
         {
@@ -388,7 +388,7 @@
           "h": 64.0,
           "area": 18,
           "elements": [
-            "e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
+            "e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
           ]
         },
         {
@@ -398,7 +398,7 @@
           "h": 80.0,
           "area": 14,
           "elements": [
-            "e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
+            "e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
           ]
         },
         {
@@ -408,13 +408,20 @@
           "h": 80.0,
           "area": 13,
           "elements": [
-            "e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
+            "e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\""
           ]
         }
       ]
     }
   ],
   "issues": [
+    {
+      "slide": 0,
+      "severity": "warn",
+      "code": "font-portability",
+      "msg": "'Inter SemiBold' is a non-system font: recipients need it installed (or build with --embed-fonts, experimental)",
+      "el": ""
+    },
     {
       "slide": 0,
       "severity": "warn",
@@ -433,13 +440,6 @@
       "slide": 0,
       "severity": "warn",
       "code": "font-portability",
-      "msg": "'Inter SemiBold' is a non-system font: recipients need it installed (or build with --embed-fonts, experimental)",
-      "el": ""
-    },
-    {
-      "slide": 0,
-      "severity": "warn",
-      "code": "font-portability",
       "msg": "'Manrope' is a non-system font: recipients need it installed (or build with --embed-fonts, experimental)",
       "el": ""
     },
@@ -447,14 +447,14 @@
       "slide": 2,
       "severity": "warn",
       "code": "visual-drift",
-      "msg": "0.3% differ, largest mismatch 31 cells — (224,240 240x48) e7 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\"; (192,272 16x16) e7 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\". See qa/compare-02.png",
+      "msg": "0.3% differ, largest mismatch 31 cells — (224,240 240x48) e9 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\"; (192,272 16x16) e9 h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\". See qa/compare-02.png",
       "el": ""
     },
     {
       "slide": 10,
       "severity": "warn",
       "code": "visual-drift",
-      "msg": "0.9% differ, largest mismatch 41 cells — (432,192 208x80) e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\"; (304,192 112x64) e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\"; (224,176 64x80) e94 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\". See qa/compare-10.png",
+      "msg": "0.9% differ, largest mismatch 41 cells — (432,192 208x80) e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\"; (304,192 112x64) e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\"; (224,176 64x80) e96 h2.abs.hero[data-name=\"Headline\"] \"Try it on your next deck\". See qa/compare-10.png",
       "el": ""
     }
   ],

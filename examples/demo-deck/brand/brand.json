@@ -33,16 +33,35 @@
     "display": {
       "family": "Manrope",
       "installed": true,
-      "files": [],
+      "files": [
+        "fonts/Manrope-400.ttf",
+        "fonts/Manrope-600.ttf",
+        "fonts/Manrope-700.ttf",
+        "fonts/Manrope-800.ttf"
+      ],
       "fallback": "Segoe UI, Arial, sans-serif"
     },
     "body": {
       "family": "Inter",
       "installed": true,
-      "files": [],
+      "files": [
+        "fonts/Inter-400.ttf",
+        "fonts/Inter-500.ttf",
+        "fonts/Inter-600.ttf",
+        "fonts/Inter-700.ttf"
+      ],
       "fallback": "Segoe UI, Arial, sans-serif"
     },
-    "files": []
+    "files": [
+      "fonts/Inter-400.ttf",
+      "fonts/Inter-500.ttf",
+      "fonts/Inter-600.ttf",
+      "fonts/Inter-700.ttf",
+      "fonts/Manrope-400.ttf",
+      "fonts/Manrope-600.ttf",
+      "fonts/Manrope-700.ttf",
+      "fonts/Manrope-800.ttf"
+    ]
   },
   "logos": [
     {
@@ -295,6 +314,63 @@
         "source": "tokens.json"
       }
     ],
-    "font_files": []
+    "font_files": [
+      {
+        "file": "fonts/Inter-400.ttf",
+        "family": "Inter",
+        "legacy_family": "Inter",
+        "weight": 400,
+        "italic": false
+      },
+      {
+        "file": "fonts/Inter-500.ttf",
+        "family": "Inter",
+        "legacy_family": "Inter Medium",
+        "weight": 500,
+        "italic": false
+      },
+      {
+        "file": "fonts/Inter-600.ttf",
+        "family": "Inter",
+        "legacy_family": "Inter SemiBold",
+        "weight": 600,
+        "italic": false
+      },
+      {
+        "file": "fonts/Inter-700.ttf",
+        "family": "Inter",
+        "legacy_family": "Inter",
+        "weight": 700,
+        "italic": false
+      },
+      {
+        "file": "fonts/Manrope-400.ttf",
+        "family": "Manrope",
+        "legacy_family": "Manrope",
+        "weight": 400,
+        "italic": false
+      },
+      {
+        "file": "fonts/Manrope-600.ttf",
+        "family": "Manrope",
+        "legacy_family": "Manrope SemiBold",
+        "weight": 600,
+        "italic": false
+      },
+      {
+        "file": "fonts/Manrope-700.ttf",
+        "family": "Manrope",
+        "legacy_family": "Manrope",
+        "weight": 700,
+        "italic": false
+      },
+      {
+        "file": "fonts/Manrope-800.ttf",
+        "family": "Manrope",
+        "legacy_family": "Manrope ExtraBold",
+        "weight": 800,
+        "italic": false
+      }
+    ]
   }
 }
