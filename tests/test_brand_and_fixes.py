@@ -21,9 +21,9 @@ def _paths(node):
 
 
 def test_brand_json_paths_are_relative_and_resolve(tmp_path, monkeypatch):
-    from deckkit.brand import ingest
-
     import shutil
+
+    from deckkit.brand import ingest
     # the kit sits beside the project (same drive: CI keeps the repo on D: and temp on C:), passed as a relative path,
     # which used to be stored relative to the cwd and then read relative to brand/
     shutil.copytree(BRAND_KIT, tmp_path / "kit")
