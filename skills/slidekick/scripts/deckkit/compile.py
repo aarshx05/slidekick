@@ -87,7 +87,10 @@ class Ctx:
         fam = run.get("platform_font")
         if not fam:
             css = stack_families(run.get("family", "Arial"))
-            fam = next((f for f in css if f.lower() not in GENERIC), None) or GENERIC_MAP.get((css or ["sans-serif"])[0].lower(), "Arial")
+            named = [f for f in css if f.lower() not in GENERIC]
+            generic = next((GENERIC_MAP[f.lower()] for f in css if f.lower() in GENERIC_MAP), "Arial")
+            # like a browser: the first family in the stack that this machine has, then the generic's stand-in
+            fam = next((f for f in named if self.index.has(f)), None) or (generic if self.index.has(generic) else None)                 or (named[0] if named else generic)
         key = (fam, run.get("weight", 400), run.get("italic", False))
         if key not in self.font_cache:
             typeface, bold, italic, face = self.index.resolve(fam, run.get("weight", 400), run.get("italic", False))

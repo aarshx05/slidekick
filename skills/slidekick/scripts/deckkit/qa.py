@@ -40,6 +40,10 @@ def _runs(el):
                             yield p, r
 
 
+# fonts every PowerPoint install has (Windows and Mac Office): missing locally is a render caveat, not a broken deck
+OFFICE_FONTS = {"arial", "arial black", "calibri", "calibri light", "cambria", "candara", "consolas", "constantia", "corbel",
+                "courier new", "georgia", "segoe ui", "segoe ui semibold", "segoe ui light", "tahoma", "times new roman",
+                "trebuchet ms", "verdana", "aptos", "aptos display"}
 TOLERANCE_PX = 2  # canvas px of positional jitter forgiven (glyph advance rounding differs between renderers)
 # Calibrated on real decks: clean slides peak at ~25 connected 16px cells; a missing 2-line headline is ~150.
 REGION_WARN_CELLS = 30
@@ -169,7 +173,10 @@ def run_qa(project, build="build", out="qa", diff_limit=0.012):
     if not R:
         add(0, "renderer", "no render found (run `deck.py render`) — visual diff skipped", severity="warn")
     for fam, info in (C.get("fonts") or {}).items():
-        if not info.get("installed"):
+        if not info.get("installed") and fam.lower() in OFFICE_FONTS:
+            add(0, "font-local", f"'{fam}' isn't installed on this machine, so the local render substitutes it. "
+                                 "PowerPoint ships it, so recipients see it correctly", severity="warn")
+        elif not info.get("installed"):
             add(0, "font-missing", f"font '{fam}' is not installed — PowerPoint will substitute it. "
                                    f"Install it (`deck.py fonts install <files>` / `deck.py fonts fetch \"{fam}\"`) or switch fonts.")
         elif info.get("kit_only"):

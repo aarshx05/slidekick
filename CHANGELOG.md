@@ -5,6 +5,7 @@
 **Fixed**
 - **Mac and Linux without PowerPoint no longer report FAIL on a good deck.** "PowerPoint not installed" isn't an error any more. When LibreOffice does the rendering, pixel diffs are warnings, and the report says the check is approximate. A real PowerPoint render still fails on a real diff.
 - `build` and `compile` install the brand kit's fonts per-user when they aren't installed, so renderers stop substituting them. Each install is logged, `deck.py uninstall --fonts` removes them, and `--no-font-install` turns this off. QA now flags a font that exists only in the kit.
+- Fonts in a CSS stack resolve the way a browser picks them: the first family installed on this machine. A deck with no brand kit on Mac or Linux no longer asks for Segoe UI. A missing core Office font (Arial, Calibri, Segoe UI…) is a warning, because recipients' PowerPoint has it.
 - The demo deck ships its OFL fonts (Manrope, Inter), so it rebuilds on any OS.
 - Demo deck slide 1: the top card of the Morph stack now shows a real cover slide instead of an empty card.
 
