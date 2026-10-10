@@ -23,10 +23,13 @@ def _paths(node):
 def test_brand_json_paths_are_relative_and_resolve(tmp_path, monkeypatch):
     from deckkit.brand import ingest
 
-    monkeypatch.chdir(tmp_path)  # a relative kit path used to be stored relative to the cwd, then read relative to brand/
-    rel_kit = pathlib.Path(__import__("os").path.relpath(BRAND_KIT, tmp_path))
+    import shutil
+    # the kit sits beside the project (same drive: CI keeps the repo on D: and temp on C:), passed as a relative path,
+    # which used to be stored relative to the cwd and then read relative to brand/
+    shutil.copytree(BRAND_KIT, tmp_path / "kit")
+    monkeypatch.chdir(tmp_path)
     out = tmp_path / "proj" / "brand"
-    ingest([str(rel_kit)], out)
+    ingest(["kit"], out)
     data = json.loads((out / "brand.json").read_text(encoding="utf-8"))
     for p in _paths(data):
         assert not pathlib.Path(p).is_absolute(), f"absolute path leaked into brand.json: {p}"
