@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deck</title>
+<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="brand.css">
+<style>
+  /* Deck-level design system: type scale, spacing, components. Built on brand tokens from brand.css. */
+  :root { --m: 72px; --ink: var(--color-text); --paper: var(--color-bg); --accent: var(--color-primary); }
+  .kicker   { font: 600 16px/20px var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .h-hero   { font: 800 76px/80px var(--font-display); letter-spacing: -0.02em; }
+  .h-slide  { font: 700 44px/52px var(--font-display); letter-spacing: -0.01em; }
+  .lead     { font: 400 24px/34px var(--font-body); color: var(--color-muted); }
+  .body     { font: 400 22px/32px var(--font-body); }
+  .small    { font: 400 16px/22px var(--font-body); color: var(--color-muted); }
+  .card     { background: var(--color-surface); border-radius: 20px; }
+  section.slide.dark { background: var(--color-dark); color: #fff; }
+  .grad-text { background: linear-gradient(90deg, var(--brand-accent1), var(--brand-accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body>
+<script>if (/[?&]debug/.test(location.search)) document.body.classList.add('debug');</script>
+
+<!-- 1. Title -->
+<section class="slide dark" data-transition="fade" style="background: radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--brand-accent1) 55%, var(--color-dark)), var(--color-dark) 60%);">
+  <svg data-pptx="image" data-name="Logo" class="abs" style="left:var(--m); top:56px; width:150px; height:36px" viewBox="0 0 150 36" aria-label="Logo">
+    <rect width="36" height="36" rx="9" fill="#fff"/><text x="48" y="26" font-family="Segoe UI, Arial" font-size="22" font-weight="700" fill="#fff">Acme</text>
+  </svg>
+  <div data-pptx="shape" data-name="!!accent" class="abs" style="left:880px; top:-140px; width:520px; height:520px; border-radius:50%; background: linear-gradient(135deg, var(--brand-accent2), var(--brand-accent1)); opacity:.9"></div>
+  <p data-pptx="text" class="abs kicker" style="left:var(--m); top:250px; width:700px; color:#fff; opacity:.75">Launch review · Q3</p>
+  <h1 data-pptx="text" data-name="Title" class="abs h-hero" style="left:var(--m); top:286px; width:800px">The workspace that <span class="grad-text">writes itself</span></h1>
+  <p data-pptx="text" class="abs lead" style="left:var(--m); top:470px; width:640px; color:rgba(255,255,255,.78)">How we cut onboarding from 9 days to 40 minutes — and what we ship next.</p>
+  <aside class="notes">Open with the onboarding number. Pause after "40 minutes".</aside>
+</section>
+
+<!-- 2. Statement + Morph (the !!accent shape morphs from slide 1) -->
+<section class="slide" data-transition="morph">
+  <div data-pptx="shape" data-name="!!accent" class="abs" style="left:-120px; top:420px; width:420px; height:420px; border-radius:50%; background: linear-gradient(135deg, var(--brand-accent2), var(--brand-accent1));"></div>
+  <p data-pptx="text" class="abs kicker" style="left:400px; top:200px; width:800px">The problem</p>
+  <h2 data-pptx="text" class="abs" style="left:400px; top:236px; width:800px; font:700 54px/64px var(--font-display); letter-spacing:-0.015em">New hires spend their first week <em style="color:var(--accent); font-style:normal">looking for things</em>, not building them.</h2>
+  <aside class="notes">Survey of 412 new hires, March 2026.</aside>
+</section>
+
+<!-- 3. Bullets + image -->
+<section class="slide" data-transition="push" data-transition-dir="left">
+  <p data-pptx="text" class="abs kicker" style="left:var(--m); top:64px; width:560px">What changed</p>
+  <h2 data-pptx="text" class="abs h-slide" style="left:var(--m); top:96px; width:560px">Three moves made onboarding self-serve</h2>
+  <ul data-pptx="text" class="abs body" style="left:var(--m); top:260px; width:540px; padding-left:28px" data-anim="float">
+    <li style="margin-bottom:14px"><b>Auto-generated workspace</b> from the team's repos and docs</li>
+    <li style="margin-bottom:14px"><b>Guided first PR</b> with a reviewer on day one</li>
+    <li><b>One search</b> across code, tickets and chat</li>
+  </ul>
+  <div data-pptx="image" data-name="Product shot" class="abs" style="left:680px; top:96px; width:528px; height:528px; border-radius:24px; overflow:hidden; box-shadow:0 24px 48px rgba(0,0,0,.18)">
+    <svg viewBox="0 0 528 528" style="width:100%; height:100%"><rect width="528" height="528" fill="#EEF1F6"/><rect x="32" y="32" width="464" height="40" rx="10" fill="#fff"/><rect x="32" y="96" width="140" height="400" rx="12" fill="#fff"/><rect x="190" y="96" width="306" height="190" rx="12" fill="#fff"/><rect x="190" y="306" width="306" height="190" rx="12" fill="#fff"/><circle cx="56" cy="52" r="8" fill="#FF6B6B"/></svg>
+  </div>
+  <aside class="notes">Walk through each move in one sentence.</aside>
+</section>
+
+<!-- 4. Stats: each card is a group so it moves/animates as one object -->
+<section class="slide" data-transition="fade">
+  <p data-pptx="text" class="abs kicker" style="left:var(--m); top:64px; width:900px">Results after one quarter</p>
+  <h2 data-pptx="text" class="abs h-slide" style="left:var(--m); top:96px; width:1000px">Faster ramp, happier teams, fewer interruptions</h2>
+  <div data-pptx="group" data-name="Stat 1" class="abs card" style="left:var(--m); top:250px; width:352px; height:300px; padding:36px" data-anim="float">
+    <p data-pptx="text" style="font:800 80px/88px var(--font-display); color:var(--accent)">-93%</p>
+    <p data-pptx="text" class="body" style="margin-top:16px">time to first merged PR</p>
+  </div>
+  <div data-pptx="group" data-name="Stat 2" class="abs card" style="left:464px; top:250px; width:352px; height:300px; padding:36px" data-anim="float" data-anim-trigger="after">
+    <p data-pptx="text" style="font:800 80px/88px var(--font-display); color:var(--accent)">4.7/5</p>
+    <p data-pptx="text" class="body" style="margin-top:16px">new-hire satisfaction</p>
+  </div>
+  <div data-pptx="group" data-name="Stat 3" class="abs card" style="left:856px; top:250px; width:352px; height:300px; padding:36px" data-anim="float" data-anim-trigger="after">
+    <p data-pptx="text" style="font:800 80px/88px var(--font-display); color:var(--accent)">-61%</p>
+    <p data-pptx="text" class="body" style="margin-top:16px">"where is X?" questions in chat</p>
+  </div>
+  <p data-pptx="text" class="abs small" style="left:var(--m); top:620px; width:900px">Source: internal onboarding telemetry, Q3 2026 (n = 412)</p>
+</section>
+
+<!-- 5. Native, editable chart (the inner markup is only a layout placeholder) -->
+<section class="slide" data-transition="fade">
+  <p data-pptx="text" class="abs kicker" style="left:var(--m); top:64px; width:900px">Adoption</p>
+  <h2 data-pptx="text" class="abs h-slide" style="left:var(--m); top:96px; width:1100px">Weekly active teams tripled in twelve weeks</h2>
+  <div data-pptx="chart" class="abs" style="left:var(--m); top:200px; width:1136px; height:440px; font:400 16px var(--font-body); color:var(--color-muted)"
+       data-chart='{"type":"column","categories":["W1","W2","W3","W4","W5","W6","W7","W8","W9","W10","W11","W12"],
+                    "series":[{"name":"Active teams","values":[41,48,55,61,70,78,86,95,104,112,121,128]}],
+                    "labels":true,"gridlines":false,"value_axis":false,"gap":45}'></div>
+</section>
+
+<!-- 6. Native table -->
+<section class="slide" data-transition="fade">
+  <p data-pptx="text" class="abs kicker" style="left:var(--m); top:64px; width:900px">Options</p>
+  <h2 data-pptx="text" class="abs h-slide" style="left:var(--m); top:96px; width:1100px">Rolling out company-wide is the cheapest path</h2>
+  <table data-pptx="table" class="abs body" style="left:var(--m); top:220px; width:1136px; border-collapse:collapse; font-size:20px; line-height:28px">
+    <thead><tr style="background:var(--color-dark); color:#fff"><th style="text-align:left; padding:16px 20px">Option</th><th style="text-align:left; padding:16px 20px">Cost / yr</th><th style="text-align:left; padding:16px 20px">Ramp time</th></tr></thead>
+    <tbody>
+      <tr style="border-bottom:1px solid #D9DEE7"><td style="padding:16px 20px"><b>Company-wide</b></td><td style="padding:16px 20px">$180k</td><td style="padding:16px 20px">40 min</td></tr>
+      <tr style="border-bottom:1px solid #D9DEE7"><td style="padding:16px 20px">Engineering only</td><td style="padding:16px 20px">$120k</td><td style="padding:16px 20px">2 days</td></tr>
+      <tr><td style="padding:16px 20px">Status quo</td><td style="padding:16px 20px">$0</td><td style="padding:16px 20px">9 days</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 7. Closing -->
+<section class="slide dark" data-transition="morph" style="background: var(--color-dark)">
+  <div data-pptx="shape" data-name="!!accent" class="abs" style="left:780px; top:180px; width:360px; height:360px; border-radius:50%; background: linear-gradient(135deg, var(--brand-accent2), var(--brand-accent1));"></div>
+  <h2 data-pptx="text" class="abs h-hero" style="left:var(--m); top:240px; width:640px; color:#fff">Ship it to everyone in Q4</h2>
+  <div data-pptx="text" class="abs" style="left:var(--m); top:440px; width:260px; height:60px; border-radius:30px; background:#fff; color:var(--color-dark); font:700 20px/60px var(--font-body); text-align:center" data-anim="zoom" data-anim-trigger="after" data-anim-delay="300">Approve rollout</div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+{
+  "name": "Slidekick",
+  "theme": {
+    "dk1": "14122B",
+    "lt1": "FFFFFF",
+    "dk2": "26224D",
+    "lt2": "F3F2FF",
+    "accent1": "5B4BFF",
+    "accent2": "FF6B4A",
+    "accent3": "18C29C",
+    "accent4": "2EA8FF",
+    "accent5": "FFC23D",
+    "accent6": "5E5B7A",
+    "hlink": "5B4BFF",
+    "folHlink": "8A7DFF"
+  },
+  "colors": {
+    "primary": "#5B4BFF",
+    "background": "#FFFFFF",
+    "text": "#14122B",
+    "dark": "#14122B",
+    "surface": "#F3F2FF",
+    "accents": [
+      "#5B4BFF",
+      "#FF6B4A",
+      "#18C29C",
+      "#2EA8FF",
+      "#FFC23D",
+      "#5E5B7A"
+    ]
+  },
+  "fonts": {
+    "display": {
+      "family": "Manrope",
+      "installed": true,
+      "files": [],
+      "fallback": "Segoe UI, Arial, sans-serif"
+    },
+    "body": {
+      "family": "Inter",
+      "installed": true,
+      "files": [],
+      "fallback": "Segoe UI, Arial, sans-serif"
+    },
+    "files": []
+  },
+  "logos": [
+    {
+      "path": "assets/logo-mark.svg",
+      "name": "logo-mark.svg",
+      "from_master": false,
+      "width": 60.0,
+      "height": 48.0,
+      "has_alpha": true,
+      "colors": [
+        "FF6B4A",
+        "5B4BFF",
+        "14122B"
+      ],
+      "vector": true,
+      "mean_luminance": 0.1583395201561206,
+      "shape": "mark",
+      "variant": "for-light-backgrounds"
+    },
+    {
+      "path": "assets/logo-primary-dark.svg",
+      "name": "logo-primary-dark.svg",
+      "from_master": false,
+      "width": 344.0,
+      "height": 48.0,
+      "has_alpha": true,
+      "colors": [
+        "FF6B4A",
+        "5B4BFF",
+        "14122B"
+      ],
+      "vector": true,
+      "mean_luminance": 0.12064402277872596,
+      "shape": "wordmark",
+      "variant": "for-light-backgrounds"
+    },
+    {
+      "path": "assets/logo-primary-light.svg",
+      "name": "logo-primary-light.svg",
+      "from_master": false,
+      "width": 344.0,
+      "height": 48.0,
+      "has_alpha": true,
+      "colors": [
+        "FF6B4A",
+        "5B4BFF",
+        "FFFFFF"
+      ],
+      "vector": true,
+      "mean_luminance": 0.616865257455455,
+      "shape": "wordmark",
+      "variant": "for-dark-backgrounds"
+    }
+  ],
+  "template": "deck-template.potx",
+  "imagery": [],
+  "guidelines": [
+    {
+      "pdf": "../../demo-brand-kit/brand-guidelines.pdf",
+      "text": "brand-guidelines.txt",
+      "pages": 1
+    }
+  ],
+  "rules": [
+    "Logo clear space: at least the height of the mark on every side; minimum 24 px tall on screen.",
+    "Dark logo (logo-primary-dark.svg) on light backgrounds; light logo (logo-primary-light.svg) on Ink or Violet.",
+    "Never place Coral text on Violet; never recolour or stretch the logo.",
+    "Violet is the hero colour; Coral is for one highlight per slide (shapes, or text on Ink only: Coral on white is 2.7:1, below AA even for large text).",
+    "Display: Manrope ExtraBold 800 headlines, Bold 700 titles. Body: Inter 400 / 600."
+  ],
+  "review": {
+    "note": "Reviewed: dropped the template's master wordmark PNG (duplicate of the SVG wordmark); dark slides use Ink #14122B per the guide.",
+    "color_candidates": [
+      {
+        "hex": "#5B4BFF",
+        "weight": 29,
+        "names": [
+          "accent1",
+          "color.brand.primary.value",
+          "hlink"
+        ],
+        "sources": [
+          "brand-guidelines.pdf:text",
+          "deck-template.potx:accent1",
+          "deck-template.potx:hlink",
+          "logo:logo-mark.svg"
+        ]
+      },
+      {
+        "hex": "#FF6B4A",
+        "weight": 26,
+        "names": [
+          "accent2",
+          "color.brand.accent.value"
+        ],
+        "sources": [
+          "brand-guidelines.pdf:text",
+          "deck-template.potx:accent2",
+          "logo:logo-mark.svg",
+          "logo:logo-primary-dark.svg"
+        ]
+      },
+      {
+        "hex": "#14122B",
+        "weight": 20,
+        "names": [
+          "color.neutral.ink.value",
+          "dk1"
+        ],
+        "sources": [
+          "brand-guidelines.pdf:text",
+          "deck-template.potx:dk1",
+          "logo:deck-template-master-image1.png",
+          "logo:logo-mark.svg"
+        ]
+      },
+      {
+        "hex": "#18C29C",
+        "weight": 11,
+        "names": [
+          "accent3",
+          "color.support.mint.value"
+        ],
+        "sources": [
+          "brand-guidelines.pdf:text",
+          "deck-template.potx:accent3",
+          "tokens.json:color.support.mint.value"
+        ]
+      },
+      {
+        "hex": "#2EA8FF",
+        "weight": 11,
+        "names": [
+          "accent4",
+          "color.support.sky.value"
+        ],
+        "sources": [
+          "brand-guidelines.pdf:text",
+          "deck-template.potx:accent4",
+          "tokens.json:color.support.sky.value"
+        ]
+      },
+      {
+        "hex": "#FFC23D",
+        "weight": 11,
+        "names": [
+          "accent5",
+          "color.support.sun.value"
+        ],
+        "sources": [
+          "brand-guidelines.pdf:text",
+          "deck-template.potx:accent5",
+          "tokens.json:color.support.sun.value"
+        ]
+      },
+      {
+        "hex": "#5E5B7A",
+        "weight": 8,
+        "names": [
+          "accent6",
+          "color.neutral.slate.value"
+        ],
+        "sources": [
+          "deck-template.potx:accent6",
+          "tokens.json:color.neutral.slate.value"
+        ]
+      },
+      {
+        "hex": "#FFFFFF",
+        "weight": 5,
+        "names": [
+          "color.neutral.paper.value",
+          "lt1"
+        ],
+        "sources": [
+          "deck-template.potx:lt1",
+          "tokens.json:color.neutral.paper.value"
+        ]
+      },
+      {
+        "hex": "#F3F2FF",
+        "weight": 5,
+        "names": [
+          "color.neutral.mist.value",
+          "lt2"
+        ],
+        "sources": [
+          "deck-template.potx:lt2",
+          "tokens.json:color.neutral.mist.value"
+        ]
+      },
+      {
+        "hex": "#5D3565",
+        "weight": 4,
+        "names": [],
+        "sources": [
+          "logo:deck-template-master-image1.png"
+        ]
+      },
+      {
+        "hex": "#26224D",
+        "weight": 3,
+        "names": [
+          "dk2"
+        ],
+        "sources": [
+          "deck-template.potx:dk2"
+        ]
+      },
+      {
+        "hex": "#8A7DFF",
+        "weight": 3,
+        "names": [
+          "folHlink"
+        ],
+        "sources": [
+          "deck-template.potx:folHlink"
+        ]
+      }
+    ],
+    "font_candidates": [
+      {
+        "family": "Manrope",
+        "role": "guideline",
+        "source": "brand-guidelines.pdf"
+      },
+      {
+        "family": "Inter",
+        "role": "guideline",
+        "source": "brand-guidelines.pdf"
+      },
+      {
+        "family": "Manrope",
+        "role": "display",
+        "source": "deck-template.potx:majorFont"
+      },
+      {
+        "family": "Inter",
+        "role": "body",
+        "source": "deck-template.potx:minorFont"
+      },
+      {
+        "family": "Manrope",
+        "role": "display",
+        "source": "tokens.json"
+      },
+      {
+        "family": "Inter",
+        "role": "body",
+        "source": "tokens.json"
+      }
+    ],
+    "font_files": []
+  }
+}

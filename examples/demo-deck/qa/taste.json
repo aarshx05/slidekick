@@ -1,0 +1,134 @@
+{
+  "metrics": {
+    "source": "layout",
+    "slides": 10,
+    "compositions": 10,
+    "font_sizes": [
+      14.0,
+      22.0,
+      28.0,
+      44.0,
+      56.0,
+      96.0,
+      280.0
+    ],
+    "families": [
+      "Inter",
+      "Manrope"
+    ],
+    "off_palette": [],
+    "kicker_slides": [],
+    "card_grid_slides": [],
+    "headline_positions": {
+      "2": [
+        64,
+        224
+      ],
+      "3": [
+        64,
+        131
+      ],
+      "4": [
+        64,
+        131
+      ],
+      "5": [
+        64,
+        131
+      ],
+      "6": [
+        64,
+        131
+      ],
+      "7": [
+        800,
+        250
+      ],
+      "8": [
+        64,
+        131
+      ],
+      "9": [
+        64,
+        131
+      ],
+      "10": [
+        64,
+        246
+      ]
+    }
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "code": "margin",
+      "slide": 4,
+      "msg": "left margin 48px vs 64px on most slides",
+      "el": ""
+    },
+    {
+      "severity": "major",
+      "code": "margin",
+      "slide": 5,
+      "msg": "left margin 48px vs 64px on most slides",
+      "el": ""
+    },
+    {
+      "severity": "major",
+      "code": "margin",
+      "slide": 7,
+      "msg": "left margin 47px vs 64px on most slides",
+      "el": ""
+    },
+    {
+      "severity": "major",
+      "code": "margin",
+      "slide": 9,
+      "msg": "left margin 55px vs 64px on most slides",
+      "el": ""
+    },
+    {
+      "severity": "polish",
+      "code": "long-headline",
+      "slide": 2,
+      "msg": "4-line headline — cut it to ≤ 2 lines",
+      "el": "Statement h2.abs.stmt[data-name=\"Statement\"] \"Decks still take a day, and most AI tool\""
+    },
+    {
+      "severity": "polish",
+      "code": "baseline",
+      "slide": 4,
+      "msg": "side-by-side text baselines 3px apart — share one baseline",
+      "el": "e32 p.abs.tag \"Chart · data in Excel\" / e36 p.abs.body \"native objects in the 11-slide Fernway d\""
+    },
+    {
+      "severity": "polish",
+      "code": "tight",
+      "slide": 4,
+      "msg": "only 8px between these — group them tighter on purpose or give them air",
+      "el": "Outline – headline div.abs.sel[data-name=\"Outline – headline\"] / e34 p.abs.tag \"Text box\""
+    },
+    {
+      "severity": "polish",
+      "code": "tight",
+      "slide": 8,
+      "msg": "only 8px between these — group them tighter on purpose or give them air",
+      "el": "e72 p.abs.label.muted \"Before: the Q3 review\" / e73 div.abs"
+    },
+    {
+      "severity": "polish",
+      "code": "tight",
+      "slide": 9,
+      "msg": "only 8px between these — group them tighter on purpose or give them air",
+      "el": "e81 div.abs / e82 p.abs.foot \"Round 1\""
+    },
+    {
+      "severity": "polish",
+      "code": "tight",
+      "slide": 9,
+      "msg": "only 8px between these — group them tighter on purpose or give them air",
+      "el": "e83 div.abs / e84 p.abs.foot \"Round 2, after the fixes\""
+    }
+  ],
+  "report": "qa\\taste.md"
+}

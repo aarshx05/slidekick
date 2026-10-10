@@ -1,0 +1,37 @@
+/* Generated from brand/brand.json by `deck.py tokens` — edit brand.json, not this file. */
+@font-face { font-family: 'DM Sans'; src: url('../brand/fonts/DMSans-400.ttf'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'DM Sans'; src: url('../brand/fonts/DMSans-500.ttf'); font-weight: 500; font-style: normal; font-display: block; }
+@font-face { font-family: 'DM Sans'; src: url('../brand/fonts/DMSans-700.ttf'); font-weight: 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'Fraunces'; src: url('../brand/fonts/Fraunces-400.ttf'); font-weight: 400; font-style: normal; font-display: block; }
+@font-face { font-family: 'Fraunces'; src: url('../brand/fonts/Fraunces-600.ttf'); font-weight: 600; font-style: normal; font-display: block; }
+@font-face { font-family: 'Fraunces'; src: url('../brand/fonts/Fraunces-700.ttf'); font-weight: 700; font-style: normal; font-display: block; }
+:root {
+  --brand-dk1: #13261B;
+  --brand-lt1: #F6F0E4;
+  --brand-dk2: #1E3D2C;
+  --brand-lt2: #E9DFCC;
+  --brand-accent1: #1E3D2C;
+  --brand-accent2: #C2593A;
+  --brand-accent3: #7F9C7A;
+  --brand-accent4: #E3B39C;
+  --brand-accent5: #B9C9B3;
+  --brand-accent6: #5E6E63;
+  --color-primary: #1E3D2C;
+  --color-bg: #F6F0E4;
+  --color-text: #13261B;
+  --color-dark: #1E3D2C;
+  --color-surface: #E9DFCC;
+  --color-accent-1: #1E3D2C;
+  --color-accent-2: #C2593A;
+  --color-accent-3: #7F9C7A;
+  --color-accent-4: #E3B39C;
+  --color-accent-5: #B9C9B3;
+  --color-accent-6: #5E6E63;
+  --color-muted: color-mix(in srgb, #13261B 62%, #F6F0E4);
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+  --logo-1: url('../brand/assets/fernway-logo-dark.svg');
+  --logo-2: url('../brand/assets/fernway-logo-light.svg');
+  --logo-3: url('../brand/assets/fernway-mark-light.svg');
+  --logo-4: url('../brand/assets/fernway-mark.svg');
+}

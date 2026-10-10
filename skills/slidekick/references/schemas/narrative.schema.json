@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "High-level IR: deck narrative",
+  "type": "object",
+  "required": ["title", "objective", "audience", "mode", "big_idea", "beats"],
+  "properties": {
+    "title": {"type": "string", "minLength": 2},
+    "objective": {"type": "string", "description": "What the audience should believe or do afterwards."},
+    "audience": {
+      "type": "object",
+      "required": ["who", "knowledge", "context"],
+      "properties": {
+        "who": {"type": "string"},
+        "knowledge": {"enum": ["novice", "practitioner", "expert", "mixed"]},
+        "context": {"type": "string", "description": "board meeting, investor pitch, conference talk, sales call, async read..."},
+        "cares_about": {"type": "array", "items": {"type": "string"}},
+        "objections": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "mode": {"enum": ["presented", "read"], "description": "presented = sparse slides + notes; read = self-explanatory, denser"},
+    "tone": {"type": "string"},
+    "big_idea": {"type": "string", "description": "One sentence the whole deck argues."},
+    "arc": {"type": "string", "description": "e.g. situation-complication-resolution, problem-solution-proof-ask"},
+    "length": {"type": "object", "properties": {"slides": {"type": "integer", "minimum": 1}, "minutes": {"type": "number"}}},
+    "beats": {
+      "type": "array", "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "purpose", "message"],
+        "properties": {
+          "id": {"type": "string"},
+          "purpose": {"enum": ["hook", "context", "problem", "stakes", "insight", "solution", "how-it-works", "proof", "demo",
+                                "comparison", "plan", "team", "ask", "close", "agenda", "section"]},
+          "message": {"type": "string", "description": "The single takeaway of this beat, as a full sentence."},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "slides": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "sources": {"type": "array", "items": {"type": "object", "required": ["id", "ref"],
+      "properties": {"id": {"type": "string"}, "ref": {"type": "string"}, "kind": {"type": "string"}, "notes": {"type": "string"}}}}
+  }
+}

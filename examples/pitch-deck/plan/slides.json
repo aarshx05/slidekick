@@ -1,0 +1,348 @@
+{
+  "design": {
+    "concept": "A grocer's produce ledger: warm paper, Fraunces numerals set large like a market price board, and hairline rules in place of boxes.",
+    "signature_device": "The gable. The logo's roof pitch crops the greenhouse photo into a building on the title and close, returns as a thin roofline rule whose peak points at each slide's proof, and becomes the timeline axis on the plan slide.",
+    "compositions": [
+      "gable-photo title",
+      "one giant number + stacked stats",
+      "statement + store illustration",
+      "illustration + time-stamped process",
+      "full-bleed photo with scrim",
+      "chart + side annotation",
+      "doughnut + ledger + payback numeral",
+      "chart on sand + method note",
+      "ledger table",
+      "growing numerals on a roofline",
+      "dark close with funds bar"
+    ],
+    "grid": "64px margins, 12 columns of 74px, 24px gutters (column starts 64, 162, 260, 358, 456, 554, 652, 750, 848, 946, 1044, 1142)",
+    "type_scale": {
+      "hero": "Fraunces 600, 80/84, -0.02em",
+      "title": "Fraunces 600, 44/52, -0.015em",
+      "numeral": "Fraunces 600, 96–200, line-height 0.9–1.0, -0.03em",
+      "lead": "DM Sans 400, 24/34",
+      "body": "DM Sans 400, 20/30",
+      "label": "DM Sans 500, 16/22",
+      "footnote": "DM Sans 400, 14/20, muted"
+    },
+    "background_strategy": "Paper for content; Sand for the insight and market slides; Forest for title and close; the photo full-bleed once.",
+    "transition_default": "fade; Morph from the insight slide to how-it-works so the empty store roof grows a greenhouse",
+    "animation_policy": "Builds only where order matters: the problem stats, the four process steps, the three plan years. Fade or wipe, on click or after previous, never on headlines."
+  },
+  "slides": [
+    {
+      "id": "title",
+      "beat": "b1",
+      "archetype": "title",
+      "headline": "Grown on the roof. Sold one floor down.",
+      "blocks": [
+        {
+          "role": "logo",
+          "asset": "brand/assets/fernway-logo-light.svg"
+        },
+        {
+          "role": "subtitle",
+          "content": "Fernway builds and runs greenhouses on top of grocery stores. Seed round, 2026."
+        },
+        {
+          "role": "image",
+          "asset": "assets/greenhouse-gable.jpg",
+          "content": "photo cropped into a gable (store-and-greenhouse silhouette)"
+        }
+      ],
+      "visual": "Forest ground; the photo cropped by the logo's gable on the right, bleeding off the bottom; hero headline left.",
+      "transition": "fade",
+      "notes": "Fernway turns the roof of a grocery store into the farm that supplies it."
+    },
+    {
+      "id": "problem",
+      "beat": "b2",
+      "archetype": "stats",
+      "headline": "Supermarket greens travel 1,800 miles; one in seven is thrown out unsold",
+      "blocks": [
+        {
+          "role": "stat",
+          "content": {
+            "value": "1,800",
+            "label": "miles from field to shelf"
+          },
+          "source": "s1",
+          "emphasis": 3
+        },
+        {
+          "role": "stat",
+          "content": {
+            "value": "6 days",
+            "label": "in transit, losing shelf life every hour"
+          },
+          "source": "s1"
+        },
+        {
+          "role": "stat",
+          "content": {
+            "value": "14%",
+            "label": "of leafy greens thrown away unsold at the store"
+          },
+          "source": "s2"
+        },
+        {
+          "role": "source",
+          "content": "Illustrative figures for a fictional company."
+        }
+      ],
+      "visual": "One giant numeral (1,800) dominates the left; two smaller stats stacked on the right, divided by a hairline; 14% in Terracotta.",
+      "transition": "fade",
+      "build": "the two right-hand stats fade in one by one on click",
+      "notes": "Every lettuce in the store has been on the road for most of a week."
+    },
+    {
+      "id": "insight",
+      "beat": "b3",
+      "archetype": "statement",
+      "headline": "The best farmland in town is the roof over the produce aisle",
+      "blocks": [
+        {
+          "role": "body",
+          "content": "A typical supermarket roof is 40,000 sq ft: flat, sunny, built to carry load, and empty."
+        },
+        {
+          "role": "image",
+          "content": "flat store silhouette in Forest with its empty roof marked in Terracotta"
+        }
+      ],
+      "visual": "Sand ground; statement left; a large flat-roofed store silhouette on the right, its empty roof edge in Terracotta.",
+      "transition": "fade",
+      "notes": "Pause on the empty roof; it Morphs into a greenhouse on the next slide."
+    },
+    {
+      "id": "how",
+      "beat": "b4",
+      "archetype": "process",
+      "headline": "We farm the roof, and the harvest rides the freight lift down",
+      "blocks": [
+        {
+          "role": "image",
+          "content": "the same store, smaller, now with a greenhouse on its roof"
+        },
+        {
+          "role": "step",
+          "content": "5:40 am · Harvest: picked at dawn, roots on"
+        },
+        {
+          "role": "step",
+          "content": "6:05 · Pack: washed and boxed in the rooftop pack room"
+        },
+        {
+          "role": "step",
+          "content": "6:12 · Lift: down the store's freight lift"
+        },
+        {
+          "role": "step",
+          "content": "6:18 · Shelf: on display, 38 minutes after picking"
+        },
+        {
+          "role": "footnote",
+          "content": "Fernway leases the roof and pays for the build. The grocer pays nothing up front."
+        }
+      ],
+      "visual": "Morph: the store shrinks to the lower left and a greenhouse grows on the roof; four time-stamped steps on the right, the last time in Terracotta.",
+      "transition": "morph",
+      "build": "steps fade in one after another after the Morph",
+      "notes": "Walk the clock: 5:40 to 6:18. The grocer pays nothing up front."
+    },
+    {
+      "id": "pilot",
+      "beat": "b5",
+      "archetype": "image-full",
+      "headline": "38 minutes from harvest to shelf at our pilot stores",
+      "blocks": [
+        {
+          "role": "image",
+          "asset": "assets/greenhouse-leaves.jpg"
+        },
+        {
+          "role": "body",
+          "content": "Shrink on our greens: 4%, against 14% for trucked greens"
+        },
+        {
+          "role": "caption",
+          "content": "Median across our three pilot stores. Photo: wei / Unsplash"
+        }
+      ],
+      "visual": "Full-bleed tight crop of lettuce leaves, Forest scrim from the left, the 38 in huge Fraunces.",
+      "transition": "fade",
+      "notes": "Fresher greens sell: shrink on ours is 4%, against 14%."
+    },
+    {
+      "id": "traction",
+      "beat": "b6",
+      "archetype": "chart",
+      "headline": "Revenue grew 6.9× in a year on three pilot roofs",
+      "blocks": [
+        {
+          "role": "chart",
+          "content": {
+            "type": "column",
+            "categories": [
+              "Q3 2025",
+              "Q4 2025",
+              "Q1 2026",
+              "Q2 2026",
+              "Q3 2026"
+            ],
+            "series": [
+              {
+                "name": "Revenue ($k)",
+                "values": [
+                  38,
+                  71,
+                  118,
+                  196,
+                  262
+                ]
+              }
+            ]
+          },
+          "source": "s5"
+        },
+        {
+          "role": "stat",
+          "content": {
+            "value": "$1.05M",
+            "label": "annual run rate, Q3 2026"
+          }
+        },
+        {
+          "role": "callout",
+          "content": "Roofs 2 and 3 went live in Q1 and Q2 2026"
+        }
+      ],
+      "visual": "Native column chart across two thirds; the run rate as the side annotation; 6.9× marked in Terracotta.",
+      "transition": "fade",
+      "notes": "Each new roof steps revenue up; Q3 is the first full quarter with three roofs."
+    },
+    {
+      "id": "economics",
+      "beat": "b7",
+      "archetype": "chart",
+      "headline": "Each roof earns $124k a year and pays back in 26 months",
+      "blocks": [
+        {
+          "role": "chart",
+          "content": {
+            "type": "stacked-bar (waterfall)",
+            "categories": [
+              "Revenue $413k",
+              "Labour −$132k",
+              "Inputs and energy −$121k",
+              "Roof lease and upkeep −$36k",
+              "Contribution $124k"
+            ]
+          },
+          "source": "s6"
+        },
+        {
+          "role": "stat",
+          "content": {
+            "value": "26",
+            "label": "months to pay back a $270k roof build"
+          }
+        }
+      ],
+      "visual": "The 26 numeral on the left; a native waterfall from $413k revenue to $124k contribution (Terracotta) on the right.",
+      "transition": "fade",
+      "notes": "Contribution margin is 30% per roof before overhead."
+    },
+    {
+      "id": "market",
+      "beat": "b8",
+      "archetype": "chart",
+      "headline": "9,400 suitable roofs make a $3.9B market in the top 50 metros",
+      "blocks": [
+        {
+          "role": "chart",
+          "content": {
+            "type": "stacked-bar (nested)",
+            "categories": [
+              "Greens and herbs (TAM) $14.8B",
+              "Suitable roofs (SAM) $3.9B",
+              "2030 goal, 400 roofs $165M"
+            ],
+            "note": "the SAM shown in Forest inside the TAM bar"
+          },
+          "source": "s7"
+        },
+        {
+          "role": "body",
+          "content": "How we sized it: stores in the top 50 metros with a flat roof over 25,000 sq ft rated for the load, × $413k revenue per roof."
+        }
+      ],
+      "visual": "Sand ground; native bar chart; method note in a narrow right column.",
+      "transition": "fade",
+      "notes": "We only count roofs we could build on today."
+    },
+    {
+      "id": "compare",
+      "beat": "b9",
+      "archetype": "table",
+      "headline": "Only rooftop growing skips the truck and costs the grocer nothing",
+      "blocks": [
+        {
+          "role": "table",
+          "content": "Model × distance to shelf, cost to grocer, shelf life, energy per lb; Fernway row highlighted",
+          "source": "s8"
+        }
+      ],
+      "visual": "A ledger table with hairline rules; the Fernway row on Sand with Forest type.",
+      "transition": "fade",
+      "notes": "Sunlight does most of the work, which is why our energy per pound is a fraction of a vertical farm's."
+    },
+    {
+      "id": "plan",
+      "beat": "b10",
+      "archetype": "timeline",
+      "headline": "The seed round takes us from 3 roofs to 20 by 2028",
+      "blocks": [
+        {
+          "role": "step",
+          "content": "2026 · 3 roofs live with one regional grocer"
+        },
+        {
+          "role": "step",
+          "content": "2027 · 9 roofs; a second grocery chain signs"
+        },
+        {
+          "role": "step",
+          "content": "2028 · 20 roofs and an $8.3M run rate"
+        }
+      ],
+      "visual": "The roofline becomes the timeline; numerals 3, 9 and 20 grow in size along it; 20 in Terracotta.",
+      "transition": "fade",
+      "build": "2027 and 2028 wipe in from the left on click",
+      "notes": "Twenty roofs at $413k each is an $8.3M run rate."
+    },
+    {
+      "id": "ask",
+      "beat": "b11",
+      "archetype": "closing",
+      "headline": "Raising $6M to put greens on 20 roofs",
+      "blocks": [
+        {
+          "role": "chart",
+          "content": "use of funds bar: roof builds $3.5M (58%, Terracotta), team and operations $1.6M (27%), climate software $0.9M (15%)"
+        },
+        {
+          "role": "cta",
+          "content": "founders@fernway.example"
+        },
+        {
+          "role": "footnote",
+          "content": "Fernway is a fictional company. All figures are illustrative."
+        }
+      ],
+      "visual": "Forest ground; the gable photo returns on the right as a bookend; a single proportional funds bar under the headline.",
+      "transition": "fade",
+      "notes": "We are raising $6M. Most of it goes onto roofs."
+    }
+  ]
+}

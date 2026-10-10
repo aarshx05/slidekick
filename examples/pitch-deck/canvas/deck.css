@@ -1,0 +1,26 @@
+/* deck canvas — every slide is 1280×720 CSS px. 1px = 1/96in, so px→pt is exact in the PPTX (pt = px × 0.75).
+   Resets use :where() (zero specificity) so any class you write wins over them. */
+html { background: #26262B; }
+body { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; }
+
+section.slide {
+  position: relative; width: 1280px; height: 720px; flex: none; overflow: hidden;
+  background: var(--color-bg, #fff); color: var(--color-text, #111);
+  font-family: var(--font-body, 'Segoe UI', Arial, sans-serif);
+  font-variant-ligatures: none;           /* PowerPoint does not apply standard ligatures */
+  -webkit-font-smoothing: antialiased;
+}
+:where(section.slide) *, :where(section.slide) *::before, :where(section.slide) *::after { box-sizing: border-box; }
+:where(section.slide) :where(h1, h2, h3, h4, h5, p, ul, ol, figure, blockquote, table) { margin: 0; }
+:where(section.slide) :where(ul, ol) { padding-left: 1.25em; }
+:where(section.slide) :where(h1, h2, h3, h4) { font-weight: 700; font-family: var(--font-display, inherit); }
+:where(section.slide) :where(img) { display: block; }
+aside.notes { display: none; }
+
+/* absolute boxes give the most faithful PPTX; flow layout inside a box is fine */
+.abs { position: absolute; }
+
+/* `<body class="debug">` (or deck.html?debug) outlines what will be exported */
+body.debug [data-pptx] { outline: 1px dashed rgba(255, 0, 90, .75); outline-offset: -1px; }
+body.debug [data-pptx="group"] { outline-color: rgba(0, 160, 255, .85); }
+body.debug [data-pptx="image"] { outline-color: rgba(0, 200, 120, .85); }

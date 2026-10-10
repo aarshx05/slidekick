@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "slidekick",
+  "version": "1.0.0",
+  "description": "Make, edit and review fully editable, on-brand PowerPoint decks, checked against real PowerPoint and reviewed by fresh eyes.",
+  "author": {
+    "name": "aarshx05",
+    "url": "https://github.com/aarshx05"
+  },
+  "homepage": "https://aarshx05.github.io/slidekick/",
+  "repository": "https://github.com/aarshx05/slidekick",
+  "license": "MIT",
+  "keywords": ["powerpoint", "pptx", "presentation", "slides", "skill"]
+}

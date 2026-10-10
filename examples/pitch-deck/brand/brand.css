@@ -1,0 +1,13 @@
+/* Fernway brand kit (fictional). Source tokens for Slidekick: `deck.py brand brand/ -p .` */
+:root {
+  --fernway-forest: #1E3D2C;      /* primary: deep greenhouse green, text and dark grounds */
+  --fernway-terracotta: #C2593A;  /* accent: one highlight per slide */
+  --fernway-paper: #F6F0E4;       /* warm off-white ground */
+  --fernway-sand: #E9DFCC;        /* secondary light surface */
+  --fernway-sage: #7F9C7A;        /* supporting green for muted data */
+  --fernway-loam: #13261B;        /* darkest green, body text on paper */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', Arial, sans-serif;
+}
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; }
+body { font-family: 'DM Sans', Arial, sans-serif; color: #13261B; background: #F6F0E4; }

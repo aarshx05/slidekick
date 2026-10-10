@@ -1,0 +1,11 @@
+name: Feature request
+description: Suggest something /slidekick should do
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like /slidekick to do?
+      description: The deck, edit or review you wish it could handle, and why.
+    validations:
+      required: true

@@ -1,0 +1,18 @@
+{"edits": [
+  {"op": "text", "slide": 1, "shape": 2, "text": "Q4 2026 Business Review"},
+  {"op": "text", "slide": 1, "shape": 3, "text": "Halden Outdoor Co. · January 2027"},
+  {"op": "import", "from": "new-slides/deck.pptx", "slides": [1], "replace": 2, "as": "highlights"},
+  {"op": "text", "slide": 3, "shape": 2, "text": "Revenue rose three quarters in a row"},
+  {"op": "chart", "slide": 3, "shape": 3, "categories": ["Q1 2026", "Q2 2026", "Q3 2026", "Q4 2026"], "series": [{"name": "Revenue ($M)", "values": [14.8, 16.9, 18.4, 19.8]}], "number_format": "$0.0\"M\""},
+  {"op": "text", "slide": 3, "shape": 4, "text": ["+34%", "Q4 vs Q1 2026"]},
+  {"op": "style", "slide": 3, "shape": 4, "fill": "tx2"},
+  {"op": "notes", "slide": 3, "text": "Three quarters of growth in a row after the Q1 dip. Q4 was our best quarter ever, up 22% on Q4 2025."},
+  {"op": "duplicate", "slide": 4, "as": "channels"},
+  {"op": "text", "slide": 4, "shape": 2, "text": "West led Q4, and East is back on plan"},
+  {"op": "table", "slide": 4, "shape": 3, "cells": [null, [[{"runs": [{"text": "West", "bold": true}]}], [{"runs": [{"text": "$7.9M", "bold": true}]}], "+5%", "41.5%"], [null, "$5.9M", "+2%", "39.8%"], [null, "$6.0M", [{"runs": [{"text": "0%", "bold": true}]}], "40.2%"]]},
+  {"op": "notes", "slide": 4, "text": "East returned to plan once the Albany store reopened after its refit."},
+  {"op": "text", "slide": "channels", "shape": 2, "text": "Online grew to 39% of Q4 sales"},
+  {"op": "table", "slide": "channels", "shape": 3, "cells": [["Channel", "Revenue (share)", null, null], ["Stores", "$12.1M (61%)", "−1%", "42.4%"], ["Online", "$7.7M (39%)", "+9%", "37.8%"], [[{"runs": [{"text": "Total", "bold": true}]}], [{"runs": [{"text": "$19.8M (100%)", "bold": true}]}], [{"runs": [{"text": "+3%", "bold": true}]}], [{"runs": [{"text": "40.6%", "bold": true}]}]]]},
+  {"op": "notes", "slide": "channels", "text": "Online beat plan by 9%, ahead of the 38% share target we set in October."},
+  {"op": "import", "from": "new-slides/deck.pptx", "slides": [2], "replace": 5, "as": "priorities"}
+]}

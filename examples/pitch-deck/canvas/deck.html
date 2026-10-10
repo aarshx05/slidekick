@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fernway: seed round</title>
+<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="brand.css">
+<style>
+  :root {
+    --forest: var(--brand-dk2); --paper: var(--brand-lt1); --sand: var(--brand-lt2); --terra: var(--brand-accent2);
+    --sage: var(--brand-accent3); --loam: var(--brand-dk1);
+    --muted: color-mix(in srgb, var(--brand-dk1) 76%, var(--brand-lt1));
+    --rule: color-mix(in srgb, var(--brand-dk2) 28%, var(--brand-lt1));
+    --paper-soft: color-mix(in srgb, var(--brand-lt1) 82%, var(--brand-dk2));
+  }
+  section.slide { background: var(--paper); color: var(--loam); }
+  section.slide.forest { background: var(--forest); color: var(--paper); }
+  section.slide.sand { background: var(--sand); }
+  .hero    { font: 600 64px/70px var(--font-display); letter-spacing: -0.02em; }
+  .title   { font: 600 44px/52px var(--font-display); letter-spacing: -0.015em; color: var(--forest); }
+  .num     { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; color: var(--forest); }
+  .lead    { font: 400 28px/38px var(--font-body); }
+  .body    { font: 400 22px/32px var(--font-body); }
+  .small   { font: 400 18px/26px var(--font-body); color: var(--muted); }
+  .label   { font: 500 18px/26px var(--font-body); letter-spacing: 0.01em; color: var(--muted); }
+  .foot    { font: 400 14px/20px var(--font-body); color: var(--muted); }
+  .strong  { font-weight: 700; color: var(--forest); }
+  .rule    { height: 1px; background: var(--rule); }
+  .terra   { color: var(--terra); }
+</style>
+</head>
+<body>
+<script>if (/[?&]debug/.test(location.search)) document.body.classList.add('debug');</script>
+
+<!-- 1. Title -->
+<section class="slide forest" data-transition="fade">
+  <img data-pptx="image" data-name="Logo" class="abs" src="../brand/assets/fernway-logo-light.svg" alt="Fernway" style="left:64px; top:64px; width:186px; height:40px">
+  <h1 data-pptx="text" data-name="Title" class="abs hero" style="left:64px; top:236px; width:620px">Grown on the roof.<br>Sold one floor down.</h1>
+  <p data-pptx="text" data-name="Subtitle" class="abs lead" style="left:64px; top:404px; width:520px; color:var(--paper-soft)">Greenhouses on top of the grocery stores that sell what they grow.</p>
+  <p data-pptx="text" class="abs label" style="left:64px; top:634px; width:400px; color:var(--paper-soft)">Seed round · 2026</p>
+  <img data-pptx="image" data-name="Gable photo" class="abs" src="../assets/greenhouse-gable.jpg" alt="Greenhouse interior with rows of lettuce" style="left:736px; top:96px; width:480px; height:624px; object-fit:cover">
+  <svg data-pptx="image" data-name="Gable roof" class="abs" style="left:736px; top:96px; width:480px; height:168px" viewBox="0 0 480 168">
+    <polygon points="0,0 240,0 0,168" fill="#1E3D2C"/><polygon points="240,0 480,0 480,168" fill="#1E3D2C"/>
+  </svg>
+  <aside class="notes">Fernway turns the roof of a grocery store into the farm that supplies it. Everything in this deck is about one roof, then twenty.</aside>
+</section>
+
+<!-- 2. Problem -->
+<section class="slide" data-transition="fade">
+  <svg data-pptx="image" data-name="Roofline" class="abs" style="left:64px; top:40px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 226,25 252,1 278,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">Supermarket greens travel 1,800 miles;<br>one in seven is thrown out unsold</h2>
+  <p data-pptx="text" data-name="Stat 1,800" class="abs num" style="left:56px; top:252px; width:640px; font-size:200px; line-height:192px">1,800</p>
+  <p data-pptx="text" class="abs lead" style="left:64px; top:477px; width:560px">miles from field to shelf, on average</p>
+  <div data-pptx="group" data-name="Stat 6 days" class="abs" style="left:750px; top:265px; width:466px; height:118px" data-anim="fade">
+    <p data-pptx="text" class="num" style="font-size:64px; line-height:72px">6 days</p>
+    <p data-pptx="text" class="body" style="margin-top:12px">in transit, losing shelf life every hour</p>
+  </div>
+  <div data-pptx="shape" class="abs rule" style="left:750px; top:410px; width:466px"></div>
+  <div data-pptx="group" data-name="Stat 14%" class="abs" style="left:750px; top:430px; width:466px; height:118px" data-anim="fade">
+    <p data-pptx="text" class="num terra" style="font-size:64px; line-height:72px">14%</p>
+    <p data-pptx="text" class="body" style="margin-top:12px">of leafy greens are thrown out unsold</p>
+  </div>
+  <p data-pptx="text" class="abs foot" style="left:64px; top:660px; width:600px">Illustrative figures for a fictional company.</p>
+  <aside class="notes">Every lettuce in the store has been on the road for most of a week, and one in seven never sells.</aside>
+</section>
+
+<!-- 3. Insight -->
+<section class="slide sand" data-transition="fade">
+  <h2 data-pptx="text" data-name="Statement" class="abs" style="left:64px; top:160px; width:600px; font:600 64px/70px var(--font-display); letter-spacing:-0.02em; color:var(--forest)">The best farmland<br>in town is above<br>the produce aisle</h2>
+  <p data-pptx="text" class="abs body" style="left:64px; top:400px; width:480px">A typical supermarket roof is 40,000&nbsp;sq&nbsp;ft: flat, sunny, built to carry load, and empty.</p>
+  <div data-pptx="shape" data-name="Dimension line" class="abs" style="left:656px; top:330px; width:576px; height:1px; background:var(--forest)"></div>
+  <div data-pptx="shape" class="abs" style="left:656px; top:322px; width:1px; height:17px; background:var(--forest)"></div>
+  <div data-pptx="shape" class="abs" style="left:1231px; top:322px; width:1px; height:17px; background:var(--forest)"></div>
+  <p data-pptx="text" data-name="Dimension label" class="abs label" style="left:860px; top:319px; width:168px; background:var(--sand); color:var(--forest); text-align:center">40,000&nbsp;sq&nbsp;ft</p>
+  <div data-pptx="shape" data-name="!!roof" class="abs" style="left:656px; top:376px; width:576px; height:14px; background:var(--terra)"></div>
+  <div data-pptx="shape" data-name="!!store" class="abs" style="left:672px; top:390px; width:544px; height:330px; background:var(--forest)"></div>
+  <div data-pptx="shape" data-name="!!window" class="abs" style="left:720px; top:464px; width:448px; height:104px; background:var(--sage)"></div>
+  <div data-pptx="shape" data-name="!!door" class="abs" style="left:888px; top:616px; width:112px; height:104px; background:var(--sand)"></div>
+  <aside class="notes">Grocery stores sit on the flattest, sunniest, most structurally sound empty land in any city. Watch the roof.</aside>
+</section>
+
+<!-- 4. How it works (Morph from 3) -->
+<section class="slide" data-transition="morph">
+  <svg data-pptx="image" data-name="Roofline" class="abs" style="left:64px; top:40px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 174,25 200,1 226,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">We farm the roof, and the harvest<br>rides the freight lift down</h2>
+  <svg data-pptx="image" data-name="Greenhouse" class="abs" style="left:80px; top:336px; width:368px; height:168px" viewBox="0 0 368 168">
+    <polygon points="2,62 184,2 366,62 366,166 2,166" fill="#DCE4D3" stroke="#1E3D2C" stroke-width="3" stroke-linejoin="round"/>
+    <line x1="94" y1="32" x2="94" y2="166" stroke="#1E3D2C" stroke-width="2"/><line x1="184" y1="2" x2="184" y2="166" stroke="#1E3D2C" stroke-width="2"/><line x1="274" y1="32" x2="274" y2="166" stroke="#1E3D2C" stroke-width="2"/>
+    <line x1="2" y1="104" x2="366" y2="104" stroke="#1E3D2C" stroke-width="2"/>
+    <g fill="#7F9C7A"><ellipse cx="26" cy="152" rx="18" ry="12"/><ellipse cx="68" cy="152" rx="18" ry="12"/><ellipse cx="116" cy="152" rx="18" ry="12"/><ellipse cx="160" cy="152" rx="18" ry="12"/><ellipse cx="208" cy="152" rx="18" ry="12"/><ellipse cx="252" cy="152" rx="18" ry="12"/><ellipse cx="298" cy="152" rx="18" ry="12"/><ellipse cx="342" cy="152" rx="18" ry="12"/></g>
+  </svg>
+  <div data-pptx="shape" data-name="!!roof" class="abs" style="left:64px; top:504px; width:400px; height:10px; background:var(--forest)"></div>
+  <div data-pptx="shape" data-name="!!store" class="abs" style="left:80px; top:514px; width:368px; height:206px; background:var(--forest)"></div>
+  <div data-pptx="shape" data-name="!!window" class="abs" style="left:104px; top:560px; width:320px; height:64px; background:var(--sage)"></div>
+  <div data-pptx="shape" data-name="!!door" class="abs" style="left:228px; top:648px; width:72px; height:72px; background:var(--paper)"></div>
+  <div data-pptx="shape" data-name="Freight lift" class="abs" style="left:262px; top:514px; width:4px; height:134px; background:var(--paper)"></div>
+
+  <div data-pptx="group" data-name="Step 1" class="abs" style="left:554px; top:236px; width:662px; height:88px" data-anim="fade" data-anim-trigger="after" data-anim-delay="200">
+    <p data-pptx="text" class="abs num" style="left:0; top:0; width:180px; font-size:36px; line-height:40px">5:40&nbsp;am</p>
+    <p data-pptx="text" class="abs body strong" style="left:196px; top:11px; width:466px; line-height:30px">Harvest</p>
+    <p data-pptx="text" class="abs small" style="left:196px; top:45px; width:466px">Picked at dawn, roots on</p>
+  </div>
+  <div data-pptx="shape" class="abs rule" style="left:554px; top:328px; width:662px"></div>
+  <div data-pptx="group" data-name="Step 2" class="abs" style="left:554px; top:344px; width:662px; height:88px" data-anim="fade" data-anim-trigger="after">
+    <p data-pptx="text" class="abs num" style="left:0; top:0; width:180px; font-size:36px; line-height:40px">6:05</p>
+    <p data-pptx="text" class="abs body strong" style="left:196px; top:11px; width:466px; line-height:30px">Pack</p>
+    <p data-pptx="text" class="abs small" style="left:196px; top:45px; width:466px">Washed and boxed in the rooftop pack room</p>
+  </div>
+  <div data-pptx="shape" class="abs rule" style="left:554px; top:436px; width:662px"></div>
+  <div data-pptx="group" data-name="Step 3" class="abs" style="left:554px; top:452px; width:662px; height:88px" data-anim="fade" data-anim-trigger="after">
+    <p data-pptx="text" class="abs num" style="left:0; top:0; width:180px; font-size:36px; line-height:40px">6:12</p>
+    <p data-pptx="text" class="abs body strong" style="left:196px; top:11px; width:466px; line-height:30px">Lift</p>
+    <p data-pptx="text" class="abs small" style="left:196px; top:45px; width:466px">Down the store’s own freight lift</p>
+  </div>
+  <div data-pptx="shape" class="abs rule" style="left:554px; top:544px; width:662px"></div>
+  <div data-pptx="group" data-name="Step 4" class="abs" style="left:554px; top:560px; width:662px; height:88px" data-anim="fade" data-anim-trigger="after">
+    <p data-pptx="text" class="abs num terra" style="left:0; top:0; width:180px; font-size:36px; line-height:40px">6:18</p>
+    <p data-pptx="text" class="abs body strong" style="left:196px; top:11px; width:466px; line-height:30px">Shelf</p>
+    <p data-pptx="text" class="abs small" style="left:196px; top:45px; width:466px">On display, 38 minutes after picking</p>
+  </div>
+  <p data-pptx="text" class="abs small" style="left:554px; top:664px; width:662px; color:var(--forest)">We lease the roof and fund the build. The grocer pays nothing.</p>
+  <aside class="notes">Walk the clock: picked at 5:40, on the shelf at 6:18. We lease the roof and pay for the build, so the grocer has no capex.</aside>
+</section>
+
+<!-- 5. Pilot photo -->
+<section class="slide forest" data-transition="fade">
+  <img data-pptx="image" data-name="Greenhouse photo" class="abs" src="../assets/greenhouse-leaves.jpg" alt="Rows of lettuce growing in a greenhouse" style="left:0; top:0; width:1280px; height:720px; object-fit:cover; object-position:50% 50%">
+  <div data-pptx="shape" data-name="Scrim" class="abs" style="left:0; top:0; width:1280px; height:720px; background:linear-gradient(90deg, rgba(19,38,27,.94) 0%, rgba(19,38,27,.86) 36%, rgba(19,38,27,0) 70%)"></div>
+  <p data-pptx="text" data-name="Stat 38" class="abs num" style="left:52px; top:88px; width:440px; font-size:256px; line-height:240px; color:var(--paper)">38</p>
+  <h2 data-pptx="text" data-name="Headline" class="abs" style="left:64px; top:344px; width:480px; font:400 44px/52px var(--font-display); letter-spacing:-0.01em; color:var(--paper)">minutes from harvest<br>to the shelf</h2>
+  <div data-pptx="shape" class="abs" style="left:64px; top:480px; width:440px; height:1px; background:var(--paper); opacity:.4"></div>
+  <p data-pptx="text" class="abs lead" style="left:64px; top:504px; width:480px; color:var(--paper)">Shrink on our greens: 4%,<br>against 14% for trucked greens</p>
+  <p data-pptx="text" class="abs foot" style="left:64px; top:664px; width:700px; color:var(--paper-soft)">Median across our three pilot stores. Photo: wei / Unsplash. Figures illustrative.</p>
+  <aside class="notes">Fresher greens last longer on the shelf and sell. Shrink on ours is 4%, against 14% for trucked greens.</aside>
+</section>
+
+<!-- 6. Traction -->
+<section class="slide" data-transition="fade">
+  <svg data-pptx="image" data-name="Roofline" class="abs" style="left:64px; top:40px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 680,25 706,1 732,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">Revenue grew 6.9<span style="font:500 32px/52px var(--font-body); letter-spacing:0">×</span> in a year<br>on three pilot roofs</h2>
+  <div data-pptx="chart" data-name="Chart – quarterly revenue" class="abs" style="left:64px; top:232px; width:800px; height:424px; font:400 18px var(--font-body); color:var(--loam)"
+       data-chart='{"type":"column","categories":["Q3 2025","Q4 2025","Q1 2026","Q2 2026","Q3 2026"],"series":[{"name":"Revenue ($k)","values":[38,71,118,196,262]}],"colors":["#1E3D2C"],"labels":true,"label_format":"$#,##0\"k\"","number_format":"$#,##0\"k\"","gridlines":false,"value_axis":false,"gap":56,"grid_color":"#F6F0E4"}'></div>
+  <p data-pptx="text" class="abs num terra" style="left:946px; top:236px; width:270px; font-size:96px; line-height:96px">6.9<span style="font:500 72px/96px var(--font-body); letter-spacing:0">×</span></p>
+  <p data-pptx="text" class="abs small" style="left:946px; top:344px; width:270px">growth from Q3 2025<br>to Q3 2026</p>
+  <div data-pptx="shape" class="abs rule" style="left:946px; top:426px; width:270px"></div>
+  <p data-pptx="text" class="abs num" style="left:946px; top:452px; width:270px; font-size:44px; line-height:52px">$1.05M</p>
+  <p data-pptx="text" class="abs small" style="left:946px; top:512px; width:270px">annual run rate. Roofs 2 and 3 went live in Q1 and Q2&nbsp;2026.</p>
+  <p data-pptx="text" class="abs foot" style="left:946px; top:660px; width:270px">Fernway finance, illustrative.</p>
+  <aside class="notes">Each new roof steps revenue up. Q3 2026 is the first full quarter with all three roofs: $262k, a $1.05M run rate.</aside>
+</section>
+
+<!-- 7. Unit economics -->
+<section class="slide" data-transition="fade">
+  <svg data-pptx="image" data-name="Roofline" class="abs" style="left:64px; top:40px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 88,25 114,1 140,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">Each roof earns $124k a year<br>and pays back in 26 months</h2>
+  <div data-pptx="chart" data-name="Chart – per-roof P&amp;L" class="abs" style="left:440px; top:236px; width:776px; height:368px; font:400 18px var(--font-body); color:var(--loam)"
+       data-chart='{"type":"stacked-bar","categories":["Contribution   $124k","Roof lease and upkeep   −$36k","Inputs and energy   −$121k","Labour   −$132k","Revenue   $413k"],"series":[{"name":"Base","values":[0,124,160,281,0],"color":"#F6F0E4"},{"name":"Revenue","values":[0,0,0,0,413],"color":"#1E3D2C"},{"name":"Costs","values":[0,36,121,132,0],"color":"#7F9C7A"},{"name":"Contribution","values":[124,0,0,0,0],"color":"#C2593A"}],"labels":false,"legend":"none","gridlines":false,"value_axis":false,"min":0,"max":420,"gap":36,"grid_color":"#F6F0E4"}'></div>
+  <p data-pptx="text" class="abs foot" style="left:64px; top:660px; width:900px">Per roof per year: a 30% contribution margin before overhead. Fernway per-roof model, illustrative.</p>
+  <div data-pptx="shape" class="abs" style="left:392px; top:248px; width:1px; height:376px; background:var(--rule)"></div>
+  <p data-pptx="text" data-name="Stat 26" class="abs num" style="left:56px; top:248px; width:300px; font-size:200px; line-height:184px">26</p>
+  <p data-pptx="text" class="abs body" style="left:64px; top:448px; width:280px">months to pay back a $270k roof build</p>
+  <aside class="notes">One roof sells 140,000 lb a year at $2.95, which is $413k. After labour, inputs and the roof lease, $124k is left: a 30% margin and a 26-month payback on a $270k build.</aside>
+</section>
+
+<!-- 8. Market -->
+<section class="slide sand" data-transition="fade">
+  <svg data-pptx="image" data-name="Roofline" class="abs" style="left:64px; top:40px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 330,25 356,1 382,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">9,400 suitable roofs make a $3.9B<br>market in the top 50 metros</h2>
+  <div data-pptx="chart" data-name="Chart – market size" class="abs" style="left:64px; top:236px; width:760px; height:392px; font:400 18px var(--font-body); color:var(--loam)"
+       data-chart='{"type":"stacked-bar","categories":["2030 goal, 400 roofs   $165M","Suitable roofs (SAM)   $3.9B","Greens and herbs (TAM)   $14.8B"],"series":[{"name":"Roofs we can build on","values":[165,3880,3880],"color":"#1E3D2C"},{"name":"Rest of the category","values":[0,0,10920],"color":"#B9C9B3"}],"labels":false,"legend":"none","gridlines":false,"value_axis":false,"min":0,"max":15000,"gap":44,"grid_color":"#E9DFCC"}'></div>
+  <p data-pptx="text" class="abs label strong" style="left:848px; top:252px; width:368px">How we sized it</p>
+  <p data-pptx="text" class="abs small" style="left:848px; top:284px; width:368px; color:var(--loam)">9,400 stores in the top 50 metros have a flat, load-rated roof over 25,000&nbsp;sq&nbsp;ft. At $413k a roof, that is $3.9B.</p>
+  <div data-pptx="shape" class="abs" style="left:848px; top:389px; width:368px; height:1px; background:var(--forest); opacity:.3"></div>
+  <p data-pptx="text" class="abs num terra" style="left:848px; top:412px; width:368px; font-size:44px; line-height:52px">4%</p>
+  <p data-pptx="text" class="abs small" style="left:848px; top:472px; width:368px; color:var(--loam)">of those roofs are our 2030 goal:<br>400 roofs, $165M a year.</p>
+  <p data-pptx="text" class="abs foot" style="left:64px; top:660px; width:760px; color:var(--loam)">Fernway market analysis, illustrative. TAM: US grocery spend on leafy greens and herbs.</p>
+  <aside class="notes">We only count roofs we could build on today: flat, over 25,000 square feet, rated for the load. 400 of them is 4%.</aside>
+</section>
+
+<!-- 9. Comparison table -->
+<section class="slide" data-transition="fade">
+  <svg data-pptx="image" data-name="Roofline" class="abs" style="left:64px; top:40px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 104,25 130,1 156,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">Only rooftop growing skips the truck<br>and costs the grocer nothing</h2>
+  <table data-pptx="table" data-name="Comparison table" class="abs" style="left:64px; top:248px; width:1152px; border-collapse:collapse; font:400 22px/30px var(--font-body); color:var(--loam)">
+    <thead>
+      <tr>
+        <th style="text-align:left; padding:0 16px 14px 16px; font:500 18px/26px var(--font-body); color:var(--muted); border-bottom:2px solid #1E3D2C; width:380px">Model</th>
+        <th style="text-align:right; padding:0 16px 14px 16px; font:500 18px/26px var(--font-body); color:var(--muted); border-bottom:2px solid #1E3D2C">Distance to shelf</th>
+        <th style="text-align:right; padding:0 16px 14px 16px; font:500 18px/26px var(--font-body); color:var(--muted); border-bottom:2px solid #1E3D2C">Cost to grocer</th>
+        <th style="text-align:right; padding:0 16px 14px 16px; font:500 18px/26px var(--font-body); color:var(--muted); border-bottom:2px solid #1E3D2C">Shelf life</th>
+        <th style="text-align:right; padding:0 16px 14px 16px; font:500 18px/26px var(--font-body); color:var(--muted); border-bottom:2px solid #1E3D2C">Energy per lb</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="background:#E9DFCC; border-bottom:1px solid #B9C2B2">
+        <td style="padding:24px 16px; font:600 28px/30px var(--font-display); color:#1E3D2C">Fernway rooftop</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">1 floor</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">$0</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">12–14 days</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">2&nbsp;kWh</td>
+      </tr>
+      <tr style="border-bottom:1px solid #B9C2B2">
+        <td style="padding:24px 16px">Indoor vertical farm</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">40–150 miles</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">$0</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">10–12 days</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">11&nbsp;kWh</td>
+      </tr>
+      <tr style="border-bottom:1px solid #B9C2B2">
+        <td style="padding:24px 16px">Field farm and cold chain</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">~1,800 miles</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">$0</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">5–7 days</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">0.4&nbsp;kWh + diesel</td>
+      </tr>
+      <tr>
+        <td style="padding:24px 16px">In-store growing cabinets</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">0 miles</td>
+        <td style="padding:24px 16px; text-align:right; font-weight:700; color:#1E3D2C">$25k+ each</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">10 days</td>
+        <td style="padding:24px 16px; text-align:right; color:#5E6E63">14&nbsp;kWh</td>
+      </tr>
+    </tbody>
+  </table>
+  <p data-pptx="text" class="abs foot" style="left:64px; top:660px; width:900px">Fernway competitive analysis, illustrative. Energy per lb of leafy greens, growing only.</p>
+  <aside class="notes">Vertical farms skip the field but still truck, and pay for every photon. Cabinets skip the truck but the grocer buys them. We are the only model with both at zero.</aside>
+</section>
+
+<!-- 10. Plan -->
+<section class="slide" data-transition="fade">
+  <h2 data-pptx="text" data-name="Headline" class="abs title" style="left:64px; top:96px; width:900px">The seed round takes us from 3 roofs<br>to 20 by 2028</h2>
+  <svg data-pptx="image" data-name="Roofline timeline" class="abs" style="left:64px; top:500px; width:1152px; height:26px" viewBox="0 0 1152 26"><polyline points="0,25 4,25 30,1 56,25 396,25 422,1 448,25 788,25 814,1 840,25 1152,25" fill="none" stroke="#1E3D2C" stroke-width="2" stroke-linejoin="miter"/></svg>
+  <div data-pptx="group" data-name="2026" class="abs" style="left:64px; top:300px; width:340px; height:360px">
+    <p data-pptx="text" class="abs num" style="left:0; top:80px; width:300px; font-size:112px; line-height:96px">3</p>
+    <p data-pptx="text" class="abs body strong" style="left:0; top:248px; width:300px">2026</p>
+    <p data-pptx="text" class="abs small" style="left:0; top:280px; width:300px">Three pilot roofs live<br>with one regional grocer</p>
+  </div>
+  <div data-pptx="group" data-name="2027" class="abs" style="left:456px; top:300px; width:340px; height:360px" data-anim="wipe-left">
+    <p data-pptx="text" class="abs num" style="left:0; top:32px; width:300px; font-size:168px; line-height:152px">9</p>
+    <p data-pptx="text" class="abs body strong" style="left:0; top:248px; width:300px">2027</p>
+    <p data-pptx="text" class="abs small" style="left:0; top:280px; width:300px">Nine roofs, and a second<br>grocery chain signs</p>
+  </div>
+  <div data-pptx="group" data-name="2028" class="abs" style="left:848px; top:236px; width:368px; height:424px" data-anim="wipe-left">
+    <p data-pptx="text" class="abs num terra" style="left:-10px; top:12px; width:368px; font-size:256px; line-height:256px">20</p>
+    <p data-pptx="text" class="abs body strong" style="left:0; top:312px; width:300px">End of 2028</p>
+    <p data-pptx="text" class="abs small" style="left:0; top:344px; width:300px">Twenty roofs and<br>an $8.3M run rate</p>
+  </div>
+  <aside class="notes">Three roofs today, nine next year with a second chain, twenty by the end of 2028. Twenty roofs at $413k is an $8.3M run rate.</aside>
+</section>
+
+<!-- 11. Ask -->
+<section class="slide forest" data-transition="fade">
+  <img data-pptx="image" data-name="Logo" class="abs" src="../brand/assets/fernway-logo-light.svg" alt="Fernway" style="left:64px; top:64px; width:186px; height:40px">
+  <h2 data-pptx="text" data-name="Headline" class="abs hero" style="left:64px; top:180px; width:600px">Raising $6M to put greens on 20&nbsp;roofs</h2>
+  <div data-pptx="shape" data-name="Funds – roof builds" class="abs" style="left:64px; top:448px; width:318px; height:14px; background:var(--terra)"></div>
+  <div data-pptx="shape" data-name="Funds – team" class="abs" style="left:390px; top:448px; width:144px; height:14px; background:var(--paper)"></div>
+  <div data-pptx="shape" data-name="Funds – software" class="abs" style="left:542px; top:448px; width:82px; height:14px; background:var(--sage)"></div>
+  <div data-pptx="group" data-name="Funds label 1" class="abs" style="left:64px; top:478px; width:300px; height:72px">
+    <p data-pptx="text" class="num" style="font-size:36px; line-height:40px; color:var(--paper)">$3.5M</p>
+    <p data-pptx="text" class="small" style="color:var(--paper-soft)">roof builds</p>
+  </div>
+  <div data-pptx="group" data-name="Funds label 2" class="abs" style="left:390px; top:478px; width:144px; height:72px">
+    <p data-pptx="text" class="num" style="font-size:36px; line-height:40px; color:var(--paper)">$1.6M</p>
+    <p data-pptx="text" class="small" style="color:var(--paper-soft)">team and ops</p>
+  </div>
+  <div data-pptx="group" data-name="Funds label 3" class="abs" style="left:542px; top:478px; width:150px; height:72px">
+    <p data-pptx="text" class="num" style="font-size:36px; line-height:40px; color:var(--paper)">$0.9M</p>
+    <p data-pptx="text" class="small" style="color:var(--paper-soft)">software</p>
+  </div>
+  <p data-pptx="text" data-name="Contact" class="abs lead" style="left:64px; top:592px; width:560px; color:var(--paper)">founders@fernway.example</p>
+  <p data-pptx="text" class="abs foot" style="left:64px; top:660px; width:560px; color:var(--paper-soft)">Fernway is a fictional company. All figures are illustrative.</p>
+  <img data-pptx="image" data-name="Gable photo" class="abs" src="../assets/greenhouse-gable.jpg" alt="Greenhouse interior with rows of lettuce" style="left:736px; top:96px; width:480px; height:624px; object-fit:cover">
+  <svg data-pptx="image" data-name="Gable roof" class="abs" style="left:736px; top:96px; width:480px; height:168px" viewBox="0 0 480 168">
+    <polygon points="0,0 240,0 0,168" fill="#1E3D2C"/><polygon points="240,0 480,0 480,168" fill="#1E3D2C"/>
+  </svg>
+  <aside class="notes">We are raising $6M. $3.5M goes onto roofs, $1.6M into the growing team, $0.9M into the climate-control software that runs every roof.</aside>
+</section>
+
+</body>
+</html>

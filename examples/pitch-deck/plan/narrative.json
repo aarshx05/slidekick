@@ -1,0 +1,155 @@
+{
+  "title": "Fernway: seed round",
+  "objective": "Seed investors take a second meeting to lead or join a $6M round.",
+  "audience": {
+    "who": "Seed-stage investors, generalist and climate/food-tech partners",
+    "knowledge": "practitioner",
+    "context": "investor pitch, first meeting, 20 minutes, presented",
+    "cares_about": [
+      "unit economics",
+      "capital intensity",
+      "path to scale",
+      "market size"
+    ],
+    "objections": [
+      "Vertical farms failed on energy costs",
+      "Will grocers give up their roofs?",
+      "Does one roof make money?",
+      "Is the market big enough?"
+    ]
+  },
+  "mode": "presented",
+  "tone": "editorial, warm, numbers-forward",
+  "big_idea": "A grocery store's roof is profitable farmland, so $6M turns three pilot roofs into a 20-roof business.",
+  "arc": "problem-solution-proof-ask",
+  "length": {
+    "slides": 11,
+    "minutes": 18
+  },
+  "beats": [
+    {
+      "id": "b1",
+      "purpose": "hook",
+      "message": "Fernway grows produce on the roof of the store that sells it."
+    },
+    {
+      "id": "b2",
+      "purpose": "problem",
+      "message": "Supermarket greens travel 1,800 miles, and one in seven is thrown out unsold.",
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "id": "b3",
+      "purpose": "insight",
+      "message": "The best farmland in a city is the flat, empty roof above the produce aisle.",
+      "evidence": [
+        "s3"
+      ]
+    },
+    {
+      "id": "b4",
+      "purpose": "how-it-works",
+      "message": "We build and run the greenhouse, and the harvest takes the freight lift instead of a truck.",
+      "evidence": [
+        "s4"
+      ]
+    },
+    {
+      "id": "b5",
+      "purpose": "proof",
+      "message": "At our pilot stores, greens reach the shelf 38 minutes after harvest.",
+      "evidence": [
+        "s4"
+      ]
+    },
+    {
+      "id": "b6",
+      "purpose": "proof",
+      "message": "Revenue grew 6.9× in a year on three pilot roofs.",
+      "evidence": [
+        "s5"
+      ]
+    },
+    {
+      "id": "b7",
+      "purpose": "proof",
+      "message": "Each roof earns $124k a year and pays back its build in 26 months.",
+      "evidence": [
+        "s6"
+      ]
+    },
+    {
+      "id": "b8",
+      "purpose": "context",
+      "message": "9,400 suitable roofs make a $3.9B market in the top 50 US metros.",
+      "evidence": [
+        "s7"
+      ]
+    },
+    {
+      "id": "b9",
+      "purpose": "comparison",
+      "message": "Only rooftop growing reaches the shelf with no truck and no cost to the grocer.",
+      "evidence": [
+        "s8"
+      ]
+    },
+    {
+      "id": "b10",
+      "purpose": "plan",
+      "message": "The seed round takes Fernway from 3 roofs to 20 by the end of 2028.",
+      "evidence": [
+        "s9"
+      ]
+    },
+    {
+      "id": "b11",
+      "purpose": "ask",
+      "message": "We are raising $6M to put greens on 20 roofs.",
+      "evidence": [
+        "s9"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "ref": "Fernway market research (illustrative)"
+    },
+    {
+      "id": "s2",
+      "ref": "Pilot grocer shrink data (illustrative)"
+    },
+    {
+      "id": "s3",
+      "ref": "Fernway roof surveys (illustrative)"
+    },
+    {
+      "id": "s4",
+      "ref": "Fernway pilot operations logs (illustrative)"
+    },
+    {
+      "id": "s5",
+      "ref": "Fernway finance, quarterly revenue (illustrative)"
+    },
+    {
+      "id": "s6",
+      "ref": "Fernway per-roof model (illustrative)"
+    },
+    {
+      "id": "s7",
+      "ref": "Fernway market analysis (illustrative)"
+    },
+    {
+      "id": "s8",
+      "ref": "Fernway competitive analysis (illustrative)"
+    },
+    {
+      "id": "s9",
+      "ref": "Fernway operating plan 2026–2028 (illustrative)"
+    }
+  ]
+}

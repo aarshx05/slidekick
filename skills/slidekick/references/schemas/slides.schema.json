@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mid-level IR: semantic slides",
+  "type": "object",
+  "required": ["slides"],
+  "properties": {
+    "design": {
+      "type": "object",
+      "description": "Deck-wide visual decisions taken once, before slides.",
+      "properties": {
+        "grid": {"type": "string"}, "type_scale": {"type": "object"}, "background_strategy": {"type": "string"},
+        "transition_default": {"type": "string"}, "animation_policy": {"type": "string"}
+      }
+    },
+    "slides": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "beat", "archetype", "headline", "blocks"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "beat": {"type": "string"},
+          "archetype": {"enum": ["title", "agenda", "section", "statement", "bullets", "two-column", "image-full", "image-split",
+                                  "stats", "chart", "table", "timeline", "process", "comparison", "quote", "team", "logo-wall",
+                                  "product-shot", "before-after", "cta", "closing"]},
+          "headline": {"type": "string", "description": "Action title: the slide's takeaway as a sentence (except title/section slides)."},
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["role"],
+              "properties": {
+                "role": {"enum": ["kicker", "subtitle", "body", "bullets", "stat", "chart", "table", "image", "logo", "icon",
+                                   "quote", "attribution", "caption", "callout", "step", "card", "cta", "footnote", "source"]},
+                "content": {},
+                "asset": {"type": "string"},
+                "source": {"type": "string"},
+                "emphasis": {"type": "integer", "minimum": 0, "maximum": 3}
+              }
+            }
+          },
+          "visual": {"type": "string", "description": "What the eye lands on first and how it is treated."},
+          "transition": {"type": "string"},
+          "build": {"type": "string", "description": "Animation intent, e.g. 'cards float in one by one on click'."},
+          "notes": {"type": "string", "description": "Speaker notes — what is said, not shown."}
+        }
+      }
+    }
+  }
+}

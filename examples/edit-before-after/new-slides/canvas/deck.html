@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Halden Q4: redesigned slides</title>
+<link rel="stylesheet" href="deck.css">
+<link rel="stylesheet" href="brand.css">
+<style>
+  /* The deck's own system, taken from inspect/inventory.json: Office theme, Calibri, 44pt centred title in a
+     1152x120 box at (64,29), 32pt body, white ground, navy (tx2) for the one accent (the restyled callout). */
+  section.slide { background: #FFFFFF; color: #000000; font-family: var(--font-body); }
+  .title { font: 400 58.667px/70px var(--font-display); text-align: center; padding-top: 25px; }
+  .num   { font: 700 88px/96px var(--font-body); color: var(--brand-dk2); }
+  .lbl   { font: 400 32px/40px var(--font-body); color: #404040; }
+  .body  { font: 400 32px/40px var(--font-body); }
+  .metric{ font: 700 48px/56px var(--font-body); color: var(--brand-dk2); }
+  .rule  { height: 1px; background: #BFBFBF; }
+</style>
+</head>
+<body>
+
+<!-- Replaces slide 2 (Q4 highlights) -->
+<section class="slide" data-transition="none">
+  <h1 data-pptx="text" data-name="Title 1" class="abs title" style="left:64px; top:29px; width:1152px; height:120px">Record Q4: revenue up 22% to $19.8M</h1>
+  <div data-pptx="group" data-name="Stat revenue" class="abs" style="left:64px; top:240px; width:352px; height:192px">
+    <p data-pptx="text" class="num">$19.8M</p>
+    <p data-pptx="text" class="lbl" style="margin-top:16px">best quarter yet,<br>$1.4M above Q3</p>
+  </div>
+  <div data-pptx="group" data-name="Stat margin" class="abs" style="left:464px; top:240px; width:352px; height:192px">
+    <p data-pptx="text" class="num">40.6%</p>
+    <p data-pptx="text" class="lbl" style="margin-top:16px">gross margin,<br>down 0.6 points on Q3</p>
+  </div>
+  <div data-pptx="group" data-name="Stat online" class="abs" style="left:864px; top:240px; width:352px; height:192px">
+    <p data-pptx="text" class="num">39%</p>
+    <p data-pptx="text" class="lbl" style="margin-top:16px">of revenue online,<br>up from 34% in Q3</p>
+  </div>
+  <div data-pptx="shape" class="abs rule" style="left:64px; top:480px; width:1152px"></div>
+  <p data-pptx="text" class="abs body" style="left:64px; top:512px; width:1152px">Holiday campaign sales beat plan by 7%</p>
+  <aside class="notes">Best quarter in our history, driven by the holiday campaign. Margin dipped on promotions and the shift to online.</aside>
+</section>
+
+<!-- Replaces slide 5 (Q1 priorities) -->
+<section class="slide" data-transition="none">
+  <h1 data-pptx="text" data-name="Title 1" class="abs title" style="left:64px; top:29px; width:1152px; height:120px">Q1 priority: win back margin</h1>
+  <p data-pptx="text" class="abs metric" style="left:64px; top:208px; width:384px">18% → 12%</p>
+  <p data-pptx="text" class="abs body" style="left:480px; top:222px; width:736px">Cut markdowns as a share of sales</p>
+  <div data-pptx="shape" class="abs rule" style="left:64px; top:296px; width:1152px"></div>
+  <p data-pptx="text" class="abs metric" style="left:64px; top:320px; width:384px">2 outlets</p>
+  <p data-pptx="text" class="abs body" style="left:480px; top:334px; width:736px">Close the two underperforming outlets</p>
+  <div data-pptx="shape" class="abs rule" style="left:64px; top:408px; width:1152px"></div>
+  <p data-pptx="text" class="abs metric" style="left:64px; top:432px; width:384px">37.8% → 40%</p>
+  <p data-pptx="text" class="abs body" style="left:480px; top:446px; width:736px">Lift the online gross margin</p>
+  <div data-pptx="shape" class="abs rule" style="left:64px; top:520px; width:1152px"></div>
+  <p data-pptx="text" class="abs metric" style="left:64px; top:544px; width:384px">2 carriers</p>
+  <p data-pptx="text" class="abs body" style="left:480px; top:558px; width:736px">Renegotiate freight with both carriers</p>
+  <aside class="notes">Margin fell 0.6 points on promotions and the shift to online. These four actions win it back in Q1.</aside>
+</section>
+
+</body>
+</html>

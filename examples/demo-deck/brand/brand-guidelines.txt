@@ -1,0 +1,23 @@
+Colour
+Signal Violet (primary)
+#5B4BFF
+Coral (accent)
+#FF6B4A
+Ink
+#14122B
+Mint
+#18C29C
+Sky
+#2EA8FF
+Sun
+#FFC23D
+Typography
+Display typeface: Manrope (ExtraBold 800 for headlines, Bold 700 for titles)
+Body typeface: Inter (Regular 400, SemiBold 600)
+Logo
+- Clear space: at least the height of the mark on every side.
+- Minimum size: 24 px tall on screen.
+- Use the dark logo on light backgrounds and the light logo on Ink or Violet.
+- Never place Coral text on Violet; never recolour or stretch the logo.
+- Violet is the hero colour; Coral is for one highlight per slide.
+Slidekick · Brand guidelines v1.2

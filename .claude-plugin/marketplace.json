@@ -1,0 +1,16 @@
+{
+  "name": "slidekick",
+  "description": "Brief in, deck out. Make, edit and review fully editable, on-brand PowerPoint decks with one command.",
+  "owner": {
+    "name": "aarshx05",
+    "url": "https://github.com/aarshx05"
+  },
+  "plugins": [
+    {
+      "name": "slidekick",
+      "source": "./",
+      "description": "Create on-brand, fully editable .pptx decks (HTML canvas -> native PowerPoint objects -> PowerPoint QA), edit existing decks in place, and analyse any deck, with a fresh-eyes design review.",
+      "version": "1.0.0"
+    }
+  ]
+}

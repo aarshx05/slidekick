@@ -1,0 +1,269 @@
+{
+  "design": {
+    "concept": "The logo is a stack of three cards; the deck is about what comes off the top of that stack. Every piece of proof is a real output of the tool, pulled off a pile of slides.",
+    "signature_device": "The stack: the mark's three offset rounded cards (Coral, Violet, Ink/white) at the mark's own offsets. They Morph from the title into the frame behind the first product image, then into the brief → brand → deck panels, and return as the offset layers behind real screenshots.",
+    "compositions": [
+      "dark title with the big stack",
+      "statement + framed 'picture of a slide'",
+      "three unequal panels (brief, kit, deck)",
+      "annotated slide render + object counts",
+      "kit board → slide",
+      "full-bleed QA strip",
+      "numbers only on Ink",
+      "mode list + stacked before/after",
+      "native score chart + review note",
+      "dark CTA with command"
+    ],
+    "grid": "64px margins, 12 columns of 74px, 24px gutters",
+    "type_scale": {
+      "hero": "Manrope 800, 96/100, -0.03em",
+      "statement": "Manrope 800, 56/64, -0.02em",
+      "title": "Manrope 700, 44/52, -0.015em",
+      "lead": "Inter 400, 26/36",
+      "body": "Inter 400, 22/32",
+      "label": "Inter 600, 18/26",
+      "footnote": "Inter 400, 14/20"
+    },
+    "background_strategy": "Ink for title, the numbers slide and the close; Mist for the brand and review slides; white for the rest.",
+    "transition_default": "fade; Morph 1→2→3 so the logo's stack becomes the product frame and then the three panels",
+    "animation_policy": "Builds only where order tells the story: the three panels (brief, kit, deck), the before → after pair, the numbers. Fade or float, never on headlines."
+  },
+  "slides": [
+    {
+      "id": "title",
+      "beat": "b1",
+      "archetype": "title",
+      "headline": "Meet Slidekick",
+      "blocks": [
+        {
+          "role": "logo",
+          "asset": "brand/assets/logo-primary-light.svg"
+        },
+        {
+          "role": "subtitle",
+          "content": "Turn a brief and your brand kit into a PowerPoint deck you can actually edit."
+        },
+        {
+          "role": "image",
+          "content": "the logo's three stacked cards, large, on the right"
+        }
+      ],
+      "visual": "Ink ground; hero type left; the stack of three cards right.",
+      "transition": "fade",
+      "notes": "Slidekick is a Claude Code skill. You type /slidekick, give it a brief and your brand kit, and get back a real .pptx."
+    },
+    {
+      "id": "pain",
+      "beat": "b2",
+      "archetype": "statement",
+      "headline": "Decks still take a day, and most AI tools hand back pictures of slides",
+      "blocks": [
+        {
+          "role": "image",
+          "asset": "assets/fernway-slide-07.png",
+          "content": "a slide shown as one selected picture: 'Picture 1, 1 object'"
+        }
+      ],
+      "visual": "Statement left; a slide image framed by the stack with a single selection box around the whole thing.",
+      "transition": "morph",
+      "notes": "Click into most AI-made slides and the whole slide is one picture. Change a word and you are back to rebuilding it."
+    },
+    {
+      "id": "what",
+      "beat": "b3",
+      "archetype": "process",
+      "headline": "Your brief and brand kit in, an editable deck out",
+      "blocks": [
+        {
+          "role": "card",
+          "content": "brief.md excerpt"
+        },
+        {
+          "role": "image",
+          "asset": "assets/fernway-brand-board.png"
+        },
+        {
+          "role": "image",
+          "asset": "assets/fernway-slide-grid.jpg"
+        }
+      ],
+      "visual": "The stack Morphs into three unequal panels: brief (Mist), brand kit (Violet), deck (Ink).",
+      "transition": "morph",
+      "build": "panels appear left to right",
+      "notes": "This is a real run: the Fernway example in this repo."
+    },
+    {
+      "id": "native",
+      "beat": "b4",
+      "archetype": "product-shot",
+      "headline": "Every word, chart and table is native PowerPoint",
+      "blocks": [
+        {
+          "role": "image",
+          "asset": "assets/fernway-slide-07.png"
+        },
+        {
+          "role": "callout",
+          "content": "text box, native chart, text box"
+        },
+        {
+          "role": "stat",
+          "content": "object counts from inspect of the Fernway deck"
+        }
+      ],
+      "visual": "The same slide large, now with an outline around each real object; counts on the right.",
+      "transition": "fade",
+      "notes": "Same slide as before, now as it really is: a text box, a chart with its data in Excel, live numerals."
+    },
+    {
+      "id": "brand",
+      "beat": "b5",
+      "archetype": "two-column",
+      "headline": "It builds from your kit: template, logos, colours, fonts and rules",
+      "blocks": [
+        {
+          "role": "image",
+          "asset": "assets/fernway-brand-board.png"
+        },
+        {
+          "role": "image",
+          "asset": "assets/fernway-slide-01.png"
+        }
+      ],
+      "visual": "Mist ground; the brand board on the stack on the left, the resulting title slide on the right.",
+      "transition": "fade",
+      "notes": "It reads .potx templates, logos, tokens, CSS and guideline PDFs, then shows you a brand board to confirm."
+    },
+    {
+      "id": "qa",
+      "beat": "b6",
+      "archetype": "image-full",
+      "headline": "Every build is rendered in real PowerPoint and checked against the design",
+      "blocks": [
+        {
+          "role": "image",
+          "asset": "assets/fernway-qa-compare.png"
+        },
+        {
+          "role": "caption",
+          "content": "Design · PowerPoint render · difference"
+        }
+      ],
+      "visual": "A full-bleed strip: design, PowerPoint render, diff.",
+      "transition": "fade",
+      "notes": "QA forgives ±2 px of renderer jitter. A rewrapped line, a shifted block or a wrong colour fails the build."
+    },
+    {
+      "id": "numbers",
+      "beat": "b7",
+      "archetype": "stats",
+      "headline": "Text lands exactly where it was designed",
+      "blocks": [
+        {
+          "role": "stat",
+          "content": {
+            "value": "0 px",
+            "label": "baseline error across 175 text styles calibrated against PowerPoint"
+          },
+          "source": "s1",
+          "emphasis": 3
+        },
+        {
+          "role": "stat",
+          "content": {
+            "value": "25",
+            "label": "transitions, Morph included"
+          },
+          "source": "s2"
+        },
+        {
+          "role": "stat",
+          "content": {
+            "value": "14",
+            "label": "entrance animations"
+          },
+          "source": "s3"
+        }
+      ],
+      "visual": "Ink ground; one huge number; two smaller ones in a column.",
+      "transition": "fade",
+      "build": "the two smaller numbers fade in",
+      "notes": "Before calibration, text could sit up to 8 px off. Now it lands where it was designed."
+    },
+    {
+      "id": "modes",
+      "beat": "b8",
+      "archetype": "before-after",
+      "headline": "Create a deck, edit yours in place, or review one",
+      "blocks": [
+        {
+          "role": "bullets",
+          "content": [
+            "Create",
+            "Edit",
+            "Review"
+          ]
+        },
+        {
+          "role": "image",
+          "asset": "assets/halden-before-03.png"
+        },
+        {
+          "role": "image",
+          "asset": "assets/halden-after-03.png"
+        }
+      ],
+      "visual": "Three modes listed left, Edit marked; a before/after pair from the Halden example stacked on the right.",
+      "transition": "fade",
+      "build": "the After card fades in beside Before",
+      "notes": "Edit mode keeps their template and formatting, and changes only what you ask."
+    },
+    {
+      "id": "review",
+      "beat": "b9",
+      "archetype": "chart",
+      "headline": "A fresh-eyes reviewer scores the design before anything ships",
+      "blocks": [
+        {
+          "role": "chart",
+          "content": "Fernway review scores per dimension"
+        },
+        {
+          "role": "quote",
+          "content": "one real finding with its fix"
+        }
+      ],
+      "visual": "Mist ground; native bar chart of eight scores; one finding set like an editor's note.",
+      "transition": "fade",
+      "notes": "The author never signs off their own design. A separate reviewer scores eight dimensions; nothing ships under 4."
+    },
+    {
+      "id": "cta",
+      "beat": "b10",
+      "archetype": "cta",
+      "headline": "Try it on your next deck",
+      "blocks": [
+        {
+          "role": "cta",
+          "content": "/plugin install slidekick@slidekick"
+        },
+        {
+          "role": "caption",
+          "content": "github.com/aarshx05/slidekick"
+        },
+        {
+          "role": "logo",
+          "asset": "brand/assets/logo-primary-light.svg"
+        },
+        {
+          "role": "image",
+          "asset": "assets/fernway-slide-01.jpg",
+          "content": "the payoff: a real slide on top of the stack"
+        }
+      ],
+      "visual": "Ink ground; the command in a framed box; the stack returns.",
+      "transition": "fade",
+      "notes": "Install it, point it at your brand kit, and ask for your next deck."
+    }
+  ]
+}

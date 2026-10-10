@@ -1,0 +1,190 @@
+{
+  "name": "Halden Outdoor",
+  "theme": {
+    "dk1": "000000",
+    "lt1": "FFFFFF",
+    "dk2": "1F497D",
+    "lt2": "EEECE1",
+    "accent1": "4F81BD",
+    "accent2": "C0504D",
+    "accent3": "9BBB59",
+    "accent4": "8064A2",
+    "accent5": "4BACC6",
+    "accent6": "F79646",
+    "hlink": "0000FF",
+    "folHlink": "800080"
+  },
+  "colors": {
+    "primary": "#4F81BD",
+    "background": "#FFFFFF",
+    "text": "#000000",
+    "dark": "#1F497D",
+    "surface": "#EEECE1",
+    "accents": [
+      "#4F81BD",
+      "#C0504D",
+      "#9BBB59",
+      "#8064A2",
+      "#4BACC6",
+      "#F79646"
+    ]
+  },
+  "fonts": {
+    "display": {
+      "family": "Calibri",
+      "installed": true,
+      "files": [],
+      "fallback": "Segoe UI, Arial, sans-serif"
+    },
+    "body": {
+      "family": "Calibri",
+      "installed": true,
+      "files": [],
+      "fallback": "Segoe UI, Arial, sans-serif"
+    },
+    "files": []
+  },
+  "logos": [],
+  "template": "../../before.pptx",
+  "imagery": [],
+  "guidelines": [],
+  "rules": [],
+  "review": {
+    "note": "Auto-extracted. Check the brand board, fix roles/colors/logos here, then run `deck.py tokens`.",
+    "color_candidates": [
+      {
+        "hex": "#4F81BD",
+        "weight": 6,
+        "names": [
+          "accent1"
+        ],
+        "sources": [
+          "before.pptx:accent1"
+        ]
+      },
+      {
+        "hex": "#C0504D",
+        "weight": 6,
+        "names": [
+          "accent2"
+        ],
+        "sources": [
+          "before.pptx:accent2"
+        ]
+      },
+      {
+        "hex": "#9BBB59",
+        "weight": 6,
+        "names": [
+          "accent3"
+        ],
+        "sources": [
+          "before.pptx:accent3"
+        ]
+      },
+      {
+        "hex": "#8064A2",
+        "weight": 6,
+        "names": [
+          "accent4"
+        ],
+        "sources": [
+          "before.pptx:accent4"
+        ]
+      },
+      {
+        "hex": "#4BACC6",
+        "weight": 6,
+        "names": [
+          "accent5"
+        ],
+        "sources": [
+          "before.pptx:accent5"
+        ]
+      },
+      {
+        "hex": "#F79646",
+        "weight": 6,
+        "names": [
+          "accent6"
+        ],
+        "sources": [
+          "before.pptx:accent6"
+        ]
+      },
+      {
+        "hex": "#000000",
+        "weight": 3,
+        "names": [
+          "dk1"
+        ],
+        "sources": [
+          "before.pptx:dk1"
+        ]
+      },
+      {
+        "hex": "#FFFFFF",
+        "weight": 3,
+        "names": [
+          "lt1"
+        ],
+        "sources": [
+          "before.pptx:lt1"
+        ]
+      },
+      {
+        "hex": "#1F497D",
+        "weight": 3,
+        "names": [
+          "dk2"
+        ],
+        "sources": [
+          "before.pptx:dk2"
+        ]
+      },
+      {
+        "hex": "#EEECE1",
+        "weight": 3,
+        "names": [
+          "lt2"
+        ],
+        "sources": [
+          "before.pptx:lt2"
+        ]
+      },
+      {
+        "hex": "#0000FF",
+        "weight": 3,
+        "names": [
+          "hlink"
+        ],
+        "sources": [
+          "before.pptx:hlink"
+        ]
+      },
+      {
+        "hex": "#800080",
+        "weight": 3,
+        "names": [
+          "folHlink"
+        ],
+        "sources": [
+          "before.pptx:folHlink"
+        ]
+      }
+    ],
+    "font_candidates": [
+      {
+        "family": "Calibri",
+        "role": "display",
+        "source": "before.pptx:majorFont"
+      },
+      {
+        "family": "Calibri",
+        "role": "body",
+        "source": "before.pptx:minorFont"
+      }
+    ],
+    "font_files": []
+  }
+}

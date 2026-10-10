@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slidekick: your slide sidekick. Brief in, editable on-brand PowerPoint out</title>
+<meta name="description" content="An agent skill that makes fully editable, on-brand PowerPoint decks, edits the ones you have without breaking them, and reviews any deck. Checked against real PowerPoint. Free and open source.">
+<meta property="og:title" content="Slidekick: brief in, deck out">
+<meta property="og:description" content="Real PowerPoint, on your brand, every word editable. An open-source agent skill for Claude Code, Codex and more.">
+<meta property="og:image" content="https://aarshx05.github.io/slidekick/assets/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Slidekick home"><img src="assets/favicon.svg" alt="" width="28" height="28"><span>Slidekick</span></a>
+  <nav>
+    <a href="#gallery">Gallery</a>
+    <a href="#how">How it works</a>
+    <a href="#faq">FAQ</a>
+    <a class="gh" href="https://github.com/aarshx05/slidekick">GitHub</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow">Your slide sidekick · Free &amp; open source · Claude Code · Codex · Antigravity · Cursor</p>
+    <h1>Brief in. Deck out.<br><span class="hl">Every word editable.</span></h1>
+    <p class="lede">An agent skill that turns your brief, docs, data or repo into a <strong>native, on-brand PowerPoint deck</strong>. It edits the decks you already have without breaking them, and reviews any deck like a design director. Every build is checked in real PowerPoint before you see it.</p>
+    <div class="cta">
+      <div class="cmd" data-copy="/plugin marketplace add aarshx05/slidekick&#10;/plugin install slidekick@slidekick">
+        <code><span class="p">&gt;</span> /plugin install slidekick@slidekick</code>
+        <button type="button" aria-label="Copy install commands">Copy</button>
+      </div>
+      <a class="btn" href="#install">All install options</a>
+    </div>
+    <figure class="stage">
+      <video autoplay muted loop playsinline poster="assets/hero.png" preload="metadata">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+    </figure>
+  </section>
+
+  <section class="strip" aria-label="What makes it different">
+    <div><b>Native objects</b><span>text, charts, tables, SVG, groups</span></div>
+    <div><b>25 transitions</b><span>Morph included, plus 14 entrance animations</span></div>
+    <div><b>0 px</b><span>baseline error vs PowerPoint, across 175 styles</span></div>
+    <div><b>Fresh-eyes review</b><span>nothing ships below 4/5</span></div>
+  </section>
+
+  <section class="modes">
+    <h2>One skill, three jobs</h2>
+    <div class="cards">
+      <article>
+        <span class="tag">Create</span>
+        <h3>From a brief to a finished deck</h3>
+        <p>Docs, a spreadsheet, a website, a repo, or a sentence. You get a story, slides with one idea each, and a <code>.pptx</code> on your brand that you can keep editing like one you made yourself.</p>
+        <p class="say">“make a 10-slide seed pitch from this repo”</p>
+      </article>
+      <article>
+        <span class="tag">Edit</span>
+        <h3>Change your deck, not its design</h3>
+        <p>Update numbers, charts and tables, rewrite headlines, swap images, reorder or import slides. Masters, fonts and every slide you didn't mention stay exactly as they were.</p>
+        <p class="say">“update the Q3 numbers to Q4 and keep the rest”</p>
+      </article>
+      <article>
+        <span class="tag">Review</span>
+        <h3>A design director on call</h3>
+        <p>Real renders, an outline, mechanical issues like overflow, tiny text and low contrast, a story critique, and a scored design review with exact fixes. Works on .pptx, .ppt, .odp and .pdf.</p>
+        <p class="say">“review this deck before Friday”</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Made with Slidekick</h2>
+    <p class="sub">Every example ships with its brief, plan, canvas, QA report and design review, and rebuilds from its own folder.</p>
+    <div class="shots">
+      <a href="https://github.com/aarshx05/slidekick/tree/main/examples/demo-deck"><img src="assets/gallery/demo-deck.png" alt="Meet Slidekick: ten slides on the demo brand kit" loading="lazy"><span><b>Meet Slidekick</b> the launch deck, on the demo brand kit</span></a>
+      <a href="https://github.com/aarshx05/slidekick/tree/main/examples/pitch-deck"><img src="assets/gallery/pitch-deck.png" alt="Fernway seed pitch with native charts and Morph" loading="lazy"><span><b>Fernway seed pitch</b> native charts, a table, Morph</span></a>
+      <a href="https://github.com/aarshx05/slidekick/tree/main/examples/edit-before-after"><img src="assets/gallery/edit-before-after.png" alt="An existing deck before and after an in-place edit" loading="lazy"><span><b>Edit: Q3 → Q4</b> the same deck, new numbers, nothing broken</span></a>
+    </div>
+  </section>
+
+  <section id="how" class="how">
+    <h2>Why the deck comes out right</h2>
+    <ol>
+      <li><b>Designed as a canvas.</b> The agent lays out every slide in HTML and CSS against your brand tokens, and Chromium solves the layout.</li>
+      <li><b>Compiled to native PowerPoint.</b> Each element becomes a real object: text boxes with runs and bullets, shapes, vector SVG, tables, charts with an embedded workbook, groups, transitions, animations.</li>
+      <li><b>Checked in real PowerPoint.</b> PowerPoint renders the file, <code>/slidekick</code> pixel-diffs it against the design and reads back what PowerPoint parsed. Problems get fixed before you open it.</li>
+      <li><b>Reviewed by fresh eyes.</b> A lint for near-misses, runts, type sprawl and AI-deck tells, then an independent reviewer scores 8 dimensions. It ships only when nothing is below 4/5.</li>
+    </ol>
+  </section>
+
+  <section id="install" class="install">
+    <h2>Install</h2>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="claude">Claude Code</button>
+      <button role="tab" aria-selected="false" data-tab="codex">Codex</button>
+      <button role="tab" aria-selected="false" data-tab="any">Any agent</button>
+    </div>
+    <div class="panel" data-panel="claude">
+      <div class="cmd block" data-copy="/plugin marketplace add aarshx05/slidekick&#10;/plugin install slidekick@slidekick"><pre>/plugin marketplace add aarshx05/slidekick
+/plugin install slidekick@slidekick</pre><button type="button">Copy</button></div>
+      <p>Then just ask: <em>“/slidekick make a deck about …”</em></p>
+    </div>
+    <div class="panel" data-panel="codex" hidden>
+      <div class="cmd block" data-copy="codex plugin marketplace add aarshx05/slidekick&#10;codex plugin add slidekick@slidekick"><pre>codex plugin marketplace add aarshx05/slidekick
+codex plugin add slidekick@slidekick</pre><button type="button">Copy</button></div>
+    </div>
+    <div class="panel" data-panel="any" hidden>
+      <div class="cmd block" data-copy="npx skills add https://github.com/aarshx05/slidekick --skill slidekick"><pre>npx skills add https://github.com/aarshx05/slidekick --skill slidekick</pre><button type="button">Copy</button></div>
+      <p>Works with Cursor, Copilot, Gemini CLI, opencode, Antigravity and more. <a href="https://github.com/aarshx05/slidekick/blob/main/docs/other-agents.md">Other agents →</a></p>
+    </div>
+    <p class="req">Needs Python 3.10+ and Edge or Chrome. PowerPoint is optional but recommended for ground-truth QA (Windows, or Mac in beta). Without it, LibreOffice gives an approximate check.</p>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Questions</h2>
+    <details><summary>Is the PowerPoint really editable?</summary><p>Yes. Headlines are text boxes, bullets are real bullets, and charts are native charts with their data in an embedded workbook that you can open from PowerPoint. Transitions and animations are PowerPoint's own. Images are used only for photos and screenshots.</p></details>
+    <details><summary>Do I need PowerPoint installed?</summary><p>No. Without PowerPoint, <code>/slidekick</code> uses LibreOffice to check its work, which is a close approximation. With PowerPoint on Windows you get ground-truth QA, including readback of transitions and animations. PowerPoint for Mac is supported in beta for render checks.</p></details>
+    <details><summary>Will it match my brand?</summary><p>Give it whatever you have: logos, a palette, fonts, a <code>.potx</code> or <code>.pptx</code> template, design tokens or a guidelines PDF. It builds on your template's masters and theme. No kit? It can take the identity from your website or product.</p></details>
+    <details><summary>Can it edit a deck someone else made?</summary><p>Yes. Edit mode reads the deck first, then changes only what you asked for, in place. Untouched slides, masters and fonts stay as they were, and the result is re-rendered to catch any text that no longer fits.</p></details>
+    <details><summary>Does my content leave my machine?</summary><p>No. The pipeline runs locally. It goes online only to install its Python packages on first run, to fetch a Google Font you ask for, or to capture a URL you give it.</p></details>
+    <details><summary>What does it cost?</summary><p>Nothing. Slidekick is MIT-licensed. You use it with the agent you already have.</p></details>
+  </section>
+</main>
+
+<footer>
+  <p><b>Slidekick</b> · MIT · made by <a href="https://github.com/aarshx05">aarshx05</a> · launch video made with <a href="https://github.com/latent-spaces/brag">/brag</a></p>
+  <p><a href="https://github.com/aarshx05/slidekick">GitHub</a> · <a href="https://github.com/aarshx05/slidekick/issues">Issues</a> · <a href="https://github.com/aarshx05/slidekick/blob/main/CHANGELOG.md">Changelog</a></p>
+</footer>
+
+<script>
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelector('.stage video')?.pause();
+  document.querySelectorAll('.cmd').forEach(el => {
+    const btn = el.querySelector('button');
+    btn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(el.dataset.copy); btn.textContent = 'Copied'; }
+      catch { btn.textContent = 'Select & copy'; }
+      setTimeout(() => (btn.textContent = 'Copy'), 1600);
+    });
+  });
+  document.querySelectorAll('.tabs button').forEach(tab => tab.addEventListener('click', () => {
+    document.querySelectorAll('.tabs button').forEach(t => t.setAttribute('aria-selected', t === tab));
+    document.querySelectorAll('.panel').forEach(p => (p.hidden = p.dataset.panel !== tab.dataset.tab));
+  }));
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+{
+  "title": "Meet Slidekick",
+  "objective": "Deck makers install Slidekick and try it on their next deck.",
+  "audience": {
+    "who": "Founders, PMs, marketers and consultants who make decks",
+    "knowledge": "practitioner",
+    "context": "product launch: README gallery, landing page and short talks",
+    "cares_about": [
+      "time",
+      "editability",
+      "looking on-brand",
+      "not looking AI-made"
+    ],
+    "objections": [
+      "AI deck tools export pictures",
+      "It won't match our brand",
+      "It will look different in PowerPoint",
+      "I already have a deck",
+      "AI design looks generic"
+    ]
+  },
+  "mode": "presented",
+  "tone": "confident, plain-spoken, launch energy without hype",
+  "big_idea": "Slidekick gives you a real PowerPoint deck: native objects, your brand, checked in PowerPoint before you see it.",
+  "arc": "before-after-bridge",
+  "length": {
+    "slides": 10,
+    "minutes": 8
+  },
+  "beats": [
+    {
+      "id": "b1",
+      "purpose": "hook",
+      "message": "Slidekick turns a brief and your brand kit into a PowerPoint deck you can edit."
+    },
+    {
+      "id": "b2",
+      "purpose": "problem",
+      "message": "Decks still take a day, and most AI tools hand back pictures of slides."
+    },
+    {
+      "id": "b3",
+      "purpose": "solution",
+      "message": "You give it a brief and your brand kit, and you get back an editable deck.",
+      "evidence": [
+        "s5"
+      ]
+    },
+    {
+      "id": "b4",
+      "purpose": "proof",
+      "message": "Every word, chart and table is native PowerPoint.",
+      "evidence": [
+        "s5"
+      ]
+    },
+    {
+      "id": "b5",
+      "purpose": "proof",
+      "message": "It builds from your kit: template, logos, colours, fonts and rules.",
+      "evidence": [
+        "s5"
+      ]
+    },
+    {
+      "id": "b6",
+      "purpose": "proof",
+      "message": "Every build is rendered in real PowerPoint and checked against the design.",
+      "evidence": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "id": "b7",
+      "purpose": "proof",
+      "message": "Text lands exactly where it was designed, and every transition and animation is read back from PowerPoint.",
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "id": "b8",
+      "purpose": "how-it-works",
+      "message": "It creates decks, edits yours in place, and reviews any deck.",
+      "evidence": [
+        "s6"
+      ]
+    },
+    {
+      "id": "b9",
+      "purpose": "proof",
+      "message": "A fresh-eyes reviewer scores the design before anything ships.",
+      "evidence": [
+        "s7"
+      ]
+    },
+    {
+      "id": "b10",
+      "purpose": "ask",
+      "message": "Install it and try it on your next deck."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "ref": "Baseline calibration run, PowerPoint 16 on Windows 11 (earlier demo brief, October 2026)"
+    },
+    {
+      "id": "s2",
+      "ref": "Transition read-back test, PowerPoint 16 (earlier demo brief)"
+    },
+    {
+      "id": "s3",
+      "ref": "Animation read-back test, PowerPoint 16 (earlier demo brief)"
+    },
+    {
+      "id": "s4",
+      "ref": "skills/slidekick/references/step-5-build.md, Notes on fidelity"
+    },
+    {
+      "id": "s5",
+      "ref": "examples/pitch-deck (Fernway): brief, brand board, deck.pptx, QA"
+    },
+    {
+      "id": "s6",
+      "ref": "examples/edit-before-after (Halden Q3 → Q4)"
+    },
+    {
+      "id": "s7",
+      "ref": "examples/pitch-deck/qa/review.json"
+    }
+  ]
+}

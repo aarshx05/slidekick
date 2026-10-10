@@ -1,0 +1,13 @@
+{
+  "name": "slidekick",
+  "description": "Make, edit and review PowerPoint decks that are fully editable and on-brand: brief + brand kit in, native .pptx out (real text, shapes, charts, Morph, animations), checked against real PowerPoint and reviewed by fresh eyes.",
+  "version": "1.0.0",
+  "author": {
+    "name": "aarshx05",
+    "url": "https://github.com/aarshx05"
+  },
+  "license": "MIT",
+  "homepage": "https://aarshx05.github.io/slidekick/",
+  "repository": "https://github.com/aarshx05/slidekick",
+  "keywords": ["powerpoint", "pptx", "presentation", "slides", "pitch-deck", "brand", "design", "edit", "review", "skill"]
+}

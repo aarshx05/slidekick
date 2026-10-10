@@ -1,0 +1,307 @@
+{
+  "name": "Fernway",
+  "theme": {
+    "dk1": "13261B",
+    "lt1": "F6F0E4",
+    "dk2": "1E3D2C",
+    "lt2": "E9DFCC",
+    "accent1": "1E3D2C",
+    "accent2": "C2593A",
+    "accent3": "7F9C7A",
+    "accent4": "E3B39C",
+    "accent5": "B9C9B3",
+    "accent6": "5E6E63",
+    "hlink": "1E3D2C",
+    "folHlink": "5E6E63"
+  },
+  "colors": {
+    "primary": "#1E3D2C",
+    "background": "#F6F0E4",
+    "text": "#13261B",
+    "dark": "#1E3D2C",
+    "surface": "#E9DFCC",
+    "accents": [
+      "#1E3D2C",
+      "#C2593A",
+      "#7F9C7A",
+      "#E3B39C",
+      "#B9C9B3",
+      "#5E6E63"
+    ]
+  },
+  "fonts": {
+    "display": {
+      "family": "Fraunces",
+      "installed": true,
+      "files": [
+        "fonts/Fraunces-400.ttf",
+        "fonts/Fraunces-600.ttf",
+        "fonts/Fraunces-700.ttf"
+      ],
+      "fallback": "Georgia, serif"
+    },
+    "body": {
+      "family": "DM Sans",
+      "installed": true,
+      "files": [
+        "fonts/DMSans-400.ttf",
+        "fonts/DMSans-500.ttf",
+        "fonts/DMSans-700.ttf"
+      ],
+      "fallback": "Arial, sans-serif"
+    },
+    "files": [
+      "fonts/DMSans-400.ttf",
+      "fonts/DMSans-500.ttf",
+      "fonts/DMSans-700.ttf",
+      "fonts/Fraunces-400.ttf",
+      "fonts/Fraunces-600.ttf",
+      "fonts/Fraunces-700.ttf"
+    ]
+  },
+  "logos": [
+    {
+      "path": "assets/fernway-logo-dark.svg",
+      "name": "fernway-logo-dark.svg",
+      "from_master": false,
+      "width": 232.4,
+      "height": 50.0,
+      "has_alpha": true,
+      "colors": [
+        "1E3D2C",
+        "C2593A"
+      ],
+      "vector": true,
+      "mean_luminance": 0.07576411368016667,
+      "shape": "wordmark",
+      "variant": "for-light-backgrounds"
+    },
+    {
+      "path": "assets/fernway-logo-light.svg",
+      "name": "fernway-logo-light.svg",
+      "from_master": false,
+      "width": 232.4,
+      "height": 50.0,
+      "has_alpha": true,
+      "colors": [
+        "F6F0E4",
+        "C2593A"
+      ],
+      "vector": true,
+      "mean_luminance": 0.7036572712568209,
+      "shape": "wordmark",
+      "variant": "for-dark-backgrounds"
+    },
+    {
+      "path": "assets/fernway-mark-light.svg",
+      "name": "fernway-mark-light.svg",
+      "from_master": false,
+      "width": 48.0,
+      "height": 48.0,
+      "has_alpha": true,
+      "colors": [
+        "F6F0E4",
+        "C2593A"
+      ],
+      "vector": true,
+      "mean_luminance": 0.646494884856411,
+      "shape": "mark",
+      "variant": "for-dark-backgrounds"
+    },
+    {
+      "path": "assets/fernway-mark.svg",
+      "name": "fernway-mark.svg",
+      "from_master": false,
+      "width": 48.0,
+      "height": 48.0,
+      "has_alpha": true,
+      "colors": [
+        "1E3D2C",
+        "C2593A"
+      ],
+      "vector": true,
+      "mean_luminance": 0.08836763367716287,
+      "shape": "mark",
+      "variant": "for-light-backgrounds"
+    }
+  ],
+  "template": null,
+  "imagery": [],
+  "guidelines": [],
+  "rules": [
+    "Fernway is a fictional company created for the Slidekick example gallery. All figures are illustrative.",
+    "Forest #1E3D2C is the brand colour: dark grounds and primary data. Paper #F6F0E4 is the default ground.",
+    "Terracotta #C2593A marks one thing per slide. It is 3.9:1 on Paper, so use it only for text 24 px and larger or for shapes.",
+    "Display: Fraunces 600 for headlines and numerals, 400 for large leads. Body: DM Sans 400/500/700.",
+    "Logo: dark lockup on Paper/Sand, light lockup on Forest. Clear space = the mark's height; minimum 24 px tall."
+  ],
+  "review": {
+    "note": "Auto-extracted. Check the brand board, fix roles/colors/logos here, then run `deck.py tokens`.",
+    "color_candidates": [
+      {
+        "hex": "#C2593A",
+        "weight": 18,
+        "names": [
+          "fernway-terracotta"
+        ],
+        "sources": [
+          "brand.css:--fernway-terracotta",
+          "logo:fernway-logo-dark.svg",
+          "logo:fernway-logo-light.svg",
+          "logo:fernway-mark-light.svg"
+        ]
+      },
+      {
+        "hex": "#1E3D2C",
+        "weight": 10,
+        "names": [
+          "fernway-forest"
+        ],
+        "sources": [
+          "brand.css:--fernway-forest",
+          "logo:fernway-logo-dark.svg",
+          "logo:fernway-mark.svg"
+        ]
+      },
+      {
+        "hex": "#F6F0E4",
+        "weight": 10,
+        "names": [
+          "fernway-paper"
+        ],
+        "sources": [
+          "brand.css:--fernway-paper",
+          "logo:fernway-logo-light.svg",
+          "logo:fernway-mark-light.svg"
+        ]
+      },
+      {
+        "hex": "#E9DFCC",
+        "weight": 2,
+        "names": [
+          "fernway-sand"
+        ],
+        "sources": [
+          "brand.css:--fernway-sand"
+        ]
+      },
+      {
+        "hex": "#7F9C7A",
+        "weight": 2,
+        "names": [
+          "fernway-sage"
+        ],
+        "sources": [
+          "brand.css:--fernway-sage"
+        ]
+      },
+      {
+        "hex": "#13261B",
+        "weight": 2,
+        "names": [
+          "fernway-loam"
+        ],
+        "sources": [
+          "brand.css:--fernway-loam"
+        ]
+      }
+    ],
+    "font_candidates": [
+      {
+        "family": "Fraunces",
+        "role": "display",
+        "source": "brand.css:h1, h2, h3"
+      },
+      {
+        "family": "DM Sans",
+        "role": "body",
+        "source": "brand.css:body"
+      },
+      {
+        "family": "DM Sans",
+        "role": "file",
+        "source": "DMSans-400.ttf"
+      },
+      {
+        "family": "DM Sans",
+        "role": "file",
+        "source": "DMSans-500.ttf"
+      },
+      {
+        "family": "DM Sans",
+        "role": "file",
+        "source": "DMSans-700.ttf"
+      },
+      {
+        "family": "Fraunces",
+        "role": "file",
+        "source": "Fraunces-400.ttf"
+      },
+      {
+        "family": "Fraunces",
+        "role": "file",
+        "source": "Fraunces-600.ttf"
+      },
+      {
+        "family": "Fraunces",
+        "role": "file",
+        "source": "Fraunces-700.ttf"
+      }
+    ],
+    "font_files": [
+      {
+        "file": "fonts/DMSans-400.ttf",
+        "family": "DM Sans",
+        "legacy_family": "DM Sans",
+        "weight": 400,
+        "italic": false,
+        "fsType": 0
+      },
+      {
+        "file": "fonts/DMSans-500.ttf",
+        "family": "DM Sans",
+        "legacy_family": "DM Sans Medium",
+        "weight": 500,
+        "italic": false,
+        "fsType": 0
+      },
+      {
+        "file": "fonts/DMSans-700.ttf",
+        "family": "DM Sans",
+        "legacy_family": "DM Sans",
+        "weight": 700,
+        "italic": false,
+        "fsType": 0
+      },
+      {
+        "file": "fonts/Fraunces-400.ttf",
+        "family": "Fraunces",
+        "legacy_family": "Fraunces",
+        "weight": 400,
+        "italic": false,
+        "fsType": 0
+      },
+      {
+        "file": "fonts/Fraunces-600.ttf",
+        "family": "Fraunces",
+        "legacy_family": "Fraunces SemiBold",
+        "weight": 600,
+        "italic": false,
+        "fsType": 0
+      },
+      {
+        "file": "fonts/Fraunces-700.ttf",
+        "family": "Fraunces",
+        "legacy_family": "Fraunces",
+        "weight": 700,
+        "italic": false,
+        "fsType": 0
+      }
+    ]
+  },
+  "chart_palette": [
+    "#1E3D2C",
+    "#C2593A",
+    "#7F9C7A"
+  ]
+}

@@ -1,0 +1,11 @@
+# Ranges cap at the next major version so a fresh install can't pull in a breaking release.
+python-pptx>=1.0.2,<2
+lxml>=5.0,<7
+XlsxWriter>=3.1,<4
+playwright>=1.44,<2
+Pillow>=10.0,<13
+numpy>=1.26,<3
+fonttools[woff]>=4.50,<5
+PyMuPDF>=1.24,<2
+jsonschema>=4.21,<5
+pywin32>=306; sys_platform == "win32"

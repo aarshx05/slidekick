@@ -1,0 +1,90 @@
+{
+  "mode": "edit",
+  "round": 3,
+  "slides_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "scores": {
+    "hierarchy": 4,
+    "composition": 4,
+    "typography": 4,
+    "alignment": 4,
+    "colour": 4,
+    "imagery": 4,
+    "brand": 4,
+    "copy": 4
+  },
+  "verdict": "ship",
+  "findings": [
+    {
+      "slide": 2,
+      "severity": "polish",
+      "dimension": "typography",
+      "element": "the three stat labels (#5, #8, #11, 24 pt #404040)",
+      "problem": "All three labels wrap greedily onto a second line at the box edge, and two of the breaks split a number from what it qualifies: 'down 0.6 / points on Q3' and 'up from / 34% in Q3'. The first label ends in a short runt line, 'above Q3'.",
+      "fix": "Break at the phrase with a line break (\\v), keeping the wording: {\"op\":\"text\",\"slide\":2,\"shape\":5,\"text\":\"best quarter yet,\\v$1.4M above Q3\"}, {\"op\":\"text\",\"slide\":2,\"shape\":8,\"text\":\"gross margin,\\vdown 0.6 points on Q3\"}, {\"op\":\"text\",\"slide\":2,\"shape\":11,\"text\":\"of revenue online,\\vup from 34% in Q3\"}. Each second line fits the 352 px box at 24 pt."
+    },
+    {
+      "slide": 6,
+      "severity": "polish",
+      "dimension": "alignment",
+      "element": "action text boxes (#4, #7, #10, #13) beside the navy metrics",
+      "problem": "Each row is centred vertically rather than aligned on the baseline. The 24 pt action sits about 6–7 px (canvas) higher than the baseline of the 36 pt metric beside it, for example 'Cut markdowns as a share of sales' against '18% → 12%'. It reads as a near-miss on all four rows.",
+      "fix": "Move each action box down 7 px: {\"op\":\"geometry\",\"slide\":6,\"shape\":4,\"y\":223}, shape 7 y 335, shape 10 y 447, shape 13 y 559. Then check that the two baselines coincide in the render."
+    },
+    {
+      "slide": 0,
+      "severity": "polish",
+      "dimension": "alignment",
+      "element": "content left edge on the two imported slides (2 and 6) against slides 3–5",
+      "problem": "The new slides start content and rules at x=64, the title-box edge, while the tables on slides 4 and 5 start at x=86. Advancing 2 → 3 → 4 → 5 → 6, the content edge moves 64 → ~95 (chart axis) → 86 → 86 → 64. The headline doesn't move, so this is minor, but the new slides are siblings of the tables and could share their edge.",
+      "fix": "Optional. Shift the slide 2 and slide 6 content onto the table grid (x=86, right edge 1190): {\"op\":\"geometry\",\"slide\":6,\"shape\":5,\"x\":86,\"w\":1104} for each rule (#5, #8, #11 on slide 6; #12 on slide 2), +22 px x on each metric and stat group, and narrow the action boxes to w 710. Otherwise leave as is: both slides are internally consistent."
+    },
+    {
+      "slide": 6,
+      "severity": "polish",
+      "dimension": "copy",
+      "element": "metrics '2 outlets' and '2 carriers' (#6, #12)",
+      "problem": "Rows 1 and 3 put a real target in the navy metric column (18% → 12%, 37.8% → 40%). Rows 2 and 4 put a count there, and the action beside it repeats that count ('Close the two…', '…both carriers'). The accent column loses its meaning on half the rows.",
+      "fix": "If the owner's plan has each action's margin effect or saving (for example, a points or $ figure), use it in #6 and #12. Don't invent one. If none exists, leave as is."
+    },
+    {
+      "slide": 3,
+      "severity": "polish",
+      "dimension": "imagery",
+      "element": "chart major gridlines at $20.0M",
+      "problem": "Still open from rounds 1 and 2. The heavy black $20.0M gridline runs between the '$19.8M' label and its bar and grazes the top of the '$18.4M' label. Every bar is labelled directly, so the gridlines do no work.",
+      "fix": "No deck.py op covers chart gridlines. In PowerPoint, use Chart Elements > Gridlines off, or format the major gridlines to light grey (bg1, darker 15%) at 0.75 pt. If left as is, the chart still reads correctly."
+    }
+  ],
+  "fixed": [
+    "Round 1 majors: slide 3's headline, callout and notes are now one argument. Slide 5's table carries the 39% and a bold Total row. Slide 6's actions all serve 'win back margin'.",
+    "Round 1 polish: slide 2 no longer repeats the headline in its body and names the margin base; slide 4 bolds West and East's 0%.",
+    "Round 2 polish: slide 5's Total cell is now '$19.8M (100%)', so the right-aligned money column lines up again. Slide 2's notes match slide 6's ('promotions and the shift to online').",
+    "Composition, round 2's open 3: slides 2 and 6 are rebuilt as a three-stat slide and a ruled target/action list. The deck now has 5 distinct compositions in 7 slides: title, stats, chart, table pair, ruled list and close. The text-heavy bullet slides that left the lower 40% empty are gone. Both new slides are true siblings. The title renders at the same position, size, weight and centring as slides 3–5 (no jump when advancing). Calibri is the only family, the white ground is unchanged, and navy tx2 keeps the one meaning it has on slide 3's callout: the number that matters."
+  ],
+  "keep": [
+    "The title is pixel-identical across slides 2–6 (64,29 1152×120, 44 pt Calibri, centred, one line each), including the two imported slides.",
+    "Navy tx2 as the single accent role: slide 3's callout, slide 2's stats and slide 6's targets all mean the key number. Black bold marks emphasis inside the tables. No new colours; rules are neutral #BFBFBF hairlines.",
+    "Slide 2's stat row: three numbers at 66 pt bold carry the quarter at a glance, at even 48 px gutters, with one supporting line under a rule.",
+    "Slide 6's ruled list with real arrows (18% → 12%) and no boxes: the strongest new composition and still clearly an Office-theme slide.",
+    "Real minus signs, consistent decimals, and figures that reconcile across slides: $19.8M = regions = channels, 40.6% blended margin, 39% = 7.7 / 19.8, +34% = 19.8 / 14.8, and $1.4M = 19.8 − 18.4. 'Up from 34% in Q3' matches last quarter's deck."
+  ],
+  "dismissed": [
+    "Inspector contrast warning on slide 3 #4 Callout (#000000 on #184878): false positive. The render shows white text from the shape style, at about 8.6:1 on the navy.",
+    "taste lint type-scale '42.5px and 48px too close': 32 pt now appears only in the title slides' subtitles, and 36 pt only in slide 3's callout and slide 6's metrics. The two sizes never share a slide, so they don't read as competing levels.",
+    "Shape rename of slide 5's 'Regional table': there is no rename op, and the name isn't visible on screen.",
+    "Slide 2's hero stat repeats the headline's $19.8M: the headline makes the claim and the stat is its evidence. The label adds new information ($1.4M above Q3), so it isn't redundant."
+  ],
+  "summary": "Round 3. The two imported slides are convincing siblings: same title box and render position, same Calibri, white ground and grey neutrals, and navy used only for the key number, as on slide 3. They lift composition from 3 to 4: 5 distinct layouts in 7 slides, with two text slides replaced by a stat row and a ruled target list. Round 2's polish (Total cell, slide 2 notes) landed. Every dimension is now at 4 with no blockers or majors, so the deck meets the ship bar. What remains is optional finish: phrase breaks in slide 2's stat labels, a 7 px baseline nudge on slide 6, an optional shared left edge with the tables, real targets for '2 outlets' and '2 carriers' if they exist, and slide 3's gridline (manual only). Off-screen note: the imported slides use the Blank layout with a text-box title, so PowerPoint's outline view and accessibility checker may report them as untitled.",
+  "applied_after_review": [
+    "Slide 2 stat labels now break at the phrase ('best quarter yet, / $1.4M above Q3' etc.)",
+    "Slide 6 action text moved onto the metric baselines (taste lint: 0 baseline findings)"
+  ]
+}

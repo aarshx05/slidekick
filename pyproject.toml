@@ -1,0 +1,14 @@
+# Tooling config only. The skill installs its own dependencies from skills/slidekick/scripts/requirements.txt.
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["powerpoint: needs Microsoft PowerPoint (Windows or Mac); skipped when it isn't installed"]
+
+[tool.ruff]
+line-length = 190
+target-version = "py310"
+extend-exclude = [".backup"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+# E741: short math names (l, I) are deliberate in the geometry code; B023: closures are called inside the loop
+ignore = ["E701", "E702", "E731", "E741", "B007", "B008", "B023", "B905"]

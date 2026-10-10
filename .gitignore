@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.venv/
+deck-output*/
+build/
+qa/
+# example decks ship their review + reports (but not the bulky compare images)
+!examples/*/qa/
+examples/*/qa/*.png
+!examples/*/qa/contact-sheet.png
+.DS_Store
+.backup/
+*-inspect/
+*-edited.pptx
+*.pptx.bak
+# keep the cross-agent skill symlink, ignore local Claude Code settings
+.claude/*
+!.claude/skills/
+# /brag working output (the finished video is copied to docs/assets/)
+brag-output*/
