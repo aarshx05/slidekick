@@ -77,3 +77,37 @@ def test_powerpoint_renders_every_slide(built, tmp_path):
     info = render(built["pptx"], tmp_path / "render", engine="powerpoint")
     assert info["engine"].startswith("powerpoint")
     assert len(list((tmp_path / "render").glob("slide-*.png"))) == len(built["layout"]["slides"])
+
+
+def test_finds_chromium_built_for_another_playwright(monkeypatch, tmp_path):
+    """Cloud sandboxes ship one pinned Chromium and block `playwright install`: use what's on disk."""
+    from deckkit import util
+    for rel in ("chromium-1194/chrome-linux/chrome", "chromium-1208/chrome-linux/chrome",
+                "chromium_headless_shell-1194/chrome-linux/headless_shell", "ffmpeg-1011/ffmpeg-linux"):
+        exe = tmp_path / rel
+        exe.parent.mkdir(parents=True)
+        exe.write_text("")
+    monkeypatch.setenv("PLAYWRIGHT_BROWSERS_PATH", str(tmp_path))
+    monkeypatch.setattr(util.shutil, "which", lambda name: None)
+    found = [p.relative_to(tmp_path).as_posix() for p in util.installed_chromiums() if tmp_path in p.parents]
+    assert found[0] == "chromium-1208/chrome-linux/chrome"  # newest build first
+    assert "chromium_headless_shell-1194/chrome-linux/headless_shell" in found
+    assert not any(f.startswith("ffmpeg") for f in found)
+
+
+def test_launch_falls_back_to_chromium_on_disk(monkeypatch, tmp_path):
+    from deckkit import util
+    exe = tmp_path / "chrome"
+    monkeypatch.setattr(util, "installed_chromiums", lambda: [exe])
+
+    class Chromium:
+        def launch(self, headless, channel=None, executable_path=None):
+            if executable_path != str(exe):
+                raise RuntimeError(f"Executable doesn't exist ({channel or 'bundled'})\nlog")
+            return "browser"
+
+    pw = type("PW", (), {"chromium": Chromium()})()
+    assert util.launch_browser(pw) == "browser"
+    monkeypatch.setattr(util, "installed_chromiums", lambda: [])
+    with pytest.raises(RuntimeError, match="No Chromium browser available"):
+        util.launch_browser(pw)

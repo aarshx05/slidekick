@@ -4,6 +4,8 @@ import http.server
 import json
 import os
 import pathlib
+import re
+import shutil
 import socketserver
 import sys
 import threading
@@ -87,14 +89,61 @@ def serve_dir(root):
         httpd.server_close()
 
 
+_CHROMIUM_EXES = ("chrome", "chrome.exe", "chrome-headless-shell", "chrome-headless-shell.exe",
+                  "headless_shell", "headless_shell.exe", "Chromium.app/Contents/MacOS/Chromium",
+                  "Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing")
+
+
+def installed_chromiums() -> list[pathlib.Path]:
+    """Chromium builds already on disk that Playwright didn't install for its own version:
+    any build in a Playwright browsers folder (newest first), then system Chromium/Chrome.
+    Cloud sandboxes often ship one pinned build and block `playwright install`."""
+    roots = []
+    env = os.environ.get("PLAYWRIGHT_BROWSERS_PATH", "")
+    if env and env != "0":
+        roots.append(pathlib.Path(env))
+    home = pathlib.Path.home()
+    roots += [home / ".cache" / "ms-playwright", home / "Library" / "Caches" / "ms-playwright"]
+    if os.environ.get("LOCALAPPDATA"):
+        roots.append(pathlib.Path(os.environ["LOCALAPPDATA"]) / "ms-playwright")
+
+    def build(d):
+        m = re.search(r"-(\d+)$", d.name)
+        return int(m.group(1)) if m else -1
+
+    found = []
+    for root in roots:
+        if not root.is_dir():
+            continue
+        for d in sorted(root.glob("chromium*"), key=build, reverse=True):
+            if d.is_file() and os.access(d, os.X_OK):  # e.g. a launcher symlink
+                found.append(d)
+            elif d.is_dir():
+                found += [p for exe in _CHROMIUM_EXES for p in d.glob(f"*/{exe}") if p.is_file()]
+    for name in ("chromium", "chromium-browser", "google-chrome", "google-chrome-stable"):
+        if shutil.which(name):
+            found.append(pathlib.Path(shutil.which(name)))
+    unique = []
+    for p in found:
+        if p not in unique:
+            unique.append(p)
+    return unique
+
+
 def launch_browser(playwright):
-    """Prefer an installed Edge/Chrome so no browser download is needed."""
+    """Prefer an installed Edge/Chrome so no browser download is needed; then Playwright's
+    own build; then any Chromium already on disk, even one made for another Playwright version."""
     errors = []
     for kw in ({"channel": "msedge"}, {"channel": "chrome"}, {}):
         try:
             return playwright.chromium.launch(headless=True, **kw)
         except Exception as e:  # noqa: BLE001 - try next channel
             errors.append(f"{kw or 'bundled chromium'}: {str(e).splitlines()[0]}")
+    for exe in installed_chromiums():
+        try:
+            return playwright.chromium.launch(headless=True, executable_path=str(exe))
+        except Exception as e:  # noqa: BLE001 - try the next build
+            errors.append(f"{exe}: {str(e).splitlines()[0]}")
     raise RuntimeError("No Chromium browser available. Install Edge/Chrome or run "
                        "`python -m playwright install chromium`.\n" + "\n".join(errors))
 
