@@ -75,8 +75,9 @@ def _ensure_env() -> None:
         print("[deck] installing dependencies (first run only)", file=sys.stderr)
         subprocess.check_call([str(py), "-m", "pip", "install", "-q", "--disable-pip-version-check", "-r", str(REQ)])
         stamp.write_text(want)
-    env = dict(os.environ, DECK_IN_VENV="1", PYTHONIOENCODING="utf-8")
-    sys.exit(subprocess.call([str(py), str(HERE / "deck.py"), *sys.argv[1:]], env=env))
+    os.environ["DECK_IN_VENV"] = "1"
+    os.environ["PYTHONIOENCODING"] = "utf-8"
+    sys.exit(subprocess.call([str(py), str(HERE / "deck.py"), *sys.argv[1:]]))
 
 
 if __name__ == "__main__":
