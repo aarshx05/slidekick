@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2
+
+**Fixed**
+- The Chromium fallback from 1.1.1 no longer reads environment variables. It asks Playwright where its browsers folder is, so the module that also serves the local preview at `127.0.0.1` reads nothing from the environment. This clears a plugin-directory review hold that read the two together as a credential leaving the machine. Behaviour is unchanged.
+
 ## 1.1.1
 
 **Fixed**

@@ -94,25 +94,29 @@ _CHROMIUM_EXES = ("chrome", "chrome.exe", "chrome-headless-shell", "chrome-headl
                   "Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing")
 
 
-def installed_chromiums() -> list[pathlib.Path]:
+def _browsers_root(playwright):
+    """The folder Playwright keeps its browsers in, from where it expects its own Chromium."""
+    try:
+        exe = pathlib.Path(playwright.chromium.executable_path)
+    except Exception:  # noqa: BLE001 - no Playwright-managed browsers
+        return None
+    return next((d.parent for d in exe.parents if d.name.startswith("chromium")), None)
+
+
+def installed_chromiums(playwright=None) -> list[pathlib.Path]:
     """Chromium builds already on disk that Playwright didn't install for its own version:
     any build in a Playwright browsers folder (newest first), then system Chromium/Chrome.
     Cloud sandboxes often ship one pinned build and block `playwright install`."""
-    roots = []
-    env = os.environ.get("PLAYWRIGHT_BROWSERS_PATH", "")
-    if env and env != "0":
-        roots.append(pathlib.Path(env))
     home = pathlib.Path.home()
-    roots += [home / ".cache" / "ms-playwright", home / "Library" / "Caches" / "ms-playwright"]
-    if os.environ.get("LOCALAPPDATA"):
-        roots.append(pathlib.Path(os.environ["LOCALAPPDATA"]) / "ms-playwright")
+    roots = [_browsers_root(playwright) if playwright else None, home / ".cache" / "ms-playwright",
+             home / "Library" / "Caches" / "ms-playwright", home / "AppData" / "Local" / "ms-playwright"]
 
     def build(d):
         m = re.search(r"-(\d+)$", d.name)
         return int(m.group(1)) if m else -1
 
     found = []
-    for root in roots:
+    for root in filter(None, roots):
         if not root.is_dir():
             continue
         for d in sorted(root.glob("chromium*"), key=build, reverse=True):
@@ -139,7 +143,7 @@ def launch_browser(playwright):
             return playwright.chromium.launch(headless=True, **kw)
         except Exception as e:  # noqa: BLE001 - try next channel
             errors.append(f"{kw or 'bundled chromium'}: {str(e).splitlines()[0]}")
-    for exe in installed_chromiums():
+    for exe in installed_chromiums(playwright):
         try:
             return playwright.chromium.launch(headless=True, executable_path=str(exe))
         except Exception as e:  # noqa: BLE001 - try the next build
