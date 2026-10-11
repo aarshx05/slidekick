@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.3
+
+**Changed**
+- The example decks, the `.potx` templates and the demo kit's guidelines PDF moved to [aarshx05/aarshx05](https://github.com/aarshx05/aarshx05/tree/main/assets/slidekick/examples), so the plugin bundle holds only text, images and fonts. This clears the plugin directory's `BINARIES_NOT_INSPECTED` hold. Each example's README links its files and gives the `curl` lines to fetch them before a rebuild.
+- Tests generate their own `.potx` instead of reading the kit's template.
+
 ## 1.1.2
 
 **Fixed**

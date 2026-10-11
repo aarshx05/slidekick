@@ -48,10 +48,10 @@ def test_core_properties_are_scrubbed(built):
 
 
 def test_template_author_does_not_leak(tmp_path, built):
-    from conftest import BRAND_KIT
+    from conftest import make_potx
     from deckkit.compile import open_template, reset_core_props
 
-    prs = open_template(BRAND_KIT / "deck-template.potx")
+    prs = open_template(make_potx(tmp_path / "deck-template.potx"))
     prs.core_properties.author = "Someone Else"
     reset_core_props(prs, "Deck Bot")
     out = tmp_path / "t.pptx"

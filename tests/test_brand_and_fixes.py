@@ -2,7 +2,7 @@
 import json
 import pathlib
 
-from conftest import BRAND_KIT
+from conftest import BRAND_KIT, make_potx
 from pptx import Presentation
 from pptx.chart.data import CategoryChartData
 from pptx.enum.chart import XL_CHART_TYPE
@@ -27,6 +27,7 @@ def test_brand_json_paths_are_relative_and_resolve(tmp_path, monkeypatch):
     # the kit sits beside the project (same drive: CI keeps the repo on D: and temp on C:), passed as a relative path,
     # which used to be stored relative to the cwd and then read relative to brand/
     shutil.copytree(BRAND_KIT, tmp_path / "kit")
+    make_potx(tmp_path / "kit" / "deck-template.potx")
     monkeypatch.chdir(tmp_path)
     out = tmp_path / "proj" / "brand"
     ingest(["kit"], out)

@@ -127,7 +127,7 @@ Bigger decks, a brand kit to ingest, or more review rounds take longer. Without 
 
 ## Gallery
 
-Every example is in [`examples/`](examples/), with its brief, plan, canvas, QA report and design review. Each one rebuilds from its own folder.
+Every example is in [`examples/`](examples/), with its brief, plan, canvas, QA report and design review. Each one rebuilds from its own folder. The finished decks, the templates and the guidelines PDF are hosted in [aarshx05/aarshx05](https://github.com/aarshx05/aarshx05/tree/main/assets/slidekick/examples) so the plugin bundle stays text-only; each example's README links them.
 
 | [Meet Slidekick](examples/demo-deck/) | [Fernway seed pitch](examples/pitch-deck/) | [Edit: Q3 → Q4](examples/edit-before-after/) |
 |---|---|---|
