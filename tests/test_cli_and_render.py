@@ -87,9 +87,11 @@ def test_finds_chromium_built_for_another_playwright(monkeypatch, tmp_path):
         exe = tmp_path / rel
         exe.parent.mkdir(parents=True)
         exe.write_text("")
-    monkeypatch.setenv("PLAYWRIGHT_BROWSERS_PATH", str(tmp_path))
     monkeypatch.setattr(util.shutil, "which", lambda name: None)
-    found = [p.relative_to(tmp_path).as_posix() for p in util.installed_chromiums() if tmp_path in p.parents]
+    # Playwright 1.63 expects build 1243, which isn't there; its folder is still where the others live
+    chromium = type("Chromium", (), {"executable_path": str(tmp_path / "chromium-1243" / "chrome-linux64" / "chrome")})()
+    pw = type("PW", (), {"chromium": chromium})()
+    found = [p.relative_to(tmp_path).as_posix() for p in util.installed_chromiums(pw) if tmp_path in p.parents]
     assert found[0] == "chromium-1208/chrome-linux/chrome"  # newest build first
     assert "chromium_headless_shell-1194/chrome-linux/headless_shell" in found
     assert not any(f.startswith("ffmpeg") for f in found)
@@ -98,7 +100,7 @@ def test_finds_chromium_built_for_another_playwright(monkeypatch, tmp_path):
 def test_launch_falls_back_to_chromium_on_disk(monkeypatch, tmp_path):
     from deckkit import util
     exe = tmp_path / "chrome"
-    monkeypatch.setattr(util, "installed_chromiums", lambda: [exe])
+    monkeypatch.setattr(util, "installed_chromiums", lambda pw: [exe])
 
     class Chromium:
         def launch(self, headless, channel=None, executable_path=None):
@@ -108,6 +110,6 @@ def test_launch_falls_back_to_chromium_on_disk(monkeypatch, tmp_path):
 
     pw = type("PW", (), {"chromium": Chromium()})()
     assert util.launch_browser(pw) == "browser"
-    monkeypatch.setattr(util, "installed_chromiums", lambda: [])
+    monkeypatch.setattr(util, "installed_chromiums", lambda pw: [])
     with pytest.raises(RuntimeError, match="No Chromium browser available"):
         util.launch_browser(pw)

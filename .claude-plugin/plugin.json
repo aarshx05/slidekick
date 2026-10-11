@@ -1,7 +1,7 @@
 {
   "name": "slidekick",
   "description": "Make, edit and review PowerPoint decks that are fully editable and on-brand: brief + brand kit in, native .pptx out (real text, shapes, charts, Morph, animations), checked against real PowerPoint and reviewed by fresh eyes. Runs a local Python pipeline that installs its own packages on first run; your decks and documents are never uploaded.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": {
     "name": "aarshx05",
     "email": "12345.aarsh@gmail.com",
