@@ -2,7 +2,7 @@
 
 **Your slide sidekick. Brief in, real PowerPoint out: on your brand, every word editable.**
 
-[![Slidekick demo: a brief goes in, a real PowerPoint deck comes out, a click on a chart shows its data, and Morph plays](docs/assets/demo.gif)](https://aarshx05.github.io/slidekick/)
+[![Slidekick demo: a brief goes in, a real PowerPoint deck comes out, a click on a chart shows its data, and Morph plays](https://raw.githubusercontent.com/aarshx05/aarshx05/main/assets/slidekick-demo.gif)](https://aarshx05.github.io/slidekick/)
 
 <sub>Everything in the demo is real output. The slides are PowerPoint renders of [`examples/pitch-deck`](examples/pitch-deck/), the table is the workbook embedded in that chart, and the Morph is PowerPoint's own video export.</sub>
 
