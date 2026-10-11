@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.1
+
+**Fixed**
+- **Works out of the box in cloud sandboxes such as Claude Code on the web.** When neither Edge, Chrome nor Playwright's own Chromium build is available, Slidekick now launches any Chromium already on disk: another Playwright version's build (in `PLAYWRIGHT_BROWSERS_PATH` or the Playwright cache, newest first) or a system `chromium`/`google-chrome`. Before, a sandbox that ships one pinned Chromium and blocks `playwright install` stopped with "No Chromium browser available".
+
+**Plugin listing**
+- The Claude plugin description now says that Slidekick runs a local Python pipeline that installs its own packages on first run, and `plugin.json` links the README's Privacy section as the privacy policy.
+
 ## 1.1.0
 
 **New**
