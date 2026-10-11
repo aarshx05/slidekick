@@ -7,6 +7,10 @@ qa/
 # example decks ship their review + reports (but not the bulky compare images)
 !examples/*/qa/
 examples/*/qa/*.png
+# decks, templates and PDFs in examples/ are hosted in aarshx05/aarshx05 (keeps the plugin bundle text-only)
+examples/**/*.pptx
+examples/**/*.potx
+examples/**/*.pdf
 !examples/*/qa/contact-sheet.png
 .DS_Store
 .backup/

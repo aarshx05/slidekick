@@ -4,4 +4,14 @@
 
 Prompt: `/slidekick update before.pptx to Q4: new numbers, chart and table data, takeaway headlines, and add a channel breakdown slide.`
 
-Rebuild: `python ../../skills/slidekick/scripts/deck.py edit before.pptx edits.json --out after.pptx` (to change the two imported slides, first run `python ../../skills/slidekick/scripts/deck.py build -p new-slides`).
+Download: [before.pptx](https://raw.githubusercontent.com/aarshx05/aarshx05/main/assets/slidekick/examples/edit-before-after/before.pptx), [after.pptx](https://raw.githubusercontent.com/aarshx05/aarshx05/main/assets/slidekick/examples/edit-before-after/after.pptx) and the imported slides, [new-slides/deck.pptx](https://raw.githubusercontent.com/aarshx05/aarshx05/main/assets/slidekick/examples/edit-before-after/new-slides/deck.pptx). Decks are hosted in [aarshx05/aarshx05](https://github.com/aarshx05/aarshx05/tree/main/assets/slidekick/examples) so the plugin bundle stays text-only.
+
+Rebuild (fetch the inputs first):
+
+```bash
+curl -L -o before.pptx https://raw.githubusercontent.com/aarshx05/aarshx05/main/assets/slidekick/examples/edit-before-after/before.pptx
+curl -L -o new-slides/deck.pptx https://raw.githubusercontent.com/aarshx05/aarshx05/main/assets/slidekick/examples/edit-before-after/new-slides/deck.pptx
+python ../../skills/slidekick/scripts/deck.py edit before.pptx edits.json --out after.pptx
+```
+
+To change the two imported slides, run `python ../../skills/slidekick/scripts/deck.py build -p new-slides` before the edit.

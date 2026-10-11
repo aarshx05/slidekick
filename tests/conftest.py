@@ -11,6 +11,24 @@ sys.path.insert(0, str(SCRIPTS))
 BRAND_KIT = ROOT / "examples" / "demo-brand-kit"
 
 
+def make_potx(path):
+    """A real .potx (python-pptx's default theme saved with the template content type). The kit's own template is
+    hosted outside the repo, and ingest/open_template only need a well-formed one."""
+    import zipfile
+
+    from pptx import Presentation
+    tmp = path.with_suffix(".tmp.pptx")
+    Presentation().save(tmp)
+    with zipfile.ZipFile(tmp) as src, zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as dst:
+        for item in src.infolist():
+            data = src.read(item.filename)
+            if item.filename == "[Content_Types].xml":
+                data = data.replace(b"presentationml.presentation.main+xml", b"presentationml.template.main+xml")
+            dst.writestr(item, data)
+    tmp.unlink()
+    return path
+
+
 def pytest_collection_modifyitems(config, items):
     from deckkit.render import powerpoint_available
     if powerpoint_available():
